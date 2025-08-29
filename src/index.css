@@ -1,0 +1,311 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Suhani's Portfolio Design System */
+@layer base {
+  :root {
+    /* Soft Neutral Corporate Theme - Light */
+    --background: 210 17% 98%; /* #F8F9FA */
+    --foreground: 220 16% 22%; /* #2E3440 */
+    
+    /* Card system */
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 220 16% 22%; /* #2E3440 */
+    
+    /* Primary - Accent Blue */
+    --primary: 210 34% 54%; /* #5E81AC */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Cards/Surface */
+    --secondary: 0 0% 100%; /* #FFFFFF */
+    --secondary-foreground: 220 16% 22%; /* #2E3440 */
+    
+    /* Accent - Highlight Coral */
+    --accent: 14 51% 63%; /* #D08770 */
+    --accent-foreground: 0 0% 100%;
+    
+    /* Muted tones */
+    --muted: 210 17% 96%; /* Lighter background variant */
+    --muted-foreground: 220 16% 36%; /* #4C566A */
+    
+    /* Borders and inputs */
+    --border: 220 13% 91%; /* #E5E7EB */
+    --input: 220 13% 91%; /* #E5E7EB */
+    --ring: 210 34% 54%; /* #5E81AC */
+    
+    /* Hover states */
+    --primary-hover: 210 34% 46%; /* #4C6E9E */
+    
+    /* Destructive (keep functional) */
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 48 20% 96%;
+    
+    /* Popover */
+    --popover: 48 20% 96%;
+    --popover-foreground: 30 15% 15%;
+    
+    /* Sidebar colors */
+    --sidebar-background: 48 20% 96%;
+    --sidebar-foreground: 30 15% 15%;
+    --sidebar-primary: 25 45% 35%;
+    --sidebar-primary-foreground: 48 20% 96%;
+    --sidebar-accent: 42 25% 94%;
+    --sidebar-accent-foreground: 25 45% 35%;
+    --sidebar-border: 42 25% 85%;
+    --sidebar-ring: 25 45% 35%;
+    
+    --radius: 1rem; /* Smoother rounded corners */
+    
+    /* Custom Portfolio Colors */
+    --hero-gradient-from: 210 34% 88%; /* Lighter accent blue */
+    --hero-gradient-to: 14 51% 85%; /* Lighter coral */
+    --particle-color: 210 34% 54%; /* #5E81AC */
+    --glow-color: 14 51% 63%; /* #D08770 */
+    --skill-chip: 210 17% 96%; /* Light background variant */
+    --project-card: 0 0% 100%; /* #FFFFFF */
+    --stats-accent: 14 51% 63%; /* #D08770 */
+    --navbar-blur: 210 17% 98%; /* #F8F9FA */
+    
+    /* Footer colors */
+    --footer-bg: 220 13% 91%; /* #E5E7EB */
+    --footer-text: 220 16% 36%; /* #4C566A */
+    --footer-link: 210 34% 54%; /* #5E81AC */
+    --footer-link-hover: 210 34% 46%; /* #4C6E9E */
+    
+    /* Social Media Brand Colors */
+    --github-color: 0 0% 20%;
+    --linkedin-color: 220 85% 55%; /* Different blue for LinkedIn */
+    --instagram-color: 315 100% 50%;
+    --email-color: 11 82% 65%; /* Peachy color for email */
+    --codeforces-color: 210 100% 45%;
+    --gfg-color: 120 100% 25%;
+    --leetcode-color: 45 100% 50%;
+    --codechef-color: 25 100% 45%;
+  }
+
+  .dark {
+    /* Soft Neutral Corporate Theme - Dark */
+    --background: 220 16% 22%; /* #2E3440 */
+    --foreground: 218 27% 94%; /* #ECEFF4 */
+    
+    --card: 220 16% 28%; /* #3B4252 */
+    --card-foreground: 218 27% 94%; /* #ECEFF4 */
+    
+    --primary: 210 34% 63%; /* #81A1C1 */
+    --primary-foreground: 220 16% 22%; /* #2E3440 */
+    
+    --secondary: 220 16% 28%; /* #3B4252 */
+    --secondary-foreground: 218 27% 94%; /* #ECEFF4 */
+    
+    --accent: 40 71% 73%; /* #EBCB8B - Warm Yellow */
+    --accent-foreground: 220 16% 22%; /* #2E3440 */
+    
+    --muted: 220 16% 28%; /* #3B4252 */
+    --muted-foreground: 218 27% 84%; /* #D8DEE9 */
+    
+    --border: 220 16% 32%; /* #434C5E */
+    --input: 220 16% 32%; /* #434C5E */
+    --ring: 210 34% 63%; /* #81A1C1 */
+    
+    /* Hover states */
+    --primary-hover: 210 34% 54%; /* #5E81AC */
+    
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 48 15% 92%;
+    
+    --popover: 25 15% 8%;
+    --popover-foreground: 48 15% 92%;
+    
+    --sidebar-background: 25 15% 8%;
+    --sidebar-foreground: 48 15% 92%;
+    --sidebar-primary: 35 55% 65%;
+    --sidebar-primary-foreground: 25 15% 8%;
+    --sidebar-accent: 25 15% 15%;
+    --sidebar-accent-foreground: 48 15% 92%;
+    --sidebar-border: 25 15% 18%;
+    --sidebar-ring: 35 55% 65%;
+    
+    /* Dark mode custom colors */
+    --hero-gradient-from: 210 34% 35%; /* Darker accent blue */
+    --hero-gradient-to: 40 71% 45%; /* Darker warm yellow */
+    --particle-color: 210 34% 63%; /* #81A1C1 */
+    --glow-color: 40 71% 73%; /* #EBCB8B */
+    --skill-chip: 220 16% 28%; /* #3B4252 */
+    --project-card: 220 16% 28%; /* #3B4252 */
+    --stats-accent: 40 71% 73%; /* #EBCB8B */
+    --navbar-blur: 220 16% 22%; /* #2E3440 */
+    
+    /* Footer colors dark */
+    --footer-bg: 220 16% 22%; /* #2E3440 */
+    --footer-text: 218 27% 84%; /* #D8DEE9 */
+    --footer-link: 210 34% 63%; /* #81A1C1 */
+    --footer-link-hover: 210 34% 54%; /* #5E81AC */
+    
+    /* Social Media Brand Colors (Dark Mode) */
+    --github-color: 0 0% 80%;
+    --linkedin-color: 220 80% 70%; /* Different blue for LinkedIn */
+    --instagram-color: 315 100% 70%;
+    --email-color: 11 85% 75%; /* Peachy color for email */
+    --codeforces-color: 210 100% 65%;
+    --gfg-color: 120 100% 55%;
+    --leetcode-color: 45 100% 70%;
+    --codechef-color: 25 100% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    letter-spacing: -0.01em;
+    line-height: 1.65;
+    font-weight: 400;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero Components */
+  .hero-solid {
+    background: hsl(var(--hero-gradient-from));
+  }
+  
+  .hero-button {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:bg-[hsl(var(--primary-hover))] shadow-lg hover:shadow-xl;
+  }
+  
+  .hero-button-outline {
+    @apply border-2 border-primary text-primary px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-105 hover:shadow-lg;
+  }
+  
+  /* Skill Chips */
+  .skill-chip {
+    @apply bg-[hsl(var(--skill-chip))] text-foreground px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 hover:scale-105 hover:bg-accent hover:text-accent-foreground hover:shadow-md border border-border;
+  }
+  
+  /* Project Cards */
+  .project-card {
+    @apply bg-[hsl(var(--project-card))] border border-border rounded-2xl p-8 transition-all duration-500 hover:scale-[1.03] hover:border-primary hover:shadow-2xl;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .project-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px hsl(var(--primary) / 0.1);
+    transform: translateY(-4px) scale(1.03);
+  }
+  
+  /* Section Headers */
+  .section-title {
+    @apply text-4xl font-bold text-foreground mb-6 text-center;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  
+  .section-subtitle {
+    @apply text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto leading-relaxed;
+    font-weight: 400;
+  }
+  
+  /* Animations */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .stagger-delay-1 { transition-delay: 0.1s; }
+  .stagger-delay-2 { transition-delay: 0.2s; }
+  .stagger-delay-3 { transition-delay: 0.3s; }
+  .stagger-delay-4 { transition-delay: 0.4s; }
+  
+  /* Particle Canvas */
+  .particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* Glow effects */
+  .glow-on-hover {
+    @apply transition-all duration-300;
+  }
+  
+  .glow-on-hover:hover {
+    box-shadow: 0 0 40px hsl(var(--glow-color) / 0.25), 0 0 80px hsl(var(--glow-color) / 0.1);
+  }
+
+  /* Social Icons for Hero Section */
+  .social-icon-hero {
+    @apply p-4 rounded-full bg-primary/20 backdrop-blur-sm border-2 border-primary/40 transition-all duration-300 hover:scale-110 hover:shadow-xl shadow-lg;
+  }
+  
+  /* Brand-specific social icons */
+  .social-github { @apply text-[hsl(var(--github-color))] hover:bg-[hsl(var(--github-color))] hover:text-white border-[hsl(var(--github-color))]/40; }
+  .social-linkedin { @apply text-[hsl(var(--linkedin-color))] hover:bg-[hsl(var(--linkedin-color))] hover:text-white border-[hsl(var(--linkedin-color))]/40; }
+  .social-instagram { @apply text-[hsl(var(--instagram-color))] hover:bg-[hsl(var(--instagram-color))] hover:text-white border-[hsl(var(--instagram-color))]/40; }
+  .social-email { @apply text-[hsl(var(--email-color))] hover:bg-[hsl(var(--email-color))] hover:text-white border-[hsl(var(--email-color))]/40; }
+  .social-codeforces { @apply text-[hsl(var(--codeforces-color))] hover:bg-[hsl(var(--codeforces-color))] hover:text-white border-[hsl(var(--codeforces-color))]/40; }
+  .social-gfg { @apply text-[hsl(var(--gfg-color))] hover:bg-[hsl(var(--gfg-color))] hover:text-white border-[hsl(var(--gfg-color))]/40; }
+  .social-leetcode { @apply text-[hsl(var(--leetcode-color))] hover:bg-[hsl(var(--leetcode-color))] hover:text-white border-[hsl(var(--leetcode-color))]/40; }
+  .social-codechef { @apply text-[hsl(var(--codechef-color))] hover:bg-[hsl(var(--codechef-color))] hover:text-white border-[hsl(var(--codechef-color))]/40; }
+  
+  /* Skill category colors */
+  .skill-programming { @apply bg-gradient-to-r from-blue-500/20 to-blue-600/20 border-blue-500/30 text-blue-600 dark:text-blue-400; }
+  .skill-frontend { @apply bg-gradient-to-r from-purple-500/20 to-purple-600/20 border-purple-500/30 text-purple-600 dark:text-purple-400; }
+  .skill-backend { @apply bg-gradient-to-r from-green-500/20 to-green-600/20 border-green-500/30 text-green-600 dark:text-green-400; }
+  .skill-databases { @apply bg-gradient-to-r from-orange-500/20 to-orange-600/20 border-orange-500/30 text-orange-600 dark:text-orange-400; }
+  .skill-tools { @apply bg-gradient-to-r from-red-500/20 to-red-600/20 border-red-500/30 text-red-600 dark:text-red-400; }
+  .skill-design { @apply bg-gradient-to-r from-pink-500/20 to-pink-600/20 border-pink-500/30 text-pink-600 dark:text-pink-400; }
+  .skill-exploring { @apply bg-gradient-to-r from-indigo-500/20 to-indigo-600/20 border-indigo-500/30 text-indigo-600 dark:text-indigo-400; }
+  
+  /* Easter egg animation */
+  @keyframes naruto-run {
+    0% { transform: translateX(-100px) rotate(-10deg); }
+    100% { transform: translateX(calc(100vw + 100px)) rotate(-10deg); }
+  }
+  
+  .naruto-runner {
+    animation: naruto-run 3s linear forwards;
+  }
+  
+  /* Matrix rain effect */
+  .matrix-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.6;
+  }
+  
+  /* Blob animation */
+  .blob-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
