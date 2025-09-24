@@ -38,6 +38,7 @@ import ScrollAnimations from '../components/ScrollAnimations';
 import Navbar from '../components/Navbar';
 import ContactForm from '../components/ContactForm';
 import ProjectCard from '../components/ProjectCard';
+import CatFollowCursor from '../components/CatFollowCursor';
 import narutoImage from '../assets/naruto-character.png';
 import profilePhoto from '../assets/profile-photo.jpg';
 import gfgLogo from '../assets/gfg-logo.png';
@@ -270,11 +271,79 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
-      <Navbar />
-      <DarkModeToggle />
+      {/* Sidebar */}
+      <div className="fixed left-0 top-0 w-80 h-screen bg-primary/10 backdrop-blur-sm border-r border-border z-50 flex flex-col">
+        {/* Cat and Portfolio Title */}
+        <div className="relative p-8 text-center">
+          <div className="mb-4 flex justify-center">
+            <CatFollowCursor />
+          </div>
+          <h1 className="text-3xl font-bold text-foreground">PORTFOLIO</h1>
+        </div>
+        
+        {/* Navigation Menu */}
+        <nav className="flex-1 px-8">
+          <ul className="space-y-4">
+            <li>
+              <a
+                href="#about"
+                className="block w-full bg-primary/20 text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
+                ABOUT
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projects"
+                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300"
+              >
+                PROJECTS
+              </a>
+            </li>
+            <li>
+              <a
+                href="#experience"
+                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300"
+              >
+                EXPERIENCE
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300"
+              >
+                CONTACT
+              </a>
+            </li>
+          </ul>
+        </nav>
+        
+        {/* Social Media Icons */}
+        <div className="p-8">
+          <div className="flex justify-center gap-6">
+            <a href={socialLinks.email} className="text-muted-foreground hover:text-primary transition-colors duration-300" title="Email">
+              <Mail className="w-6 h-6" />
+            </a>
+            <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" title="GitHub">
+              <Github className="w-6 h-6" />
+            </a>
+            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" title="LinkedIn">
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" title="Instagram">
+              <Instagram className="w-6 h-6" />
+            </a>
+          </div>
+        </div>
+      </div>
 
-      {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center bg-background pt-20">
+      {/* Main Content Area */}
+      <div className="ml-80">
+        <DarkModeToggle />
+
+        {/* Hero Section */}
+        <section id="home" className="relative min-h-screen flex items-center justify-center bg-background pt-20">
         <ParticleCanvas />
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -830,9 +899,10 @@ const Index = () => {
             </p>
           </div>
         </div>
-      </footer>
-      
-      <ResumeViewer isOpen={showResumeViewer} onClose={() => setShowResumeViewer(false)} />
+        </footer>
+        
+        <ResumeViewer isOpen={showResumeViewer} onClose={() => setShowResumeViewer(false)} />
+      </div>
     </div>
   );
 };
