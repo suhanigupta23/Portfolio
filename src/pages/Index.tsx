@@ -274,11 +274,12 @@ const Index = () => {
       {/* Sidebar */}
       <div className="fixed left-0 top-0 w-80 h-screen bg-primary/10 backdrop-blur-sm border-r border-border z-50 flex flex-col">
         {/* Cat and Portfolio Title */}
-        <div className="relative p-8 text-center">
+        <div className="relative p-8 text-center border-b border-border/20">
           <div className="mb-4 flex justify-center">
             <CatFollowCursor />
           </div>
-          <h1 className="text-3xl font-bold text-foreground">PORTFOLIO</h1>
+          <h1 className="text-3xl font-bold text-foreground mb-2">PORTFOLIO</h1>
+          <div className="text-sm text-muted-foreground">Student of pixels & logic!</div>
         </div>
         
         {/* Navigation Menu */}
@@ -286,54 +287,100 @@ const Index = () => {
           <ul className="space-y-4">
             <li>
               <a
-                href="#about"
-                className="block w-full bg-primary/20 text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                href="#home"
+                className="block w-full bg-primary/20 text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center justify-center gap-2"
               >
+                <User className="w-4 h-4" />
+                HOME
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <Heart className="w-4 h-4" />
                 ABOUT
               </a>
             </li>
             <li>
               <a
                 href="#projects"
-                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300"
+                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
               >
+                <Code className="w-4 h-4" />
                 PROJECTS
               </a>
             </li>
             <li>
               <a
-                href="#experience"
-                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300"
+                href="#skills"
+                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
               >
-                EXPERIENCE
+                <Sparkles className="w-4 h-4" />
+                SKILLS
               </a>
             </li>
             <li>
               <a
-                href="#contact"
-                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300"
+                href="#achievements"
+                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
               >
+                <Trophy className="w-4 h-4" />
+                ACHIEVEMENTS
+              </a>
+            </li>
+            <li>
+              <button
+                onClick={() => setShowResumeViewer(true)}
+                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <Download className="w-4 h-4" />
+                RESUME
+              </button>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <Mail className="w-4 h-4" />
                 CONTACT
               </a>
             </li>
           </ul>
         </nav>
         
+        {/* Cute decorative elements */}
+        <div className="px-8 py-4">
+          <div className="text-center text-sm text-muted-foreground">
+            <div className="flex justify-center gap-1 mb-2">
+              <span className="text-pink-400">✨</span>
+              <span className="text-blue-400">🌟</span>
+              <span className="text-purple-400">💫</span>
+            </div>
+            <div className="text-xs">Developer by logic, designer by heart ♡</div>
+          </div>
+        </div>
+        
         {/* Social Media Icons */}
-        <div className="p-8">
-          <div className="flex justify-center gap-6">
-            <a href={socialLinks.email} className="text-muted-foreground hover:text-primary transition-colors duration-300" title="Email">
-              <Mail className="w-6 h-6" />
-            </a>
-            <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" title="GitHub">
-              <Github className="w-6 h-6" />
-            </a>
-            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" title="LinkedIn">
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" title="Instagram">
-              <Instagram className="w-6 h-6" />
-            </a>
+        <div className="p-8 border-t border-border/20">
+          <div className="text-center mb-4">
+            <div className="text-xs text-muted-foreground mb-3">Let's connect! ♡</div>
+            <div className="flex justify-center gap-4">
+              <a href={socialLinks.email} className="p-2 rounded-full bg-pink-100 dark:bg-pink-900/20 text-pink-600 hover:text-pink-700 hover:bg-pink-200 dark:hover:bg-pink-900/40 transition-all duration-300" title="Email">
+                <Mail className="w-4 h-4" />
+              </a>
+              <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-100 dark:bg-gray-900/20 text-gray-600 hover:text-gray-700 hover:bg-gray-200 dark:hover:bg-gray-900/40 transition-all duration-300" title="GitHub">
+                <Github className="w-4 h-4" />
+              </a>
+              <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/20 text-blue-600 hover:text-blue-700 hover:bg-blue-200 dark:hover:bg-blue-900/40 transition-all duration-300" title="LinkedIn">
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-purple-100 dark:bg-purple-900/20 text-purple-600 hover:text-purple-700 hover:bg-purple-200 dark:hover:bg-purple-900/40 transition-all duration-300" title="Instagram">
+                <Instagram className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

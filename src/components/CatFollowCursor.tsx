@@ -30,13 +30,13 @@ const CatFollowCursor: React.FC<CatFollowCursorProps> = ({ className = "" }) => 
       const eyeOffsetX = Math.cos(angle) * Math.min(maxEyeMovement, Math.sqrt(deltaX * deltaX + deltaY * deltaY) / 100);
       const eyeOffsetY = Math.sin(angle) * Math.min(maxEyeMovement, Math.sqrt(deltaX * deltaX + deltaY * deltaY) / 100);
 
-      // Update left eye position
-      leftEyeRef.current.setAttribute('cx', (35 + eyeOffsetX).toString());
-      leftEyeRef.current.setAttribute('cy', (35 + eyeOffsetY).toString());
+      // Update left eye position (adjusted for new cat design)
+      leftEyeRef.current.setAttribute('cx', (45 + eyeOffsetX).toString());
+      leftEyeRef.current.setAttribute('cy', (45 + eyeOffsetY).toString());
 
-      // Update right eye position  
-      rightEyeRef.current.setAttribute('cx', (65 + eyeOffsetX).toString());
-      rightEyeRef.current.setAttribute('cy', (35 + eyeOffsetY).toString());
+      // Update right eye position (adjusted for new cat design)
+      rightEyeRef.current.setAttribute('cx', (75 + eyeOffsetX).toString());
+      rightEyeRef.current.setAttribute('cy', (45 + eyeOffsetY).toString());
     };
 
     document.addEventListener('mousemove', handleMouseMove);
@@ -47,99 +47,111 @@ const CatFollowCursor: React.FC<CatFollowCursorProps> = ({ className = "" }) => 
     <div className={`${className}`}>
       <svg
         ref={catRef}
-        width="100"
-        height="80"
-        viewBox="0 0 100 80"
+        width="120"
+        height="100"
+        viewBox="0 0 120 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-20 h-16"
+        className="w-24 h-20"
       >
         {/* Cat ears */}
         <path
-          d="M20 20 L30 5 L40 20 Z"
+          d="M25 25 L35 8 L45 25 Z"
           fill="currentColor"
           className="text-foreground"
         />
         <path
-          d="M60 20 L70 5 L80 20 Z"
+          d="M75 25 L85 8 L95 25 Z"
           fill="currentColor"
           className="text-foreground"
         />
         
-        {/* Inner ears */}
+        {/* Inner ears (pink) */}
         <path
-          d="M25 17 L30 8 L35 17 Z"
-          fill="currentColor"
-          className="text-primary"
+          d="M30 22 L35 12 L40 22 Z"
+          fill="#FF69B4"
         />
         <path
-          d="M65 17 L70 8 L75 17 Z"
-          fill="currentColor"
-          className="text-primary"
+          d="M80 22 L85 12 L90 22 Z"
+          fill="#FF69B4"
         />
         
-        {/* Cat head */}
+        {/* Cat head (larger and rounder) */}
         <ellipse
-          cx="50"
-          cy="45"
-          rx="35"
-          ry="30"
+          cx="60"
+          cy="55"
+          rx="40"
+          ry="35"
           fill="currentColor"
           className="text-foreground"
         />
         
-        {/* Cat eyes (white background) */}
-        <ellipse cx="35" cy="35" rx="8" ry="10" fill="white" />
-        <ellipse cx="65" cy="35" rx="8" ry="10" fill="white" />
+        {/* Cat eyes (much larger and more anime-style) */}
+        <ellipse cx="45" cy="45" rx="12" ry="15" fill="white" />
+        <ellipse cx="75" cy="45" rx="12" ry="15" fill="white" />
         
-        {/* Cat pupils (moving parts) */}
+        {/* Eye highlights (to make them sparkle) */}
+        <ellipse cx="48" cy="42" rx="3" ry="4" fill="white" opacity="0.8" />
+        <ellipse cx="78" cy="42" rx="3" ry="4" fill="white" opacity="0.8" />
+        
+        {/* Cat pupils (moving parts - larger for cute effect) */}
         <ellipse
           ref={leftEyeRef}
-          cx="35"
-          cy="35"
-          rx="4"
-          ry="5"
+          cx="45"
+          cy="45"
+          rx="6"
+          ry="8"
           fill="currentColor"
           className="text-foreground transition-all duration-100 ease-out"
         />
         <ellipse
           ref={rightEyeRef}
-          cx="65"
-          cy="35"
-          rx="4"
-          ry="5"
+          cx="75"
+          cy="45"
+          rx="6"
+          ry="8"
           fill="currentColor"
           className="text-foreground transition-all duration-100 ease-out"
         />
         
-        {/* Cat nose */}
+        {/* Small white highlights in pupils */}
+        <circle cx="47" cy="42" r="2" fill="white" />
+        <circle cx="77" cy="42" r="2" fill="white" />
+        
+        {/* Cat nose (heart-shaped for cuteness) */}
         <path
-          d="M47 45 L53 45 L50 50 Z"
-          fill="currentColor"
-          className="text-primary"
+          d="M58 55 Q60 52 62 55 Q60 58 58 55 Z"
+          fill="#FF69B4"
         />
         
-        {/* Cat mouth */}
+        {/* Cat mouth (cute smile) */}
         <path
-          d="M50 50 Q45 55 40 52"
+          d="M60 58 Q55 62 50 58"
           stroke="currentColor"
           strokeWidth="2"
           fill="none"
           className="text-foreground"
         />
         <path
-          d="M50 50 Q55 55 60 52"
+          d="M60 58 Q65 62 70 58"
           stroke="currentColor"
           strokeWidth="2"
           fill="none"
           className="text-foreground"
         />
         
-        {/* Cat whiskers */}
-        <line x1="15" y1="40" x2="30" y2="42" stroke="currentColor" strokeWidth="1.5" className="text-foreground" />
-        <line x1="15" y1="48" x2="30" y2="48" stroke="currentColor" strokeWidth="1.5" className="text-foreground" />
-        <line x1="70" y1="42" x2="85" y2="40" stroke="currentColor" strokeWidth="1.5" className="text-foreground" />
-        <line x1="70" y1="48" x2="85" y2="48" stroke="currentColor" strokeWidth="1.5" className="text-foreground" />
+        {/* Cat whiskers (longer and more prominent) */}
+        <line x1="20" y1="50" x2="38" y2="52" stroke="currentColor" strokeWidth="2" className="text-foreground" />
+        <line x1="18" y1="58" x2="38" y2="58" stroke="currentColor" strokeWidth="2" className="text-foreground" />
+        <line x1="20" y1="66" x2="38" y2="64" stroke="currentColor" strokeWidth="2" className="text-foreground" />
+        
+        <line x1="82" y1="52" x2="100" y2="50" stroke="currentColor" strokeWidth="2" className="text-foreground" />
+        <line x1="82" y1="58" x2="102" y2="58" stroke="currentColor" strokeWidth="2" className="text-foreground" />
+        <line x1="82" y1="64" x2="100" y2="66" stroke="currentColor" strokeWidth="2" className="text-foreground" />
+        
+        {/* Cute cheek blush */}
+        <ellipse cx="25" cy="60" rx="8" ry="5" fill="#FFB6C1" opacity="0.6" />
+        <ellipse cx="95" cy="60" rx="8" ry="5" fill="#FFB6C1" opacity="0.6" />
       </svg>
     </div>
   );
