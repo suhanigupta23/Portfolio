@@ -283,7 +283,7 @@ const Index = () => {
         </div>
         
         {/* Navigation Menu */}
-        <nav className="flex-1 px-8">
+        <nav className="px-8 py-4">
           <ul className="space-y-4">
             <li>
               <a
@@ -305,20 +305,20 @@ const Index = () => {
             </li>
             <li>
               <a
-                href="#projects"
-                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                <Code className="w-4 h-4" />
-                PROJECTS
-              </a>
-            </li>
-            <li>
-              <a
                 href="#skills"
                 className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Sparkles className="w-4 h-4" />
                 SKILLS
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projects"
+                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <Code className="w-4 h-4" />
+                PROJECTS
               </a>
             </li>
             <li>
@@ -354,12 +354,11 @@ const Index = () => {
         {/* Cute decorative elements */}
         <div className="px-8 py-4">
           <div className="text-center text-sm text-muted-foreground">
-            <div className="flex justify-center gap-1 mb-2">
+            <div className="flex justify-center gap-1">
               <span className="text-pink-400">✨</span>
               <span className="text-blue-400">🌟</span>
               <span className="text-purple-400">💫</span>
             </div>
-            <div className="text-xs">Developer by logic, designer by heart ♡</div>
           </div>
         </div>
         
