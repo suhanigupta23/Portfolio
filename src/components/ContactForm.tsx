@@ -5,7 +5,7 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { useToast } from '../hooks/use-toast';
 
-const ContactForm = () => {
+const ContactForm = ({ onSuccess }: { onSuccess?: () => void }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -36,6 +36,11 @@ const ContactForm = () => {
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
       setFormData({ name: '', email: '', subject: '', message: '' });
+      
+      // Call onSuccess callback if provided (for dialog)
+      setTimeout(() => {
+        onSuccess?.();
+      }, 2000);
     } catch (error) {
       toast({
         title: "Error sending message",

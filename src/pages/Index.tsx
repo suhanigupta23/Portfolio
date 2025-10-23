@@ -28,8 +28,17 @@ import {
   MessageCircle,
   GraduationCap,
   Calendar,
-  Heart
+  Heart,
+  Menu,
+  X
 } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import ParticleCanvas from '../components/ParticleCanvas';
 import TypingEffect from '../components/TypingEffect';
 import AnimatedCounter from '../components/AnimatedCounter';
@@ -38,7 +47,6 @@ import ScrollAnimations from '../components/ScrollAnimations';
 import Navbar from '../components/Navbar';
 import ContactForm from '../components/ContactForm';
 import ProjectCard from '../components/ProjectCard';
-import CatFollowCursor from '../components/CatFollowCursor';
 import narutoImage from '../assets/naruto-character.png';
 import profilePhoto from '../assets/profile-photo.jpg';
 import gfgLogo from '../assets/gfg-logo.png';
@@ -48,6 +56,8 @@ import profileImage from '../assets/profile.jpg';
 const Index = () => {
   const [projectFilter, setProjectFilter] = useState<string>('all');
   const [showResumeViewer, setShowResumeViewer] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showContactDialog, setShowContactDialog] = useState(false);
   
   // Education data from the user's provided image
   const educationData = [
@@ -69,7 +79,7 @@ const Index = () => {
       degree: "Class X - 95.2%",
       institution: "Sagar Public School",
       duration: "2021", 
-      location: "Bhopal",
+      location: "Bhopal, Madhya Pradesh",
       type: "school"
     }
   ];
@@ -240,15 +250,7 @@ const Index = () => {
       title: "Academic Excellence",
       event: "₹60,000 Scholarship",
       description: "Awarded scholarship for outstanding academic performance and leadership qualities.",
-      icon: <Trophy className="w-6 h-6" />,
-      certificateLink: "#", // TODO: Add certificate link
-    },
-    {
-      title: "NDA (W) Qualified",
-      event: "NDA(W)-II-2021",
-      description: "Successfully qualified National Defence Academy written examination NDA-II-(W)-148.",
-      icon: <Award className="w-6 h-6" />,
-      certificateLink: "#", // TODO: Add certificate link
+      icon: <Trophy className="w-6 h-6" />
     }
   ];
 
@@ -271,13 +273,21 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
+      {/* Mobile Hamburger Button */}
+      <button
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        className="fixed top-4 left-4 z-50 md:hidden p-3 bg-primary text-primary-foreground rounded-lg shadow-lg hover:bg-primary/90 transition-all duration-300"
+        aria-label="Toggle menu"
+      >
+        {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+      </button>
+
       {/* Sidebar */}
-      <div className="fixed left-0 top-0 w-80 h-screen bg-primary/10 backdrop-blur-sm border-r border-border z-50 flex flex-col">
-        {/* Cat and Portfolio Title */}
+      <div className={`fixed left-0 top-0 w-80 h-screen bg-primary/10 backdrop-blur-sm border-r border-border z-40 flex flex-col transition-transform duration-300 ${
+        isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
+      }`}>
+        {/* Portfolio Title */}
         <div className="relative p-8 text-center border-b border-border/20">
-          <div className="mb-4 flex justify-center">
-            <CatFollowCursor />
-          </div>
           <h1 className="text-3xl font-bold text-foreground mb-2">PORTFOLIO</h1>
           <div className="text-sm text-muted-foreground">Student of pixels & logic!</div>
         </div>
@@ -288,6 +298,7 @@ const Index = () => {
             <li>
               <a
                 href="#home"
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="block w-full bg-primary/20 text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <User className="w-4 h-4" />
@@ -297,6 +308,7 @@ const Index = () => {
             <li>
               <a
                 href="#about"
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Heart className="w-4 h-4" />
@@ -306,6 +318,7 @@ const Index = () => {
             <li>
               <a
                 href="#skills"
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Sparkles className="w-4 h-4" />
@@ -315,6 +328,7 @@ const Index = () => {
             <li>
               <a
                 href="#projects"
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Code className="w-4 h-4" />
@@ -324,6 +338,7 @@ const Index = () => {
             <li>
               <a
                 href="#achievements"
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Trophy className="w-4 h-4" />
@@ -332,7 +347,10 @@ const Index = () => {
             </li>
             <li>
               <button
-                onClick={() => setShowResumeViewer(true)}
+                onClick={() => {
+                  setShowResumeViewer(true);
+                  setIsMobileMenuOpen(false);
+                }}
                 className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Download className="w-4 h-4" />
@@ -340,28 +358,19 @@ const Index = () => {
               </button>
             </li>
             <li>
-              <a
-                href="#contact"
+              <button
+                onClick={() => {
+                  setShowContactDialog(true);
+                  setIsMobileMenuOpen(false);
+                }}
                 className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Mail className="w-4 h-4" />
                 CONTACT
-              </a>
+              </button>
             </li>
           </ul>
         </nav>
-        
-        {/* Cute decorative elements */}
-        <div className="px-8 py-4">
-          <div className="text-center text-sm text-muted-foreground">
-            <div className="flex justify-center gap-1">
-              <span className="text-pink-400">✨</span>
-              <span className="text-blue-400">🌟</span>
-              <span className="text-purple-400">💫</span>
-            </div>
-          </div>
-        </div>
-        
         {/* Social Media Icons */}
         <div className="p-8 border-t border-border/20">
           <div className="text-center mb-4">
@@ -384,8 +393,16 @@ const Index = () => {
         </div>
       </div>
 
+      {/* Overlay for mobile menu */}
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-30 md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
       {/* Main Content Area */}
-      <div className="ml-80">
+      <div className="md:ml-80">
         <DarkModeToggle />
 
         {/* Hero Section */}
@@ -683,31 +700,36 @@ const Index = () => {
                        <h3 className="font-bold text-foreground mb-1">{achievement.title}</h3>
                        <p className="text-muted-foreground text-sm mb-2">{achievement.event}</p>
                        <p className="text-sm text-foreground/80 mb-3">{achievement.description}</p>
-                       <div className="flex justify-between items-center">
-                       <div className="flex gap-3 items-center justify-center">
-                         {/* Certificate and LinkedIn links - made bigger and more visible */}
-                         <a 
-                           href={achievement.certificateLink} 
-                           target="_blank" 
-                           rel="noopener noreferrer" 
-                           className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-300 hover:scale-105" 
-                           title="View Certificate"
-                         >
-                           <Award className="w-5 h-5" />
-                           <span className="text-sm font-medium">Certificate</span>
-                         </a>
-                         <a 
-                           href={achievement.linkedinPost} 
-                           target="_blank" 
-                           rel="noopener noreferrer" 
-                           className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-[hsl(var(--linkedin-color))]/10 text-[hsl(var(--linkedin-color))] hover:bg-[hsl(var(--linkedin-color))]/20 transition-all duration-300 hover:scale-105" 
-                           title="LinkedIn Post"
-                         >
-                           <Linkedin className="w-5 h-5" />
-                           <span className="text-sm font-medium">LinkedIn</span>
-                         </a>
-                       </div>
-                       </div>
+                       {(achievement.certificateLink || achievement.linkedinPost) && (
+                         <div className="flex justify-between items-center">
+                           <div className="flex gap-3 items-center justify-center">
+                             {achievement.certificateLink && (
+                               <a 
+                                 href={achievement.certificateLink} 
+                                 target="_blank" 
+                                 rel="noopener noreferrer" 
+                                 className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-300 hover:scale-105" 
+                                 title="View Certificate"
+                               >
+                                 <Award className="w-5 h-5" />
+                                 <span className="text-sm font-medium">Certificate</span>
+                               </a>
+                             )}
+                             {achievement.linkedinPost && (
+                               <a 
+                                 href={achievement.linkedinPost} 
+                                 target="_blank" 
+                                 rel="noopener noreferrer" 
+                                 className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-[hsl(var(--linkedin-color))]/10 text-[hsl(var(--linkedin-color))] hover:bg-[hsl(var(--linkedin-color))]/20 transition-all duration-300 hover:scale-105" 
+                                 title="LinkedIn Post"
+                               >
+                                 <Linkedin className="w-5 h-5" />
+                                 <span className="text-sm font-medium">LinkedIn</span>
+                               </a>
+                             )}
+                           </div>
+                         </div>
+                       )}
                      </div>
                   </div>
                 </div>
@@ -884,9 +906,20 @@ const Index = () => {
               </div>
             </ScrollAnimations>
 
-            {/* Contact Form */}
+            {/* Contact Form - Desktop */}
             <ScrollAnimations delay={2}>
-              <ContactForm />
+              <div className="hidden lg:block">
+                <ContactForm />
+              </div>
+              <div className="lg:hidden">
+                <button
+                  onClick={() => setShowContactDialog(true)}
+                  className="w-full py-4 px-6 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 flex items-center justify-center gap-2"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Open Contact Form
+                </button>
+              </div>
             </ScrollAnimations>
           </div>
         </div>
@@ -948,6 +981,19 @@ const Index = () => {
         </footer>
         
         <ResumeViewer isOpen={showResumeViewer} onClose={() => setShowResumeViewer(false)} />
+        
+        {/* Contact Form Dialog for Mobile */}
+        <Dialog open={showContactDialog} onOpenChange={setShowContactDialog}>
+          <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold text-primary">Get In Touch</DialogTitle>
+              <DialogDescription>
+                Fill out the form below and I'll get back to you as soon as possible!
+              </DialogDescription>
+            </DialogHeader>
+            <ContactForm onSuccess={() => setShowContactDialog(false)} />
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
