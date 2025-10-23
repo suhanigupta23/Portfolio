@@ -251,6 +251,12 @@ const Index = () => {
       event: "₹60,000 Scholarship",
       description: "Awarded scholarship for outstanding academic performance and leadership qualities.",
       icon: <Trophy className="w-6 h-6" />
+    },
+    {
+      title: "NDA (W) Qualified",
+      event: "NDA(W)-II-2021",
+      description: "Successfully qualified National Defence Academy written examination NDA-II-(W)-148.",
+      icon: <Award className="w-6 h-6" />
     }
   ];
 
