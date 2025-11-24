@@ -210,6 +210,20 @@ const Index = () => {
         { icon: <Users className="w-4 h-4" />, text: "Multiplayer support" },
         { icon: <Shield className="w-4 h-4" />, text: "Responsive design" }
       ]
+    },
+    {
+      title: "Snake Game – Hand Gesture Controlled",
+      description: "Classic Snake game controlled entirely via hand gestures using a webcam",
+      tech: ["Python", "OpenCV", "MediaPipe", "Pygame"],
+      tags: ["Game", "AI"],
+      github: "https://github.com/suhanigupta23/Snake-Game-Hand-Gesture",
+      demo: "https://github.com/suhanigupta23/Snake-Game-Hand-Gesture",
+      features: [
+        { icon: <Zap className="w-4 h-4" />, text: "Real-time hand gesture recognition" },
+        { icon: <Users className="w-4 h-4" />, text: "Control snake movements without keyboard" },
+        { icon: <Shield className="w-4 h-4" />, text: "Pause and resume using gestures" },
+        { icon: <Star className="w-4 h-4" />, text: "Smooth gameplay with OpenCV and Pygame" }
+      ]
     }
   ];
 
