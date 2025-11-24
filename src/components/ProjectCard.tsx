@@ -7,6 +7,7 @@ import intuneImage from '../assets/intune-project.jpg';
 import carManagementImage from '../assets/car-management-project.jpg';
 import soundorbitImage from '../assets/soundorbit-project.jpg';
 import hamsterGameImage from '../assets/hamster-game-project.jpg';
+import snakeGameImage from '../assets/snake-game-project.png';
 
 interface Feature {
   icon: React.ReactNode;
