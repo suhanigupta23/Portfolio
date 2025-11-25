@@ -378,16 +378,14 @@ const Index = () => {
               </button>
             </li>
             <li>
-              <button
-                onClick={() => {
-                  setShowContactDialog(true);
-                  setIsMobileMenuOpen(false);
-                }}
+              <a
+                href="#contact"
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Mail className="w-4 h-4" />
                 CONTACT
-              </button>
+              </a>
             </li>
           </ul>
         </nav>
