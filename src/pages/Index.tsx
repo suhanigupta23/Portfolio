@@ -872,18 +872,18 @@ const Index = () => {
                 {/* Coding Profiles Section */}
                 <div className="mt-8 pt-6 border-t border-border">
                   <h4 className="text-lg font-semibold text-primary mb-6 text-center">Coding Profiles</h4>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {/* LeetCode */}
                     <a 
                       href={socialLinks.leetcode}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex flex-col items-center justify-center p-6 rounded-xl bg-orange-500/10 border-2 border-orange-500/30 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300 group glow-on-hover min-h-[140px]"
+                      className="flex flex-col items-center justify-center p-8 rounded-xl bg-orange-500/10 border-2 border-orange-500/30 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300 group glow-on-hover min-h-[180px]"
                       title="LeetCode"
                     >
-                      <img src={leetcodeLogo} alt="LeetCode" className="w-16 h-16 mb-4 group-hover:scale-110 transition-transform" />
-                      <span className="text-base font-semibold text-foreground group-hover:text-orange-500 transition-colors text-center break-words w-full">LeetCode</span>
-                      <span className="text-xs text-muted-foreground mt-2 text-center">Problem Solving</span>
+                      <img src={leetcodeLogo} alt="LeetCode" className="w-20 h-20 mb-4 group-hover:scale-110 transition-transform" />
+                      <span className="text-lg font-semibold text-foreground group-hover:text-orange-500 transition-colors text-center break-words w-full">LeetCode</span>
+                      <span className="text-sm text-muted-foreground mt-2 text-center">Problem Solving</span>
                     </a>
 
                     {/* CodeChef */}
@@ -891,12 +891,12 @@ const Index = () => {
                       href={socialLinks.codechef}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex flex-col items-center justify-center p-6 rounded-xl bg-purple-500/10 border-2 border-purple-500/30 hover:border-purple-500/50 hover:bg-purple-500/20 transition-all duration-300 group glow-on-hover min-h-[140px]"
+                      className="flex flex-col items-center justify-center p-8 rounded-xl bg-purple-500/10 border-2 border-purple-500/30 hover:border-purple-500/50 hover:bg-purple-500/20 transition-all duration-300 group glow-on-hover min-h-[180px]"
                       title="CodeChef"
                     >
-                      <img src={codechefLogo} alt="CodeChef" className="w-16 h-16 mb-4 group-hover:scale-110 transition-transform" />
-                      <span className="text-base font-semibold text-foreground group-hover:text-purple-500 transition-colors text-center break-words w-full">CodeChef</span>
-                      <span className="text-xs text-muted-foreground mt-2 text-center">Competitive Coding</span>
+                      <img src={codechefLogo} alt="CodeChef" className="w-20 h-20 mb-4 group-hover:scale-110 transition-transform" />
+                      <span className="text-lg font-semibold text-foreground group-hover:text-purple-500 transition-colors text-center break-words w-full">CodeChef</span>
+                      <span className="text-sm text-muted-foreground mt-2 text-center">Competitive Coding</span>
                     </a>
 
                     {/* GeeksforGeeks */}
@@ -904,12 +904,12 @@ const Index = () => {
                       href={socialLinks.gfg}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex flex-col items-center justify-center p-6 rounded-xl bg-green-500/10 border-2 border-green-500/30 hover:border-green-500/50 hover:bg-green-500/20 transition-all duration-300 group glow-on-hover min-h-[140px] sm:col-span-2 lg:col-span-1"
+                      className="flex flex-col items-center justify-center p-8 rounded-xl bg-green-500/10 border-2 border-green-500/30 hover:border-green-500/50 hover:bg-green-500/20 transition-all duration-300 group glow-on-hover min-h-[180px]"
                       title="GeeksforGeeks"
                     >
-                      <img src={gfgLogo} alt="GeeksforGeeks" className="w-16 h-16 mb-4 group-hover:scale-110 transition-transform" />
-                      <span className="text-base font-semibold text-foreground group-hover:text-green-500 transition-colors text-center break-words w-full">GeeksforGeeks</span>
-                      <span className="text-xs text-muted-foreground mt-2 text-center">DSA Practice</span>
+                      <img src={gfgLogo} alt="GeeksforGeeks" className="w-20 h-20 mb-4 group-hover:scale-110 transition-transform" />
+                      <span className="text-lg font-semibold text-foreground group-hover:text-green-500 transition-colors text-center break-words w-full">GeeksforGeeks</span>
+                      <span className="text-sm text-muted-foreground mt-2 text-center">DSA Practice</span>
                     </a>
                   </div>
                 </div>
