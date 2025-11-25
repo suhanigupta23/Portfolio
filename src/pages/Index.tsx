@@ -1,8 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import ResumeViewer from '../components/ResumeViewer';
-import QRCode from 'react-qr-code';
-import { 
+import {
   Github, 
   Linkedin, 
   Mail, 
@@ -15,7 +14,6 @@ import {
   Code,
   Trophy,
   Award,
-  QrCode,
   Instagram,
   User,
   MapPin,
@@ -871,54 +869,42 @@ const Index = () => {
                   </a>
                 </div>
 
-                {/* Bottom Split Layout - Coding Profiles and QR Code */}
-                <div className="grid md:grid-cols-2 gap-6 mt-8 pt-6 border-t border-border">
-                  {/* Coding Profiles - Half Width */}
-                  <div className="space-y-4">
-                    <h4 className="text-lg font-semibold text-primary mb-4 text-center">Coding Profiles</h4>
-                    <div className="space-y-3">
-                      <a 
-                        href={socialLinks.gfg}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center p-3 rounded-xl bg-green-500/10 border border-green-500/30 hover:border-green-500/50 hover:bg-green-500/20 transition-all duration-300 group"
-                        title="GeeksforGeeks"
-                      >
-                        <img src={gfgLogo} alt="GeeksforGeeks" className="w-8 h-8 mr-3 group-hover:scale-110 transition-transform" />
-                        <span className="text-sm font-medium text-foreground group-hover:text-green-500">GeeksforGeeks</span>
-                      </a>
+                {/* Coding Profiles Section */}
+                <div className="mt-8 pt-6 border-t border-border">
+                  <h4 className="text-lg font-semibold text-primary mb-4 text-center">Coding Profiles</h4>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <a 
+                      href={socialLinks.gfg}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center p-4 rounded-xl bg-green-500/10 border border-green-500/30 hover:border-green-500/50 hover:bg-green-500/20 transition-all duration-300 group glow-on-hover"
+                      title="GeeksforGeeks"
+                    >
+                      <img src={gfgLogo} alt="GeeksforGeeks" className="w-10 h-10 mr-3 group-hover:scale-110 transition-transform" />
+                      <span className="text-sm font-medium text-foreground group-hover:text-green-500">GeeksforGeeks</span>
+                    </a>
 
-                      <a 
-                        href={socialLinks.leetcode}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center p-3 rounded-xl bg-orange-500/10 border border-orange-500/30 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300 group"
-                        title="LeetCode"
-                      >
-                        <img src={leetcodeLogo} alt="LeetCode" className="w-8 h-8 mr-3 group-hover:scale-110 transition-transform" />
-                        <span className="text-sm font-medium text-foreground group-hover:text-orange-500">LeetCode</span>
-                      </a>
+                    <a 
+                      href={socialLinks.leetcode}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center p-4 rounded-xl bg-orange-500/10 border border-orange-500/30 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300 group glow-on-hover"
+                      title="LeetCode"
+                    >
+                      <img src={leetcodeLogo} alt="LeetCode" className="w-10 h-10 mr-3 group-hover:scale-110 transition-transform" />
+                      <span className="text-sm font-medium text-foreground group-hover:text-orange-500">LeetCode</span>
+                    </a>
 
-                      <a 
-                        href={socialLinks.codechef}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center p-3 rounded-xl bg-purple-500/10 border border-purple-500/30 hover:border-purple-500/50 hover:bg-purple-500/20 transition-all duration-300 group"
-                        title="CodeChef"
-                      >
-                        <img src={codechefLogo} alt="CodeChef" className="w-8 h-8 mr-3 group-hover:scale-110 transition-transform" />
-                        <span className="text-sm font-medium text-foreground group-hover:text-purple-500">CodeChef</span>
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* Resume QR Code - Half Width */}
-                  <div className="flex flex-col items-center justify-center">
-                    <h4 className="text-lg font-semibold text-primary mb-4 text-center">Quick Resume Access</h4>
-                    <div className="p-4 bg-white rounded-xl border-2 border-primary/30 hover:border-accent transition-all duration-300 shadow-lg">
-                      <QRCode value={window.location.origin + "/Suhani-Gupta-Resume.pdf"} size={120} />
-                      <p className="text-sm text-primary font-medium mt-2 text-center">Scan for Resume</p>
-                    </div>
+                    <a 
+                      href={socialLinks.codechef}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center p-4 rounded-xl bg-purple-500/10 border border-purple-500/30 hover:border-purple-500/50 hover:bg-purple-500/20 transition-all duration-300 group glow-on-hover"
+                      title="CodeChef"
+                    >
+                      <img src={codechefLogo} alt="CodeChef" className="w-10 h-10 mr-3 group-hover:scale-110 transition-transform" />
+                      <span className="text-sm font-medium text-foreground group-hover:text-purple-500">CodeChef</span>
+                    </a>
                   </div>
                 </div>
               </div>
