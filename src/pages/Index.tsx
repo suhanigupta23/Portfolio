@@ -794,8 +794,8 @@ const Index = () => {
             </p>
           </ScrollAnimations>
 
-           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left Side - Social Links and Coding Profiles */}
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Side - Social Links */}
             <ScrollAnimations delay={1}>
               <div className="space-y-8">
                 <div className="text-center lg:text-left">
@@ -868,51 +868,6 @@ const Index = () => {
                     </div>
                   </a>
                 </div>
-
-                {/* Coding Profiles Section */}
-                <div className="mt-8 pt-6 border-t border-border">
-                  <h4 className="text-lg font-semibold text-primary mb-6 text-center">Coding Profiles</h4>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {/* LeetCode */}
-                    <a 
-                      href={socialLinks.leetcode}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center justify-center p-8 rounded-xl bg-orange-500/10 border-2 border-orange-500/30 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300 group glow-on-hover min-h-[180px]"
-                      title="LeetCode"
-                    >
-                      <img src={leetcodeLogo} alt="LeetCode" className="w-20 h-20 mb-4 group-hover:scale-110 transition-transform" />
-                      <span className="text-lg font-semibold text-foreground group-hover:text-orange-500 transition-colors text-center break-words w-full">LeetCode</span>
-                      <span className="text-sm text-muted-foreground mt-2 text-center">Problem Solving</span>
-                    </a>
-
-                    {/* CodeChef */}
-                    <a 
-                      href={socialLinks.codechef}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center justify-center p-8 rounded-xl bg-purple-500/10 border-2 border-purple-500/30 hover:border-purple-500/50 hover:bg-purple-500/20 transition-all duration-300 group glow-on-hover min-h-[180px]"
-                      title="CodeChef"
-                    >
-                      <img src={codechefLogo} alt="CodeChef" className="w-20 h-20 mb-4 group-hover:scale-110 transition-transform" />
-                      <span className="text-lg font-semibold text-foreground group-hover:text-purple-500 transition-colors text-center break-words w-full">CodeChef</span>
-                      <span className="text-sm text-muted-foreground mt-2 text-center">Competitive Coding</span>
-                    </a>
-
-                    {/* GeeksforGeeks */}
-                    <a 
-                      href={socialLinks.gfg}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center justify-center p-8 rounded-xl bg-green-500/10 border-2 border-green-500/30 hover:border-green-500/50 hover:bg-green-500/20 transition-all duration-300 group glow-on-hover min-h-[180px]"
-                      title="GeeksforGeeks"
-                    >
-                      <img src={gfgLogo} alt="GeeksforGeeks" className="w-20 h-20 mb-4 group-hover:scale-110 transition-transform" />
-                      <span className="text-lg font-semibold text-foreground group-hover:text-green-500 transition-colors text-center break-words w-full">GeeksforGeeks</span>
-                      <span className="text-sm text-muted-foreground mt-2 text-center">DSA Practice</span>
-                    </a>
-                  </div>
-                </div>
               </div>
             </ScrollAnimations>
 
@@ -932,6 +887,53 @@ const Index = () => {
               </div>
             </ScrollAnimations>
           </div>
+
+          {/* Coding Profiles Section - Full Width */}
+          <ScrollAnimations delay={3}>
+            <div className="mt-16">
+              <h3 className="text-2xl font-bold text-primary mb-8 text-center">Coding Profiles</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* LeetCode */}
+                <a 
+                  href={socialLinks.leetcode}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center justify-center p-10 rounded-xl bg-orange-500/10 border-2 border-orange-500/30 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300 group glow-on-hover min-h-[200px]"
+                  title="LeetCode"
+                >
+                  <img src={leetcodeLogo} alt="LeetCode" className="w-24 h-24 mb-6 group-hover:scale-110 transition-transform" />
+                  <span className="text-xl font-semibold text-foreground group-hover:text-orange-500 transition-colors text-center break-words w-full">LeetCode</span>
+                  <span className="text-sm text-muted-foreground mt-3 text-center">Problem Solving</span>
+                </a>
+
+                {/* CodeChef */}
+                <a 
+                  href={socialLinks.codechef}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center justify-center p-10 rounded-xl bg-purple-500/10 border-2 border-purple-500/30 hover:border-purple-500/50 hover:bg-purple-500/20 transition-all duration-300 group glow-on-hover min-h-[200px]"
+                  title="CodeChef"
+                >
+                  <img src={codechefLogo} alt="CodeChef" className="w-24 h-24 mb-6 group-hover:scale-110 transition-transform" />
+                  <span className="text-xl font-semibold text-foreground group-hover:text-purple-500 transition-colors text-center break-words w-full">CodeChef</span>
+                  <span className="text-sm text-muted-foreground mt-3 text-center">Competitive Coding</span>
+                </a>
+
+                {/* GeeksforGeeks */}
+                <a 
+                  href={socialLinks.gfg}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center justify-center p-10 rounded-xl bg-green-500/10 border-2 border-green-500/30 hover:border-green-500/50 hover:bg-green-500/20 transition-all duration-300 group glow-on-hover min-h-[200px]"
+                  title="GeeksforGeeks"
+                >
+                  <img src={gfgLogo} alt="GeeksforGeeks" className="w-24 h-24 mb-6 group-hover:scale-110 transition-transform" />
+                  <span className="text-xl font-semibold text-foreground group-hover:text-green-500 transition-colors text-center break-words w-full">GeeksforGeeks</span>
+                  <span className="text-sm text-muted-foreground mt-3 text-center">DSA Practice</span>
+                </a>
+              </div>
+            </div>
+          </ScrollAnimations>
         </div>
       </section>
 
