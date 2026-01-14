@@ -319,18 +319,26 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
-      {/* Mobile Hamburger Button */}
+      {/* Hamburger Button - Always Visible */}
       <button
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="fixed top-4 left-4 z-50 md:hidden p-3 bg-primary text-primary-foreground rounded-lg shadow-lg hover:bg-primary/90 transition-all duration-300"
+        className="fixed top-4 left-4 z-50 p-3 bg-primary text-primary-foreground rounded-lg shadow-lg hover:bg-primary/90 transition-all duration-300"
         aria-label="Toggle menu"
       >
         {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
       </button>
 
-      {/* Sidebar */}
-      <div className={`fixed left-0 top-0 w-80 h-screen bg-primary/10 backdrop-blur-sm border-r border-border z-40 flex flex-col transition-transform duration-300 ${
-        isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
+      {/* Overlay when menu is open */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-30 backdrop-blur-sm"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
+      {/* Sidebar - Hidden by default, shown on hamburger click */}
+      <div className={`fixed left-0 top-0 w-80 h-screen bg-background/95 backdrop-blur-md border-r border-border z-40 flex flex-col transition-transform duration-300 ${
+        isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
       }`}>
         {/* Portfolio Title */}
         <div className="relative p-8 text-center border-b border-border/20">
@@ -469,8 +477,8 @@ const Index = () => {
         />
       )}
 
-      {/* Main Content Area */}
-      <div className="md:ml-80">
+      {/* Main Content Area - Full width */}
+      <div className="w-full">
         <DarkModeToggle />
 
         {/* Hero Section */}
