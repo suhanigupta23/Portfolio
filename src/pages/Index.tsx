@@ -56,6 +56,34 @@ const Index = () => {
   const [showResumeViewer, setShowResumeViewer] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showContactDialog, setShowContactDialog] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+
+  // Scroll-based active section detection
+  useEffect(() => {
+    const sections = ['home', 'about', 'skills', 'projects', 'achievements', 'contact'];
+    
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 150;
+      
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   
   // Education data from the user's provided image
   const educationData = [
@@ -317,7 +345,11 @@ const Index = () => {
               <a
                 href="#home"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full bg-primary/20 text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center justify-center gap-2"
+                className={`block w-full py-4 px-6 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 ${
+                  activeSection === 'home' 
+                    ? 'bg-primary text-primary-foreground' 
+                    : 'text-foreground hover:bg-primary/20'
+                }`}
               >
                 <User className="w-4 h-4" />
                 HOME
@@ -327,7 +359,11 @@ const Index = () => {
               <a
                 href="#about"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
+                className={`block w-full py-4 px-6 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 ${
+                  activeSection === 'about' 
+                    ? 'bg-primary text-primary-foreground' 
+                    : 'text-foreground hover:bg-primary/20'
+                }`}
               >
                 <Heart className="w-4 h-4" />
                 ABOUT
@@ -337,7 +373,11 @@ const Index = () => {
               <a
                 href="#skills"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
+                className={`block w-full py-4 px-6 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 ${
+                  activeSection === 'skills' 
+                    ? 'bg-primary text-primary-foreground' 
+                    : 'text-foreground hover:bg-primary/20'
+                }`}
               >
                 <Sparkles className="w-4 h-4" />
                 SKILLS
@@ -347,7 +387,11 @@ const Index = () => {
               <a
                 href="#projects"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
+                className={`block w-full py-4 px-6 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 ${
+                  activeSection === 'projects' 
+                    ? 'bg-primary text-primary-foreground' 
+                    : 'text-foreground hover:bg-primary/20'
+                }`}
               >
                 <Code className="w-4 h-4" />
                 PROJECTS
@@ -357,7 +401,11 @@ const Index = () => {
               <a
                 href="#achievements"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
+                className={`block w-full py-4 px-6 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 ${
+                  activeSection === 'achievements' 
+                    ? 'bg-primary text-primary-foreground' 
+                    : 'text-foreground hover:bg-primary/20'
+                }`}
               >
                 <Trophy className="w-4 h-4" />
                 ACHIEVEMENTS
@@ -379,7 +427,11 @@ const Index = () => {
               <a
                 href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
+                className={`block w-full py-4 px-6 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 ${
+                  activeSection === 'contact' 
+                    ? 'bg-primary text-primary-foreground' 
+                    : 'text-foreground hover:bg-primary/20'
+                }`}
               >
                 <Mail className="w-4 h-4" />
                 CONTACT
