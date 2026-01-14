@@ -54,7 +54,7 @@ import profileImage from '../assets/profile.jpg';
 const Index = () => {
   const [projectFilter, setProjectFilter] = useState<string>('all');
   const [showResumeViewer, setShowResumeViewer] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(true);
   const [showContactDialog, setShowContactDialog] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
