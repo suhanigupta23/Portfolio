@@ -331,29 +331,29 @@ const Index = () => {
       {/* Overlay when menu is open */}
       {isMobileMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/50 z-30 backdrop-blur-sm"
+          className="fixed inset-0 bg-black/30 z-30"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
 
       {/* Sidebar - Hidden by default, shown on hamburger click */}
-      <div className={`fixed left-0 top-0 w-80 h-screen bg-background/95 backdrop-blur-md border-r border-border z-40 flex flex-col transition-transform duration-300 ${
+      <div className={`fixed left-0 top-0 w-64 h-screen bg-background border-r border-border z-40 flex flex-col transition-transform duration-300 ${
         isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
       }`}>
         {/* Portfolio Title */}
-        <div className="relative p-8 text-center border-b border-border/20">
-          <h1 className="text-3xl font-bold text-foreground mb-2">PORTFOLIO</h1>
-          <div className="text-sm text-muted-foreground">Student of pixels & logic!</div>
+        <div className="relative p-6 text-center border-b border-border/20">
+          <h1 className="text-2xl font-bold text-foreground mb-1">PORTFOLIO</h1>
+          <div className="text-xs text-muted-foreground">Student of pixels & logic!</div>
         </div>
         
         {/* Navigation Menu */}
-        <nav className="px-8 py-4">
-          <ul className="space-y-4">
+        <nav className="px-4 py-3">
+          <ul className="space-y-2">
             <li>
               <a
                 href="#home"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-4 px-6 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-2 ${
                   activeSection === 'home' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
@@ -367,7 +367,7 @@ const Index = () => {
               <a
                 href="#about"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-4 px-6 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-2 ${
                   activeSection === 'about' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
@@ -381,7 +381,7 @@ const Index = () => {
               <a
                 href="#skills"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-4 px-6 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-2 ${
                   activeSection === 'skills' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
@@ -395,7 +395,7 @@ const Index = () => {
               <a
                 href="#projects"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-4 px-6 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-2 ${
                   activeSection === 'projects' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
@@ -409,7 +409,7 @@ const Index = () => {
               <a
                 href="#achievements"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-4 px-6 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-2 ${
                   activeSection === 'achievements' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
@@ -425,7 +425,7 @@ const Index = () => {
                   setShowResumeViewer(true);
                   setIsMobileMenuOpen(false);
                 }}
-                className="block w-full text-foreground py-4 px-6 rounded-xl font-semibold text-center hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2"
+                className="block w-full text-foreground py-3 px-4 rounded-lg font-medium text-sm hover:bg-primary/20 transition-all duration-300 flex items-center gap-2"
               >
                 <Download className="w-4 h-4" />
                 RESUME
@@ -435,7 +435,7 @@ const Index = () => {
               <a
                 href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-4 px-6 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-2 ${
                   activeSection === 'contact' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
