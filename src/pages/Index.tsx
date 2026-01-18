@@ -151,9 +151,9 @@ const Index = () => {
   ];
 
   const skills = {
-    "Programming": ["Java", "JavaScript", "C", "HTML5", "CSS3"],
+    "Programming": ["Java", "JavaScript", "C", "Python", "HTML5", "CSS3"],
     "Frontend": ["React.js", "TailwindCSS", "Bootstrap"],
-    "Backend": ["Node.js", "Express.js", "Spring Boot", "REST APIs", "Firebase"],
+    "Backend": ["Spring Boot", "REST APIs", "Firebase"],
     "Databases": ["MongoDB", "SQL", "Firebase Firestore"],
     "Tools": ["Git", "GitHub", "Postman", "VS Code", "NPM"],
     "Design": ["Figma", "Canva"],
@@ -679,30 +679,67 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <ScrollAnimations>
             <h2 className="section-title text-primary">Skills & Technologies</h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Technologies and tools I use to bring ideas to life
+            </p>
           </ScrollAnimations>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {Object.entries(skills).map(([category, skillList], index) => {
-              const getSkillClass = (category: string) => {
+              const getCategoryIcon = (category: string) => {
                 switch (category.toLowerCase()) {
-                  case 'programming': return 'skill-programming';
-                  case 'frontend': return 'skill-frontend';
-                  case 'backend': return 'skill-backend';
-                  case 'databases': return 'skill-databases';
-                  case 'tools': return 'skill-tools';
-                  case 'design': return 'skill-design';
-                  case 'currently exploring': return 'skill-exploring';
-                  default: return 'skill-chip';
+                  case 'programming': return <Code className="w-5 h-5" />;
+                  case 'frontend': return <Palette className="w-5 h-5" />;
+                  case 'backend': return <Zap className="w-5 h-5" />;
+                  case 'databases': return <Shield className="w-5 h-5" />;
+                  case 'tools': return <Sparkles className="w-5 h-5" />;
+                  case 'design': return <Film className="w-5 h-5" />;
+                  case 'currently exploring': return <Star className="w-5 h-5" />;
+                  default: return <Code className="w-5 h-5" />;
+                }
+              };
+
+              const getCategoryColor = (category: string) => {
+                switch (category.toLowerCase()) {
+                  case 'programming': return 'from-blue-500/20 to-blue-600/10 border-blue-500/30 hover:border-blue-500/60';
+                  case 'frontend': return 'from-purple-500/20 to-purple-600/10 border-purple-500/30 hover:border-purple-500/60';
+                  case 'backend': return 'from-green-500/20 to-green-600/10 border-green-500/30 hover:border-green-500/60';
+                  case 'databases': return 'from-orange-500/20 to-orange-600/10 border-orange-500/30 hover:border-orange-500/60';
+                  case 'tools': return 'from-cyan-500/20 to-cyan-600/10 border-cyan-500/30 hover:border-cyan-500/60';
+                  case 'design': return 'from-pink-500/20 to-pink-600/10 border-pink-500/30 hover:border-pink-500/60';
+                  case 'currently exploring': return 'from-yellow-500/20 to-yellow-600/10 border-yellow-500/30 hover:border-yellow-500/60';
+                  default: return 'from-primary/20 to-primary/10 border-primary/30 hover:border-primary/60';
+                }
+              };
+
+              const getIconColor = (category: string) => {
+                switch (category.toLowerCase()) {
+                  case 'programming': return 'text-blue-500';
+                  case 'frontend': return 'text-purple-500';
+                  case 'backend': return 'text-green-500';
+                  case 'databases': return 'text-orange-500';
+                  case 'tools': return 'text-cyan-500';
+                  case 'design': return 'text-pink-500';
+                  case 'currently exploring': return 'text-yellow-500';
+                  default: return 'text-primary';
                 }
               };
               
               return (
-                <ScrollAnimations key={category} delay={index * 0.2}>
-                  <div className="bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-6 hover:border-accent transition-all duration-300 glow-on-hover">
-                    <h3 className="text-lg font-bold text-foreground mb-4 text-center border-b border-border pb-2">{category}</h3>
-                    <div className="flex flex-wrap justify-center gap-2">
+                <ScrollAnimations key={category} delay={index * 0.1}>
+                  <div className={`bg-gradient-to-br ${getCategoryColor(category)} backdrop-blur-sm border rounded-2xl p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 h-full`}>
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className={`p-2 rounded-lg bg-background/50 ${getIconColor(category)}`}>
+                        {getCategoryIcon(category)}
+                      </div>
+                      <h3 className="text-base font-bold text-foreground">{category}</h3>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
                       {skillList.map((skill) => (
-                        <span key={skill} className={`${getSkillClass(category)} px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 border`}>
+                        <span 
+                          key={skill} 
+                          className="px-3 py-1.5 bg-background/70 dark:bg-background/40 rounded-lg text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-background transition-all duration-200"
+                        >
                           {skill}
                         </span>
                       ))}
