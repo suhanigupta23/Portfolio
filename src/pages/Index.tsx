@@ -54,7 +54,7 @@ import profileImage from '../assets/profile.jpg';
 const Index = () => {
   const [projectFilter, setProjectFilter] = useState<string>('all');
   const [showResumeViewer, setShowResumeViewer] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showContactDialog, setShowContactDialog] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
@@ -319,29 +319,29 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
-      {/* Hamburger Button - Always Visible */}
+      {/* Hamburger Button - Only visible on small screens */}
       <button
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="fixed top-4 left-4 z-50 p-3 bg-primary text-primary-foreground rounded-lg shadow-lg hover:bg-primary/90 transition-all duration-300"
+        className="fixed top-4 left-4 z-50 p-3 bg-primary text-primary-foreground rounded-lg shadow-lg hover:bg-primary/90 transition-all duration-300 lg:hidden"
         aria-label="Toggle menu"
       >
         {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
       </button>
 
-      {/* Overlay when menu is open */}
+      {/* Overlay when menu is open - Only on small screens */}
       {isMobileMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/30 z-30"
+          className="fixed inset-0 bg-black/30 z-30 lg:hidden"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
 
-      {/* Sidebar - Hidden by default, shown on hamburger click */}
+      {/* Sidebar - Hidden on mobile, always visible on large screens */}
       <div className={`fixed left-0 top-0 w-64 h-screen bg-background border-r border-border z-40 flex flex-col transition-transform duration-300 ${
         isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-      }`}>
+      } lg:translate-x-0`}>
         {/* Portfolio Title */}
-        <div className="relative p-6 text-center border-b border-border/20">
+        <div className="p-6 pt-8 text-center border-b border-border/20">
           <h1 className="text-2xl font-bold text-foreground mb-1">PORTFOLIO</h1>
           <div className="text-xs text-muted-foreground">Student of pixels & logic!</div>
         </div>
@@ -448,10 +448,10 @@ const Index = () => {
           </ul>
         </nav>
         {/* Social Media Icons */}
-        <div className="p-8 border-t border-border/20">
-          <div className="text-center mb-4">
+        <div className="mt-auto p-4 border-t border-border/20">
+          <div className="text-center">
             <div className="text-xs text-muted-foreground mb-3">Let's connect! ♡</div>
-            <div className="flex justify-center gap-4">
+            <div className="flex justify-center gap-3">
               <a href={socialLinks.email} className="p-2 rounded-full bg-pink-100 dark:bg-pink-900/20 text-pink-600 hover:text-pink-700 hover:bg-pink-200 dark:hover:bg-pink-900/40 transition-all duration-300" title="Email">
                 <Mail className="w-4 h-4" />
               </a>
@@ -469,16 +469,9 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Overlay for mobile menu */}
-      {isMobileMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-30 md:hidden"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-      )}
 
-      {/* Main Content Area - Full width */}
-      <div className="w-full">
+      {/* Main Content Area - Full width on mobile, with left margin on large screens */}
+      <div className="w-full lg:ml-64">
         <DarkModeToggle />
 
         {/* Hero Section */}
