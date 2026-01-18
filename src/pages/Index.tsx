@@ -341,25 +341,25 @@ const Index = () => {
         isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
       } lg:translate-x-0`}>
         {/* Portfolio Title */}
-        <div className="p-6 pt-8 text-center border-b border-border/20">
-          <h1 className="text-2xl font-bold text-foreground mb-1">PORTFOLIO</h1>
+        <div className="p-4 pt-6 text-center border-b border-border/20 shrink-0">
+          <h1 className="text-xl font-bold text-foreground mb-1">PORTFOLIO</h1>
           <div className="text-xs text-muted-foreground">Student of pixels & logic!</div>
         </div>
         
-        {/* Navigation Menu */}
-        <nav className="px-4 py-3">
-          <ul className="space-y-2">
+        {/* Navigation Menu - Takes remaining space */}
+        <nav className="flex-1 px-3 py-4 flex flex-col">
+          <ul className="flex flex-col flex-1 justify-between">
             <li>
               <a
                 href="#home"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-2 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
                   activeSection === 'home' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
                 }`}
               >
-                <User className="w-4 h-4" />
+                <User className="w-5 h-5" />
                 HOME
               </a>
             </li>
@@ -367,13 +367,13 @@ const Index = () => {
               <a
                 href="#about"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-2 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
                   activeSection === 'about' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
                 }`}
               >
-                <Heart className="w-4 h-4" />
+                <Heart className="w-5 h-5" />
                 ABOUT
               </a>
             </li>
@@ -381,13 +381,13 @@ const Index = () => {
               <a
                 href="#skills"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-2 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
                   activeSection === 'skills' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
                 }`}
               >
-                <Sparkles className="w-4 h-4" />
+                <Sparkles className="w-5 h-5" />
                 SKILLS
               </a>
             </li>
@@ -395,13 +395,13 @@ const Index = () => {
               <a
                 href="#projects"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-2 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
                   activeSection === 'projects' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
                 }`}
               >
-                <Code className="w-4 h-4" />
+                <Code className="w-5 h-5" />
                 PROJECTS
               </a>
             </li>
@@ -409,13 +409,13 @@ const Index = () => {
               <a
                 href="#achievements"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-2 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
                   activeSection === 'achievements' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
                 }`}
               >
-                <Trophy className="w-4 h-4" />
+                <Trophy className="w-5 h-5" />
                 ACHIEVEMENTS
               </a>
             </li>
@@ -425,9 +425,9 @@ const Index = () => {
                   setShowResumeViewer(true);
                   setIsMobileMenuOpen(false);
                 }}
-                className="block w-full text-foreground py-3 px-4 rounded-lg font-medium text-sm hover:bg-primary/20 transition-all duration-300 flex items-center gap-2"
+                className="block w-full text-foreground py-3 px-4 rounded-lg font-medium text-sm hover:bg-primary/20 transition-all duration-300 flex items-center gap-3"
               >
-                <Download className="w-4 h-4" />
+                <Download className="w-5 h-5" />
                 RESUME
               </button>
             </li>
@@ -435,20 +435,21 @@ const Index = () => {
               <a
                 href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-2 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
                   activeSection === 'contact' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
                 }`}
               >
-                <Mail className="w-4 h-4" />
+                <Mail className="w-5 h-5" />
                 CONTACT
               </a>
             </li>
           </ul>
         </nav>
+        
         {/* Social Media Icons */}
-        <div className="mt-auto p-4 border-t border-border/20">
+        <div className="p-4 border-t border-border/20 shrink-0">
           <div className="text-center">
             <div className="text-xs text-muted-foreground mb-3">Let's connect! ♡</div>
             <div className="flex justify-center gap-3">
