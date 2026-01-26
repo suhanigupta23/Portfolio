@@ -346,9 +346,9 @@ const Index = () => {
           <div className="text-xs text-muted-foreground">Student of pixels & logic!</div>
         </div>
         
-        {/* Navigation Menu - Takes remaining space */}
-        <nav className="flex-1 px-3 py-4 flex flex-col">
-          <ul className="flex flex-col flex-1 justify-between">
+        {/* Navigation Menu */}
+        <nav className="flex-1 px-3 py-6 flex flex-col overflow-y-auto">
+          <ul className="flex flex-col gap-2">
             <li>
               <a
                 href="#home"
@@ -472,7 +472,7 @@ const Index = () => {
 
 
       {/* Main Content Area - Full width on mobile, with left margin on large screens */}
-      <div className="w-full lg:ml-64">
+      <div className="w-full lg:ml-64 lg:max-w-[calc(100vw-16rem)] lg:pr-4">
         <DarkModeToggle />
 
         {/* Hero Section */}
