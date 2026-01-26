@@ -346,125 +346,128 @@ const Index = () => {
           <div className="text-xs text-muted-foreground">Student of pixels & logic!</div>
         </div>
         
-        {/* Navigation Menu */}
-        <nav className="flex-1 px-3 py-6 flex flex-col overflow-y-auto">
-          <ul className="flex flex-col gap-2">
-            <li>
-              <a
-                href="#home"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
-                  activeSection === 'home' 
-                    ? 'bg-primary text-primary-foreground' 
-                    : 'text-foreground hover:bg-primary/20'
-                }`}
-              >
-                <User className="w-5 h-5" />
-                HOME
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
-                  activeSection === 'about' 
-                    ? 'bg-primary text-primary-foreground' 
-                    : 'text-foreground hover:bg-primary/20'
-                }`}
-              >
-                <Heart className="w-5 h-5" />
-                ABOUT
-              </a>
-            </li>
-            <li>
-              <a
-                href="#skills"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
-                  activeSection === 'skills' 
-                    ? 'bg-primary text-primary-foreground' 
-                    : 'text-foreground hover:bg-primary/20'
-                }`}
-              >
-                <Sparkles className="w-5 h-5" />
-                SKILLS
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projects"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
-                  activeSection === 'projects' 
-                    ? 'bg-primary text-primary-foreground' 
-                    : 'text-foreground hover:bg-primary/20'
-                }`}
-              >
-                <Code className="w-5 h-5" />
-                PROJECTS
-              </a>
-            </li>
-            <li>
-              <a
-                href="#achievements"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
-                  activeSection === 'achievements' 
-                    ? 'bg-primary text-primary-foreground' 
-                    : 'text-foreground hover:bg-primary/20'
-                }`}
-              >
-                <Trophy className="w-5 h-5" />
-                ACHIEVEMENTS
-              </a>
-            </li>
-            <li>
-              <button
-                onClick={() => {
-                  setShowResumeViewer(true);
-                  setIsMobileMenuOpen(false);
-                }}
-                className="block w-full text-foreground py-3 px-4 rounded-lg font-medium text-sm hover:bg-primary/20 transition-all duration-300 flex items-center gap-3"
-              >
-                <Download className="w-5 h-5" />
-                RESUME
-              </button>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
-                  activeSection === 'contact' 
-                    ? 'bg-primary text-primary-foreground' 
-                    : 'text-foreground hover:bg-primary/20'
-                }`}
-              >
-                <Mail className="w-5 h-5" />
-                CONTACT
-              </a>
-            </li>
-          </ul>
-        </nav>
-        
-        {/* Social Media Icons */}
-        <div className="p-4 border-t border-border/20 shrink-0">
-          <div className="text-center">
-            <div className="text-xs text-muted-foreground mb-3">Let's connect! ♡</div>
-            <div className="flex justify-center gap-3">
-              <a href={socialLinks.email} className="p-2 rounded-full bg-pink-100 dark:bg-pink-900/20 text-pink-600 hover:text-pink-700 hover:bg-pink-200 dark:hover:bg-pink-900/40 transition-all duration-300" title="Email">
-                <Mail className="w-4 h-4" />
-              </a>
-              <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-100 dark:bg-gray-900/20 text-gray-600 hover:text-gray-700 hover:bg-gray-200 dark:hover:bg-gray-900/40 transition-all duration-300" title="GitHub">
-                <Github className="w-4 h-4" />
-              </a>
-              <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/20 text-blue-600 hover:text-blue-700 hover:bg-blue-200 dark:hover:bg-blue-900/40 transition-all duration-300" title="LinkedIn">
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-purple-100 dark:bg-purple-900/20 text-purple-600 hover:text-purple-700 hover:bg-purple-200 dark:hover:bg-purple-900/40 transition-all duration-300" title="Instagram">
-                <Instagram className="w-4 h-4" />
-              </a>
+        {/* Navigation Menu & Social Section Container */}
+        <div className="flex-1 flex flex-col justify-between overflow-y-auto">
+          {/* Navigation Menu */}
+          <nav className="px-3 py-4">
+            <ul className="flex flex-col gap-1">
+              <li>
+                <a
+                  href="#home"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block w-full py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
+                    activeSection === 'home' 
+                      ? 'bg-primary text-primary-foreground' 
+                      : 'text-foreground hover:bg-primary/20'
+                  }`}
+                >
+                  <User className="w-5 h-5" />
+                  HOME
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block w-full py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
+                    activeSection === 'about' 
+                      ? 'bg-primary text-primary-foreground' 
+                      : 'text-foreground hover:bg-primary/20'
+                  }`}
+                >
+                  <Heart className="w-5 h-5" />
+                  ABOUT
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#skills"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block w-full py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
+                    activeSection === 'skills' 
+                      ? 'bg-primary text-primary-foreground' 
+                      : 'text-foreground hover:bg-primary/20'
+                  }`}
+                >
+                  <Sparkles className="w-5 h-5" />
+                  SKILLS
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block w-full py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
+                    activeSection === 'projects' 
+                      ? 'bg-primary text-primary-foreground' 
+                      : 'text-foreground hover:bg-primary/20'
+                  }`}
+                >
+                  <Code className="w-5 h-5" />
+                  PROJECTS
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#achievements"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block w-full py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
+                    activeSection === 'achievements' 
+                      ? 'bg-primary text-primary-foreground' 
+                      : 'text-foreground hover:bg-primary/20'
+                  }`}
+                >
+                  <Trophy className="w-5 h-5" />
+                  ACHIEVEMENTS
+                </a>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    setShowResumeViewer(true);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="block w-full text-foreground py-2.5 px-4 rounded-lg font-medium text-sm hover:bg-primary/20 transition-all duration-300 flex items-center gap-3"
+                >
+                  <Download className="w-5 h-5" />
+                  RESUME
+                </button>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block w-full py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
+                    activeSection === 'contact' 
+                      ? 'bg-primary text-primary-foreground' 
+                      : 'text-foreground hover:bg-primary/20'
+                  }`}
+                >
+                  <Mail className="w-5 h-5" />
+                  CONTACT
+                </a>
+              </li>
+            </ul>
+          </nav>
+          
+          {/* Social Media Icons - Stays at bottom */}
+          <div className="px-4 py-4 border-t border-border/20">
+            <div className="text-center">
+              <div className="text-xs text-muted-foreground mb-2">Let's connect! ♡</div>
+              <div className="flex justify-center gap-2">
+                <a href={socialLinks.email} className="p-2 rounded-full bg-pink-100 dark:bg-pink-900/20 text-pink-600 hover:text-pink-700 hover:bg-pink-200 dark:hover:bg-pink-900/40 transition-all duration-300" title="Email">
+                  <Mail className="w-4 h-4" />
+                </a>
+                <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-100 dark:bg-gray-900/20 text-gray-600 hover:text-gray-700 hover:bg-gray-200 dark:hover:bg-gray-900/40 transition-all duration-300" title="GitHub">
+                  <Github className="w-4 h-4" />
+                </a>
+                <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/20 text-blue-600 hover:text-blue-700 hover:bg-blue-200 dark:hover:bg-blue-900/40 transition-all duration-300" title="LinkedIn">
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-purple-100 dark:bg-purple-900/20 text-purple-600 hover:text-purple-700 hover:bg-purple-200 dark:hover:bg-purple-900/40 transition-all duration-300" title="Instagram">
+                  <Instagram className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
