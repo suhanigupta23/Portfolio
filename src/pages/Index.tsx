@@ -341,16 +341,16 @@ const Index = () => {
         isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
       } lg:translate-x-0`}>
         {/* Portfolio Title */}
-        <div className="p-4 pt-6 text-center border-b border-border/20 shrink-0">
+        <div className="p-4 py-8 text-center shrink-0">
           <h1 className="text-xl font-bold text-foreground mb-1">PORTFOLIO</h1>
           <div className="text-xs text-muted-foreground">Student of pixels & logic!</div>
         </div>
         
         {/* Navigation Menu & Social Section Container */}
-        <div className="flex-1 flex flex-col justify-between overflow-y-auto">
+        <div className="flex-1 flex flex-col overflow-y-auto px-3">
           {/* Navigation Menu */}
-          <nav className="px-3 py-4">
-            <ul className="flex flex-col gap-1">
+          <nav className="flex-1">
+            <ul className="flex flex-col gap-2">
               <li>
                 <a
                   href="#home"
@@ -451,9 +451,9 @@ const Index = () => {
           </nav>
           
           {/* Social Media Icons - Stays at bottom */}
-          <div className="px-4 py-4 border-t border-border/20">
+          <div className="py-8 border-t border-border/20 mt-auto">
             <div className="text-center">
-              <div className="text-xs text-muted-foreground mb-2">Let's connect! ♡</div>
+              <div className="text-xs text-muted-foreground mb-3">Let's connect! ♡</div>
               <div className="flex justify-center gap-2">
                 <a href={socialLinks.email} className="p-2 rounded-full bg-pink-100 dark:bg-pink-900/20 text-pink-600 hover:text-pink-700 hover:bg-pink-200 dark:hover:bg-pink-900/40 transition-all duration-300" title="Email">
                   <Mail className="w-4 h-4" />
