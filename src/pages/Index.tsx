@@ -335,15 +335,15 @@ const Index = () => {
       <div className={`fixed left-0 top-0 w-64 h-screen bg-background border-r border-border z-40 flex flex-col transition-transform duration-300 ${
         isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
       } lg:translate-x-0`}>
-        {/* Portfolio Title - Top section with equal padding */}
-        <div className="px-6 py-8 text-center shrink-0">
+        {/* Portfolio Title - Top section with more top spacing */}
+        <div className="px-6 pt-12 pb-8 text-center shrink-0">
           <h1 className="text-xl font-bold text-foreground tracking-wide">PORTFOLIO</h1>
           <div className="text-xs text-muted-foreground mt-1">Student of pixels & logic!</div>
         </div>
         
-        {/* Navigation Menu - Centered vertically in available space */}
+        {/* Navigation Menu - Centered vertically with increased gap */}
         <nav className="flex-1 flex flex-col justify-center px-4">
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col gap-3">
             <li>
               <a
                 href="#home"
