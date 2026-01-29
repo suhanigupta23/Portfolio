@@ -90,12 +90,12 @@ const Index = () => {
     {
       degree: "BTech in Computer Science & Engineering",
       institution: "Indian Institute of Information Technology",
-      duration: "08/2023 — present",
+      duration: "2023-2027",
       location: "Kota, Rajasthan",
       type: "college"
     },
     {
-      degree: "Class XII - 89%",
+      degree: "Class XII - 88.88%",
       institution: "Sagar Public School", 
       duration: "2023",
       location: "Bhopal, Madhya Pradesh",
@@ -152,11 +152,12 @@ const Index = () => {
 
   const skills = {
     "Programming": ["Java", "JavaScript", "C", "Python", "HTML5", "CSS3"],
-    "Frontend": ["React.js", "TailwindCSS", "Bootstrap"],
+    "Frontend": ["React.js", "TailwindCSS"],
     "Backend": ["Spring Boot", "REST APIs", "Firebase"],
     "Databases": ["MongoDB", "SQL", "Firebase Firestore"],
-    "Tools": ["Git", "GitHub", "Postman", "VS Code", "NPM"],
+    "Tools": ["Git", "GitHub", "Postman", "VS Code"],
     "Design": ["Figma", "Canva"],
+    "Relevant Coursework": ["Computer Networks", "Operating System", "DBMS", "OOP"],
     "Currently Exploring": ["AI/ML", "Spring Boot"]
   };
 
@@ -173,10 +174,7 @@ const Index = () => {
         { icon: <Shield className="w-4 h-4" />, text: "Emergency SOS with location tracking" },
         { icon: <Users className="w-4 h-4" />, text: "Multi-language support" },
         { icon: <Star className="w-4 h-4" />, text: "Smart symptom analysis" }
-      ],
-      metrics: {
-        stars: 50
-      }
+      ]
     },
     {
       title: "InTune", 
@@ -218,10 +216,7 @@ const Index = () => {
         { icon: <Users className="w-4 h-4" />, text: "Collaborative playlists" },
         { icon: <Zap className="w-4 h-4" />, text: "Smart music recommendations" },
         { icon: <Shield className="w-4 h-4" />, text: "Cross-platform sync" }
-      ],
-      metrics: {
-        stars: 30
-      }
+      ]
     },
     {
       title: "Hit the Hamster",
@@ -265,7 +260,7 @@ const Index = () => {
     {
       title: "HackOrbit Hackathon 2025", 
       event: "Top 10",
-      description: "Built Saarthi - AI-powered health platform. Secured position in Top 10 at Hackorbit Hackathon, MITS Gwalior among 800+ participants.",
+      description: "Built Saarthi - AI-powered health platform. Secured position in Top 10 at Hackorbit Hackathon, MITS Gwalior among 800+ participants. Winner in Open Innovation category.",
       icon: <Award className="w-6 h-6" />,
       certificateLink: "#", // TODO: Add certificate link
       linkedinPost: "https://www.linkedin.com/posts/nandani-goyal-927835291_hackorbit2025-saarthi-teamnaruto-ugcPost-7351249359792975872-9JwU?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaAQ48BNHI2_nnfLgTc3mb5XkTqaGcfCF8" // TODO: Add LinkedIn post link
@@ -281,7 +276,7 @@ const Index = () => {
     {
       title: "GirlScript Summer of Code 2024",
       event: "Top 160",
-      description: "Active contributor in open-source projects. Ranked in Top 160 contributors as 154th position.",
+      description: "Active Open-Source Contributor. Ranked #154 among top 160 contributors in a global program with thousands of participants from 3-month intensive projects.",
       icon: <Code className="w-6 h-6" />,
       certificateLink: "#", // TODO: Add certificate link
       linkedinPost: "https://www.linkedin.com/posts/suhani-gupta23_gssoc-girlscriptsummerofcode-opensource-activity-7193705970844188672-s9kf?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaAQ48BNHI2_nnfLgTc3mb5XkTqaGcfCF8" // TODO: Add LinkedIn post link
@@ -613,7 +608,7 @@ const Index = () => {
               <div className="space-y-8">
                 <h3 className="text-2xl font-bold text-primary mb-6 flex items-center">
                   <GraduationCap className="w-6 h-6 mr-2" />
-                  Education Journey
+                  Education
                 </h3>
                 <div className="relative">
                   {/* Timeline line */}
@@ -698,6 +693,7 @@ const Index = () => {
                   case 'databases': return <Shield className="w-5 h-5" />;
                   case 'tools': return <Sparkles className="w-5 h-5" />;
                   case 'design': return <Film className="w-5 h-5" />;
+                  case 'relevant coursework': return <GraduationCap className="w-5 h-5" />;
                   case 'currently exploring': return <Star className="w-5 h-5" />;
                   default: return <Code className="w-5 h-5" />;
                 }
@@ -711,6 +707,7 @@ const Index = () => {
                   case 'databases': return 'from-orange-500/20 to-orange-600/10 border-orange-500/30 hover:border-orange-500/60';
                   case 'tools': return 'from-cyan-500/20 to-cyan-600/10 border-cyan-500/30 hover:border-cyan-500/60';
                   case 'design': return 'from-pink-500/20 to-pink-600/10 border-pink-500/30 hover:border-pink-500/60';
+                  case 'relevant coursework': return 'from-indigo-500/20 to-indigo-600/10 border-indigo-500/30 hover:border-indigo-500/60';
                   case 'currently exploring': return 'from-yellow-500/20 to-yellow-600/10 border-yellow-500/30 hover:border-yellow-500/60';
                   default: return 'from-primary/20 to-primary/10 border-primary/30 hover:border-primary/60';
                 }
@@ -724,6 +721,7 @@ const Index = () => {
                   case 'databases': return 'text-orange-500';
                   case 'tools': return 'text-cyan-500';
                   case 'design': return 'text-pink-500';
+                  case 'relevant coursework': return 'text-indigo-500';
                   case 'currently exploring': return 'text-yellow-500';
                   default: return 'text-primary';
                 }
