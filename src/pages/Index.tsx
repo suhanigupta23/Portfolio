@@ -335,20 +335,20 @@ const Index = () => {
       <div className={`fixed left-0 top-0 w-64 h-screen bg-background border-r border-border z-40 flex flex-col transition-transform duration-300 ${
         isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
       } lg:translate-x-0`}>
-        {/* Portfolio Title - Top section with more top spacing */}
-        <div className="px-6 pt-12 pb-8 text-center shrink-0">
+        {/* Portfolio Title - Top section */}
+        <div className="px-6 pt-8 pb-6 text-center shrink-0">
           <h1 className="text-xl font-bold text-foreground tracking-wide">PORTFOLIO</h1>
           <div className="text-xs text-muted-foreground mt-1">Student of pixels & logic!</div>
         </div>
         
-        {/* Navigation Menu - Centered vertically with increased gap */}
+        {/* Navigation Menu - Takes remaining space, vertically centered */}
         <nav className="flex-1 flex flex-col justify-center px-4">
-          <ul className="flex flex-col gap-3">
+          <ul className="flex flex-col gap-1">
             <li>
               <a
                 href="#home"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
                   activeSection === 'home' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
@@ -362,7 +362,7 @@ const Index = () => {
               <a
                 href="#about"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
                   activeSection === 'about' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
@@ -376,7 +376,7 @@ const Index = () => {
               <a
                 href="#skills"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
                   activeSection === 'skills' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
@@ -390,7 +390,7 @@ const Index = () => {
               <a
                 href="#projects"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
                   activeSection === 'projects' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
@@ -404,7 +404,7 @@ const Index = () => {
               <a
                 href="#achievements"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
                   activeSection === 'achievements' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
@@ -420,7 +420,7 @@ const Index = () => {
                   setShowResumeViewer(true);
                   setIsMobileMenuOpen(false);
                 }}
-                className="block w-full text-foreground py-2.5 px-4 rounded-lg font-medium text-sm hover:bg-primary/20 transition-all duration-300 flex items-center gap-3"
+                className="block w-full text-foreground py-3 px-4 rounded-lg font-medium text-sm hover:bg-primary/20 transition-all duration-300 flex items-center gap-3"
               >
                 <Download className="w-5 h-5" />
                 RESUME
@@ -430,7 +430,7 @@ const Index = () => {
               <a
                 href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
+                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 flex items-center gap-3 ${
                   activeSection === 'contact' 
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-foreground hover:bg-primary/20'
@@ -443,10 +443,10 @@ const Index = () => {
           </ul>
         </nav>
         
-        {/* Social Media Icons - Bottom section with equal padding */}
-        <div className="px-6 py-8 shrink-0">
+        {/* Social Media Icons - Bottom section */}
+        <div className="px-6 py-6 shrink-0">
           <div className="text-center">
-            <div className="text-xs text-muted-foreground mb-4">Let's connect :D</div>
+            <div className="text-xs text-muted-foreground mb-3">Let's connect :D</div>
             <div className="flex justify-center gap-3">
               <a href={socialLinks.email} className="p-2 rounded-full bg-pink-100 dark:bg-pink-900/20 text-pink-600 hover:text-pink-700 hover:bg-pink-200 dark:hover:bg-pink-900/40 transition-all duration-300 hover:scale-110" title="Email">
                 <Mail className="w-4 h-4" />
