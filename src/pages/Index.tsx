@@ -148,16 +148,58 @@ const Index = () => {
     "Exploration 🌏"
   ];
 
-  const skills = {
-    "Programming": ["Java", "JavaScript", "C", "Python", "HTML5", "CSS3"],
-    "Frontend": ["React.js", "TailwindCSS"],
-    "Backend": ["Spring Boot", "REST APIs", "Firebase"],
-    "Databases": ["MongoDB", "SQL", "Firebase Firestore"],
-    "Tools": ["Git", "GitHub", "Postman", "VS Code"],
-    "Design": ["Figma", "Canva"],
-    "Relevant Coursework": ["Computer Networks", "Operating System", "DBMS", "OOP"],
-    "Currently Exploring": ["AI/ML", "Spring Boot"]
-  };
+  const skillsCategories = [
+    {
+      title: "Programming Languages",
+      skills: ["Java", "JavaScript", "Python", "C"],
+      icon: <Code className="w-5 h-5" />,
+      color: "from-blue-500/20 to-cyan-500/10",
+      borderColor: "border-blue-500/30 hover:border-blue-400/60",
+      iconColor: "text-blue-400"
+    },
+    {
+      title: "Frontend",
+      skills: ["React.js", "Tailwind CSS", "HTML5", "CSS3"],
+      icon: <Palette className="w-5 h-5" />,
+      color: "from-purple-500/20 to-pink-500/10",
+      borderColor: "border-purple-500/30 hover:border-purple-400/60",
+      iconColor: "text-purple-400"
+    },
+    {
+      title: "Backend",
+      skills: ["Spring Boot", "REST APIs"],
+      icon: <Zap className="w-5 h-5" />,
+      color: "from-green-500/20 to-emerald-500/10",
+      borderColor: "border-green-500/30 hover:border-green-400/60",
+      iconColor: "text-green-400"
+    },
+    {
+      title: "Databases",
+      skills: ["MongoDB", "MySQL", "Firebase"],
+      icon: <Shield className="w-5 h-5" />,
+      color: "from-orange-500/20 to-amber-500/10",
+      borderColor: "border-orange-500/30 hover:border-orange-400/60",
+      iconColor: "text-orange-400"
+    },
+    {
+      title: "Tools & Design",
+      skills: ["Git", "VS Code", "Postman", "Figma", "Canva"],
+      icon: <Sparkles className="w-5 h-5" />,
+      color: "from-cyan-500/20 to-teal-500/10",
+      borderColor: "border-cyan-500/30 hover:border-cyan-400/60",
+      iconColor: "text-cyan-400"
+    },
+    {
+      title: "Relevant Coursework",
+      skills: ["OS", "DBMS", "Computer Networks", "OOP"],
+      icon: <GraduationCap className="w-5 h-5" />,
+      color: "from-indigo-500/20 to-violet-500/10",
+      borderColor: "border-indigo-500/30 hover:border-indigo-400/60",
+      iconColor: "text-indigo-400"
+    }
+  ];
+
+  const exploringTech = ["AI-Integrated Full Stack", "Machine Learning", "CI/CD"];
 
   const projects = [
     {
@@ -679,74 +721,83 @@ const Index = () => {
             </p>
           </ScrollAnimations>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {Object.entries(skills).map(([category, skillList], index) => {
-              const getCategoryIcon = (category: string) => {
-                switch (category.toLowerCase()) {
-                  case 'programming': return <Code className="w-5 h-5" />;
-                  case 'frontend': return <Palette className="w-5 h-5" />;
-                  case 'backend': return <Zap className="w-5 h-5" />;
-                  case 'databases': return <Shield className="w-5 h-5" />;
-                  case 'tools': return <Sparkles className="w-5 h-5" />;
-                  case 'design': return <Film className="w-5 h-5" />;
-                  case 'relevant coursework': return <GraduationCap className="w-5 h-5" />;
-                  case 'currently exploring': return <Star className="w-5 h-5" />;
-                  default: return <Code className="w-5 h-5" />;
-                }
-              };
-
-              const getCategoryColor = (category: string) => {
-                switch (category.toLowerCase()) {
-                  case 'programming': return 'from-blue-500/20 to-blue-600/10 border-blue-500/30 hover:border-blue-500/60';
-                  case 'frontend': return 'from-purple-500/20 to-purple-600/10 border-purple-500/30 hover:border-purple-500/60';
-                  case 'backend': return 'from-green-500/20 to-green-600/10 border-green-500/30 hover:border-green-500/60';
-                  case 'databases': return 'from-orange-500/20 to-orange-600/10 border-orange-500/30 hover:border-orange-500/60';
-                  case 'tools': return 'from-cyan-500/20 to-cyan-600/10 border-cyan-500/30 hover:border-cyan-500/60';
-                  case 'design': return 'from-pink-500/20 to-pink-600/10 border-pink-500/30 hover:border-pink-500/60';
-                  case 'relevant coursework': return 'from-indigo-500/20 to-indigo-600/10 border-indigo-500/30 hover:border-indigo-500/60';
-                  case 'currently exploring': return 'from-yellow-500/20 to-yellow-600/10 border-yellow-500/30 hover:border-yellow-500/60';
-                  default: return 'from-primary/20 to-primary/10 border-primary/30 hover:border-primary/60';
-                }
-              };
-
-              const getIconColor = (category: string) => {
-                switch (category.toLowerCase()) {
-                  case 'programming': return 'text-blue-500';
-                  case 'frontend': return 'text-purple-500';
-                  case 'backend': return 'text-green-500';
-                  case 'databases': return 'text-orange-500';
-                  case 'tools': return 'text-cyan-500';
-                  case 'design': return 'text-pink-500';
-                  case 'relevant coursework': return 'text-indigo-500';
-                  case 'currently exploring': return 'text-yellow-500';
-                  default: return 'text-primary';
-                }
-              };
-              
-              return (
-                <ScrollAnimations key={category} delay={index * 0.1}>
-                  <div className={`bg-gradient-to-br ${getCategoryColor(category)} backdrop-blur-sm border rounded-2xl p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 h-full`}>
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className={`p-2 rounded-lg bg-background/50 ${getIconColor(category)}`}>
-                        {getCategoryIcon(category)}
+          {/* Skills Grid - 3 columns on desktop, 1 on mobile */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skillsCategories.map((category, index) => (
+              <ScrollAnimations key={category.title} delay={index * 0.1}>
+                <div className={`relative bg-gradient-to-br ${category.color} backdrop-blur-md border ${category.borderColor} rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full group overflow-hidden`}>
+                  {/* Glassmorphism overlay */}
+                  <div className="absolute inset-0 bg-background/40 dark:bg-background/20 backdrop-blur-sm rounded-2xl" />
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Category Header */}
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className={`p-2.5 rounded-xl bg-background/60 dark:bg-background/30 ${category.iconColor} group-hover:scale-110 transition-transform duration-300`}>
+                        {category.icon}
                       </div>
-                      <h3 className="text-base font-bold text-foreground">{category}</h3>
+                      <h3 className="text-lg font-bold text-foreground">{category.title}</h3>
                     </div>
+                    
+                    {/* Skills List */}
                     <div className="flex flex-wrap gap-2">
-                      {skillList.map((skill) => (
+                      {category.skills.map((skill) => (
                         <span 
                           key={skill} 
-                          className="px-3 py-1.5 bg-background/70 dark:bg-background/40 rounded-lg text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-background transition-all duration-200"
+                          className="px-3 py-1.5 bg-background/70 dark:bg-background/30 border border-border/50 rounded-lg text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-background/90 dark:hover:bg-background/50 transition-all duration-200 hover:scale-105"
                         >
                           {skill}
                         </span>
                       ))}
                     </div>
                   </div>
-                </ScrollAnimations>
-              );
-            })}
+                </div>
+              </ScrollAnimations>
+            ))}
           </div>
+
+          {/* Currently Exploring / Learning Path Section */}
+          <ScrollAnimations delay={0.6}>
+            <div className="mt-12 relative">
+              <div className="relative bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 backdrop-blur-md border border-primary/40 rounded-2xl p-8 overflow-hidden group">
+                {/* Animated glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-accent/20 to-primary/10 animate-pulse-glow rounded-2xl" />
+                
+                {/* Glassmorphism overlay */}
+                <div className="absolute inset-0 bg-background/30 dark:bg-background/10 backdrop-blur-sm rounded-2xl" />
+                
+                {/* Decorative elements */}
+                <div className="absolute top-0 left-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute bottom-0 right-0 w-32 h-32 bg-accent/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+                
+                {/* Content */}
+                <div className="relative z-10 text-center">
+                  <div className="flex items-center justify-center gap-2 mb-4">
+                    <div className="p-2 rounded-xl bg-primary/20 text-primary animate-bounce-gentle">
+                      <Star className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground">Currently Exploring</h3>
+                  </div>
+                  
+                  <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
+                    Always learning and growing — here's what I'm diving into next
+                  </p>
+                  
+                  <div className="flex flex-wrap justify-center gap-3">
+                    {exploringTech.map((tech, index) => (
+                      <span 
+                        key={tech}
+                        className="px-5 py-2.5 bg-primary/20 border border-primary/40 rounded-full text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
+                        style={{ animationDelay: `${index * 0.2}s` }}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollAnimations>
         </div>
       </section>
 
