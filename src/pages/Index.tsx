@@ -336,14 +336,14 @@ const Index = () => {
         isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
       } lg:translate-x-0`}>
         {/* Portfolio Title - Top section */}
-        <div className="px-6 pt-8 pb-6 text-center shrink-0">
+        <div className="px-6 pt-16 pb-12 text-center shrink-0">
           <h1 className="text-xl font-bold text-foreground tracking-wide">PORTFOLIO</h1>
           <div className="text-xs text-muted-foreground mt-1">Student of pixels & logic!</div>
         </div>
         
         {/* Navigation Menu - Takes remaining space, vertically centered */}
         <nav className="flex-1 flex flex-col justify-center px-4">
-          <ul className="flex flex-col gap-1">
+          <ul className="flex flex-col gap-3">
             <li>
               <a
                 href="#home"
