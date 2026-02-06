@@ -47,9 +47,7 @@ import ContactForm from '../components/ContactForm';
 import ProjectCard from '../components/ProjectCard';
 import narutoImage from '../assets/naruto-character.png';
 import profilePhoto from '../assets/profile-photo.jpg';
-import gfgLogo from '../assets/gfg-logo.png';
-import leetcodeLogo from '../assets/leetcode-logo.png';
-import codechefLogo from '../assets/codechef-logo.png';
+// Coding profile icons removed - using Lucide icons instead
 import profileImage from '../assets/profile.jpg';
 const Index = () => {
   const [projectFilter, setProjectFilter] = useState<string>('all');
@@ -309,6 +307,7 @@ const Index = () => {
     gfg: "https://www.geeksforgeeks.org/user/user_8chfh8aqclt/", // TODO: Replace with your GeeksforGeeks URL
     leetcode: "https://leetcode.com/u/SuhaniGupta_/", // TODO: Replace with your LeetCode URL
     codechef: "https://www.codechef.com/users/mizuki_231", // TODO: Replace with your CodeChef URL
+    codeforces: "https://codeforces.com/profile/Suhani_Gupta23", // Codeforces URL
     email: "suhanigupta2304@gmail.com" // TODO: Replace with your actual email
   };
 
@@ -981,18 +980,25 @@ const Index = () => {
           <ScrollAnimations delay={3}>
             <div className="mt-16">
               <h3 className="text-2xl font-bold text-primary mb-8 text-center">Coding Profiles</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {/* LeetCode */}
                 <a 
                   href={socialLinks.leetcode}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center p-10 rounded-xl bg-orange-500/10 border-2 border-orange-500/30 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300 group glow-on-hover min-h-[200px]"
-                  title="LeetCode"
+                  className="group relative p-6 rounded-2xl bg-card border border-border hover:border-[hsl(var(--leetcode-color))]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                 >
-                  <img src={leetcodeLogo} alt="LeetCode" className="w-24 h-24 mb-6 group-hover:scale-110 transition-transform" />
-                  <span className="text-xl font-semibold text-foreground group-hover:text-orange-500 transition-colors text-center break-words w-full">LeetCode</span>
-                  <span className="text-sm text-muted-foreground mt-3 text-center">Problem Solving</span>
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-14 h-14 rounded-xl bg-[hsl(var(--leetcode-color))]/10 flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--leetcode-color))]/20 transition-colors">
+                      <Code className="w-7 h-7 text-[hsl(var(--leetcode-color))]" />
+                    </div>
+                    <h4 className="font-bold text-foreground mb-1 group-hover:text-[hsl(var(--leetcode-color))] transition-colors">LeetCode</h4>
+                    <p className="text-xs text-muted-foreground mb-3">Problem Solving</p>
+                    <div className="flex items-center gap-1 text-xs text-[hsl(var(--leetcode-color))] opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span>Visit Profile</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </div>
+                  </div>
                 </a>
 
                 {/* CodeChef */}
@@ -1000,12 +1006,19 @@ const Index = () => {
                   href={socialLinks.codechef}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center p-10 rounded-xl bg-purple-500/10 border-2 border-purple-500/30 hover:border-purple-500/50 hover:bg-purple-500/20 transition-all duration-300 group glow-on-hover min-h-[200px]"
-                  title="CodeChef"
+                  className="group relative p-6 rounded-2xl bg-card border border-border hover:border-[hsl(var(--codechef-color))]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                 >
-                  <img src={codechefLogo} alt="CodeChef" className="w-24 h-24 mb-6 group-hover:scale-110 transition-transform" />
-                  <span className="text-xl font-semibold text-foreground group-hover:text-purple-500 transition-colors text-center break-words w-full">CodeChef</span>
-                  <span className="text-sm text-muted-foreground mt-3 text-center">Competitive Coding</span>
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-14 h-14 rounded-xl bg-[hsl(var(--codechef-color))]/10 flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--codechef-color))]/20 transition-colors">
+                      <Trophy className="w-7 h-7 text-[hsl(var(--codechef-color))]" />
+                    </div>
+                    <h4 className="font-bold text-foreground mb-1 group-hover:text-[hsl(var(--codechef-color))] transition-colors">CodeChef</h4>
+                    <p className="text-xs text-muted-foreground mb-3">Competitive Coding</p>
+                    <div className="flex items-center gap-1 text-xs text-[hsl(var(--codechef-color))] opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span>Visit Profile</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </div>
+                  </div>
                 </a>
 
                 {/* GeeksforGeeks */}
@@ -1013,12 +1026,39 @@ const Index = () => {
                   href={socialLinks.gfg}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center p-10 rounded-xl bg-green-500/10 border-2 border-green-500/30 hover:border-green-500/50 hover:bg-green-500/20 transition-all duration-300 group glow-on-hover min-h-[200px]"
-                  title="GeeksforGeeks"
+                  className="group relative p-6 rounded-2xl bg-card border border-border hover:border-[hsl(var(--gfg-color))]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                 >
-                  <img src={gfgLogo} alt="GeeksforGeeks" className="w-24 h-24 mb-6 group-hover:scale-110 transition-transform" />
-                  <span className="text-xl font-semibold text-foreground group-hover:text-green-500 transition-colors text-center break-words w-full">GeeksforGeeks</span>
-                  <span className="text-sm text-muted-foreground mt-3 text-center">DSA Practice</span>
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-14 h-14 rounded-xl bg-[hsl(var(--gfg-color))]/10 flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--gfg-color))]/20 transition-colors">
+                      <Sparkles className="w-7 h-7 text-[hsl(var(--gfg-color))]" />
+                    </div>
+                    <h4 className="font-bold text-foreground mb-1 group-hover:text-[hsl(var(--gfg-color))] transition-colors">GeeksforGeeks</h4>
+                    <p className="text-xs text-muted-foreground mb-3">DSA Practice</p>
+                    <div className="flex items-center gap-1 text-xs text-[hsl(var(--gfg-color))] opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span>Visit Profile</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </div>
+                  </div>
+                </a>
+
+                {/* Codeforces */}
+                <a 
+                  href={socialLinks.codeforces}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative p-6 rounded-2xl bg-card border border-border hover:border-[hsl(var(--codeforces-color))]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                >
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-14 h-14 rounded-xl bg-[hsl(var(--codeforces-color))]/10 flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--codeforces-color))]/20 transition-colors">
+                      <Zap className="w-7 h-7 text-[hsl(var(--codeforces-color))]" />
+                    </div>
+                    <h4 className="font-bold text-foreground mb-1 group-hover:text-[hsl(var(--codeforces-color))] transition-colors">Codeforces</h4>
+                    <p className="text-xs text-muted-foreground mb-3">Contests & Ratings</p>
+                    <div className="flex items-center gap-1 text-xs text-[hsl(var(--codeforces-color))] opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span>Visit Profile</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </div>
+                  </div>
                 </a>
               </div>
             </div>
