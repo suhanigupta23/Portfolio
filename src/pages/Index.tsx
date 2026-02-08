@@ -712,88 +712,73 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section id="skills" className="py-20 px-6 bg-secondary/5">
+        <div className="max-w-5xl mx-auto">
           <ScrollAnimations>
-            <h2 className="section-title text-primary">Skills & Technologies</h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Technologies and tools I use to bring ideas to life
-            </p>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Technical <span className="text-primary">Skills</span>
+              </h2>
+              <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
+            </div>
           </ScrollAnimations>
 
-          {/* Skills Grid - 3 columns on desktop, 1 on mobile */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Clean Professional Skills Layout */}
+          <div className="space-y-8">
             {skillsCategories.map((category, index) => (
               <ScrollAnimations key={category.title} delay={index * 0.1}>
-                <div className={`relative bg-gradient-to-br ${category.color} backdrop-blur-md border ${category.borderColor} rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full group overflow-hidden`}>
-                  {/* Glassmorphism overlay */}
-                  <div className="absolute inset-0 bg-background/40 dark:bg-background/20 backdrop-blur-sm rounded-2xl" />
+                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
+                  {/* Category Header */}
+                  <div className="flex items-center gap-3 mb-5 pb-4 border-b border-border/50">
+                    <div className={`p-2.5 rounded-lg bg-primary/10 ${category.iconColor}`}>
+                      {category.icon}
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground tracking-tight">
+                      {category.title}
+                    </h3>
+                  </div>
                   
-                  {/* Content */}
-                  <div className="relative z-10">
-                    {/* Category Header */}
-                    <div className="flex items-center gap-3 mb-5">
-                      <div className={`p-2.5 rounded-xl bg-background/60 dark:bg-background/30 ${category.iconColor} group-hover:scale-110 transition-transform duration-300`}>
-                        {category.icon}
+                  {/* Skills as horizontal tags */}
+                  <div className="flex flex-wrap gap-3">
+                    {category.skills.map((skill) => (
+                      <div 
+                        key={skill} 
+                        className="flex items-center gap-2 px-4 py-2 bg-secondary/50 dark:bg-secondary/30 border border-border/30 rounded-lg text-sm font-medium text-foreground hover:bg-primary/10 hover:border-primary/30 hover:text-primary transition-all duration-200"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
+                        {skill}
                       </div>
-                      <h3 className="text-lg font-bold text-foreground">{category.title}</h3>
-                    </div>
-                    
-                    {/* Skills List */}
-                    <div className="flex flex-wrap gap-2">
-                      {category.skills.map((skill) => (
-                        <span 
-                          key={skill} 
-                          className="px-3 py-1.5 bg-background/70 dark:bg-background/30 border border-border/50 rounded-lg text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-background/90 dark:hover:bg-background/50 transition-all duration-200 hover:scale-105"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
+                    ))}
                   </div>
                 </div>
               </ScrollAnimations>
             ))}
           </div>
 
-          {/* Currently Exploring / Learning Path Section */}
+          {/* Currently Exploring Section */}
           <ScrollAnimations delay={0.6}>
-            <div className="mt-12 relative">
-              <div className="relative bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 backdrop-blur-md border border-primary/40 rounded-2xl p-8 overflow-hidden group">
-                {/* Animated glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-accent/20 to-primary/10 animate-pulse-glow rounded-2xl" />
-                
-                {/* Glassmorphism overlay */}
-                <div className="absolute inset-0 bg-background/30 dark:bg-background/10 backdrop-blur-sm rounded-2xl" />
-                
-                {/* Decorative elements */}
-                <div className="absolute top-0 left-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-                <div className="absolute bottom-0 right-0 w-32 h-32 bg-accent/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-                
-                {/* Content */}
-                <div className="relative z-10 text-center">
-                  <div className="flex items-center justify-center gap-2 mb-4">
-                    <div className="p-2 rounded-xl bg-primary/20 text-primary animate-bounce-gentle">
-                      <Star className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground">Currently Exploring</h3>
+            <div className="mt-12">
+              <div className="bg-card border-2 border-dashed border-primary/30 rounded-xl p-8 text-center">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className="p-2 rounded-lg bg-primary/10">
+                    <Star className="w-5 h-5 text-primary" />
                   </div>
-                  
-                  <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-                    Always learning and growing — here's what I'm diving into next
-                  </p>
-                  
-                  <div className="flex flex-wrap justify-center gap-3">
-                    {exploringTech.map((tech, index) => (
-                      <span 
-                        key={tech}
-                        className="px-5 py-2.5 bg-primary/20 border border-primary/40 rounded-full text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
-                        style={{ animationDelay: `${index * 0.2}s` }}
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  <h3 className="text-lg font-semibold text-foreground">Currently Exploring</h3>
+                </div>
+                
+                <p className="text-muted-foreground text-sm mb-6 max-w-md mx-auto">
+                  Technologies I'm actively learning and building with
+                </p>
+                
+                <div className="flex flex-wrap justify-center gap-3">
+                  {exploringTech.map((tech) => (
+                    <span 
+                      key={tech}
+                      className="px-5 py-2.5 bg-primary/10 border border-primary/20 rounded-full text-sm font-medium text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default"
+                    >
+                      ✦ {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
