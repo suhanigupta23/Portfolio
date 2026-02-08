@@ -713,9 +713,9 @@ const Index = () => {
 
       {/* Skills Section */}
       <section id="skills" className="py-20 px-6 bg-secondary/5">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <ScrollAnimations>
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Technical <span className="text-primary">Skills</span>
               </h2>
@@ -723,34 +723,30 @@ const Index = () => {
             </div>
           </ScrollAnimations>
 
-          {/* Vertical Rectangle Card Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {/* Clean 2-Column Card Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {skillsCategories.map((category, index) => (
-              <ScrollAnimations key={category.title} delay={index * 0.08}>
-                <div className={`group relative bg-gradient-to-b ${category.color} border ${category.borderColor} rounded-2xl p-5 h-full min-h-[280px] flex flex-col transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1`}>
-                  {/* Decorative top accent */}
-                  <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-12 h-1 rounded-b-full bg-gradient-to-r ${category.color.replace('/20', '/60').replace('/10', '/40')}`} />
-                  
-                  {/* Icon */}
-                  <div className={`mx-auto mb-4 p-3 rounded-xl bg-card/80 border border-border/50 ${category.iconColor} group-hover:scale-110 transition-transform duration-300`}>
-                    {category.icon}
+              <ScrollAnimations key={category.title} delay={index * 0.1}>
+                <div className="group bg-card border border-border rounded-xl p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
+                  {/* Header Row */}
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className={`p-2.5 rounded-lg bg-primary/10 ${category.iconColor} group-hover:scale-105 transition-transform duration-300`}>
+                      {category.icon}
+                    </div>
+                    <h3 className="text-base font-semibold text-foreground">
+                      {category.title}
+                    </h3>
                   </div>
                   
-                  {/* Category Title */}
-                  <h3 className="text-sm font-bold text-foreground text-center mb-4 leading-tight">
-                    {category.title}
-                  </h3>
-                  
-                  {/* Skills List */}
-                  <div className="flex-1 flex flex-col gap-2">
+                  {/* Skills as inline badges */}
+                  <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill) => (
-                      <div 
+                      <span 
                         key={skill} 
-                        className="flex items-center gap-2 px-3 py-1.5 bg-card/60 dark:bg-card/40 border border-border/20 rounded-lg text-xs font-medium text-foreground/90 hover:bg-primary/10 hover:text-primary transition-all duration-200"
+                        className="px-3 py-1.5 bg-secondary/60 dark:bg-secondary/40 border border-border/40 rounded-md text-sm font-medium text-foreground/90 hover:bg-primary/15 hover:text-primary hover:border-primary/30 transition-all duration-200"
                       >
-                        <span className={`w-1.5 h-1.5 rounded-full ${category.iconColor.replace('text-', 'bg-')}`} />
-                        <span className="truncate">{skill}</span>
-                      </div>
+                        {skill}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -760,31 +756,22 @@ const Index = () => {
 
           {/* Currently Exploring Section */}
           <ScrollAnimations delay={0.6}>
-            <div className="mt-12">
-              <div className="bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-8 text-center relative overflow-hidden">
-                {/* Animated glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent animate-pulse" />
+            <div className="mt-10">
+              <div className="bg-card border border-primary/20 rounded-xl p-6 text-center">
+                <div className="inline-flex items-center gap-2 mb-4">
+                  <Star className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-semibold text-foreground">Currently Exploring</span>
+                </div>
                 
-                <div className="relative z-10">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-4">
-                    <Star className="w-4 h-4 text-primary animate-pulse" />
-                    <span className="text-sm font-semibold text-primary">Currently Exploring</span>
-                  </div>
-                  
-                  <p className="text-muted-foreground text-sm mb-6 max-w-md mx-auto">
-                    Technologies I'm actively learning and building with
-                  </p>
-                  
-                  <div className="flex flex-wrap justify-center gap-3">
-                    {exploringTech.map((tech) => (
-                      <span 
-                        key={tech}
-                        className="px-5 py-2.5 bg-card border border-primary/30 rounded-xl text-sm font-medium text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 cursor-default shadow-sm hover:shadow-lg hover:shadow-primary/20"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                <div className="flex flex-wrap justify-center gap-3">
+                  {exploringTech.map((tech) => (
+                    <span 
+                      key={tech}
+                      className="px-4 py-2 bg-primary/10 border border-primary/25 rounded-lg text-sm font-medium text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
