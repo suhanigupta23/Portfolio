@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Code2 } from 'lucide-react';
+import owlCover from '../assets/codolio-owl.gif.asset.json';
+
 
 interface LoadingScreenProps {
   onComplete: () => void;
