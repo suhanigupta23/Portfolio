@@ -242,7 +242,39 @@
     pointer-events: none;
     z-index: 1;
   }
-  
+
+  /* Custom Cursor */
+  .custom-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid hsl(var(--primary));
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.18s ease-out, width 0.2s, height 0.2s, background-color 0.2s;
+    will-change: transform;
+  }
+  .custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background: hsl(var(--primary));
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.05s linear;
+    will-change: transform;
+  }
+  @media (pointer: coarse) {
+    .custom-cursor-ring, .custom-cursor-dot { display: none; }
+  }
+
   /* Glow effects */
   .glow-on-hover {
     @apply transition-all duration-300;
@@ -280,7 +312,13 @@
   @keyframes naruto-run {
     0% { transform: translateX(-100px) rotate(-10deg); }
     100% { transform: translateX(calc(100vw + 100px)) rotate(-10deg); }
-  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
   
   .naruto-runner {
     animation: naruto-run 3s linear forwards;
