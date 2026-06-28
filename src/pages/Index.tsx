@@ -323,20 +323,10 @@ const Index = () => {
         {/* Top Navbar */}
         <header className="fixed top-0 left-0 right-0 z-40 bg-background/80 dark:bg-background/70 backdrop-blur-md border-b border-border/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
-              {/* Logo / Name */}
-              <a href="#home" className="flex items-center gap-2 group">
-                <div className="w-9 h-9 rounded-lg bg-primary/15 border border-primary/30 flex items-center justify-center group-hover:bg-primary/25 transition-all">
-                  <span className="text-primary font-bold text-sm">SG</span>
-                </div>
-                <span className="hidden sm:block text-foreground font-semibold tracking-tight">
-                  Suhani Gupta
-                </span>
-              </a>
-
-              {/* Nav links - horizontal scroll on small screens */}
-              <nav className="flex-1 mx-4 overflow-x-auto no-scrollbar">
-                <ul className="flex items-center justify-center gap-1 md:gap-2 min-w-max">
+            <div className="flex items-center justify-between h-16 gap-4">
+              {/* Nav links */}
+              <nav className="flex-1 overflow-x-auto no-scrollbar">
+                <ul className="flex items-center gap-1 md:gap-2 min-w-max">
                   {navItems.map((item) => (
                     <li key={item.id}>
                       <a
@@ -352,22 +342,23 @@ const Index = () => {
                       </a>
                     </li>
                   ))}
-                  <li>
-                    <button
-                      onClick={() => setShowResumeViewer(true)}
-                      className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs sm:text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-primary/10 transition-all duration-300"
-                    >
-                      <Download className="w-4 h-4" />
-                      <span>Resume</span>
-                    </button>
-                  </li>
                 </ul>
               </nav>
 
-              <div className="flex items-center">
+              <div className="flex items-center gap-2 shrink-0">
+                <a
+                  href={socialLinks.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs sm:text-sm font-medium bg-foreground text-background hover:bg-foreground/90 transition-all duration-300"
+                >
+                  <Github className="w-4 h-4" />
+                  <span className="hidden sm:inline">View on GitHub</span>
+                </a>
                 <DarkModeToggle />
               </div>
             </div>
+
           </div>
         </header>
 
