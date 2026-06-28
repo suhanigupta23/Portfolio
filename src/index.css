@@ -312,7 +312,13 @@
   @keyframes naruto-run {
     0% { transform: translateX(-100px) rotate(-10deg); }
     100% { transform: translateX(calc(100vw + 100px)) rotate(-10deg); }
-  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
   
   .naruto-runner {
     animation: naruto-run 3s linear forwards;
