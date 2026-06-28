@@ -44,6 +44,9 @@ import LoadingScreen from '../components/LoadingScreen';
 import CustomCursor from '../components/CustomCursor';
 import CodingDecoration from '../components/CodingDecoration';
 import profileImage from '../assets/profile.jpg';
+import codolioOwl from '../assets/codolio-owl.gif.asset.json';
+import leetcodeLogo from '../assets/leetcode-logo.png.asset.json';
+
 
 const Index = () => {
   const [showResumeViewer, setShowResumeViewer] = useState(false);
