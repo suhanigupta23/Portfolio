@@ -44,6 +44,9 @@ import LoadingScreen from '../components/LoadingScreen';
 import CustomCursor from '../components/CustomCursor';
 import CodingDecoration from '../components/CodingDecoration';
 import profileImage from '../assets/profile.jpg';
+import codolioOwl from '../assets/codolio-owl.gif.asset.json';
+import leetcodeLogo from '../assets/leetcode-logo.png.asset.json';
+
 
 const Index = () => {
   const [showResumeViewer, setShowResumeViewer] = useState(false);
@@ -116,52 +119,80 @@ const Index = () => {
     'Exploration 🌏',
   ];
 
+  // Skills with brand logos via simpleicons CDN
   const skillsCategories = [
     {
       title: 'Programming Languages',
-      skills: ['Java', 'JavaScript', 'Python', 'C'],
       icon: <Code className="w-5 h-5" />,
       iconColor: 'text-blue-400',
       accent: 'bg-blue-400/10 border-blue-400/30',
+      skills: [
+        { name: 'Java', slug: 'openjdk', color: 'ED8B00' },
+        { name: 'JavaScript', slug: 'javascript', color: 'F7DF1E' },
+        { name: 'Python', slug: 'python', color: '3776AB' },
+        { name: 'C', slug: 'c', color: 'A8B9CC' },
+      ],
     },
     {
       title: 'Frontend',
-      skills: ['React.js', 'Tailwind CSS', 'HTML5', 'CSS3'],
       icon: <Palette className="w-5 h-5" />,
       iconColor: 'text-purple-400',
       accent: 'bg-purple-400/10 border-purple-400/30',
+      skills: [
+        { name: 'React.js', slug: 'react', color: '61DAFB' },
+        { name: 'Tailwind', slug: 'tailwindcss', color: '06B6D4' },
+        { name: 'HTML5', slug: 'html5', color: 'E34F26' },
+        { name: 'CSS3', slug: 'css3', color: '1572B6' },
+      ],
     },
     {
       title: 'Backend',
-      skills: ['Spring Boot', 'REST APIs'],
       icon: <Zap className="w-5 h-5" />,
       iconColor: 'text-green-400',
       accent: 'bg-green-400/10 border-green-400/30',
+      skills: [
+        { name: 'Spring Boot', slug: 'springboot', color: '6DB33F' },
+        { name: 'REST APIs', slug: 'fastapi', color: '009688' },
+      ],
     },
     {
       title: 'Databases',
-      skills: ['MongoDB', 'MySQL', 'Firebase'],
       icon: <Shield className="w-5 h-5" />,
       iconColor: 'text-orange-400',
       accent: 'bg-orange-400/10 border-orange-400/30',
+      skills: [
+        { name: 'MongoDB', slug: 'mongodb', color: '47A248' },
+        { name: 'MySQL', slug: 'mysql', color: '4479A1' },
+        { name: 'Firebase', slug: 'firebase', color: 'FFCA28' },
+      ],
     },
     {
       title: 'Tools & Design',
-      skills: ['Git', 'VS Code', 'Postman', 'Figma', 'Canva'],
       icon: <Sparkles className="w-5 h-5" />,
       iconColor: 'text-cyan-400',
       accent: 'bg-cyan-400/10 border-cyan-400/30',
+      skills: [
+        { name: 'Git', slug: 'git', color: 'F05032' },
+        { name: 'VS Code', slug: 'vscodium', color: '007ACC' },
+        { name: 'Postman', slug: 'postman', color: 'FF6C37' },
+        { name: 'Figma', slug: 'figma', color: 'F24E1E' },
+        { name: 'Canva', slug: 'canva', color: '00C4CC' },
+      ],
     },
     {
       title: 'Relevant Coursework',
-      skills: ['OS', 'DBMS', 'Computer Networks', 'OOP'],
       icon: <GraduationCap className="w-5 h-5" />,
       iconColor: 'text-indigo-400',
       accent: 'bg-indigo-400/10 border-indigo-400/30',
+      skills: [
+        { name: 'OS', slug: 'linux', color: 'FCC624' },
+        { name: 'DBMS', slug: 'databricks', color: 'FF3621' },
+        { name: 'Networks', slug: 'cisco', color: '1BA0D7' },
+        { name: 'OOP', slug: 'oracle', color: 'F80000' },
+      ],
     },
   ];
 
-  const exploringTech = ['AI-Integrated Full Stack', 'Machine Learning', 'CI/CD'];
 
   const projects = [
     {
@@ -295,20 +326,10 @@ const Index = () => {
         {/* Top Navbar */}
         <header className="fixed top-0 left-0 right-0 z-40 bg-background/80 dark:bg-background/70 backdrop-blur-md border-b border-border/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
-              {/* Logo / Name */}
-              <a href="#home" className="flex items-center gap-2 group">
-                <div className="w-9 h-9 rounded-lg bg-primary/15 border border-primary/30 flex items-center justify-center group-hover:bg-primary/25 transition-all">
-                  <span className="text-primary font-bold text-sm">SG</span>
-                </div>
-                <span className="hidden sm:block text-foreground font-semibold tracking-tight">
-                  Suhani Gupta
-                </span>
-              </a>
-
-              {/* Nav links - horizontal scroll on small screens */}
-              <nav className="flex-1 mx-4 overflow-x-auto no-scrollbar">
-                <ul className="flex items-center justify-center gap-1 md:gap-2 min-w-max">
+            <div className="flex items-center justify-between h-16 gap-4">
+              {/* Nav links */}
+              <nav className="flex-1 overflow-x-auto no-scrollbar">
+                <ul className="flex items-center gap-1 md:gap-2 min-w-max">
                   {navItems.map((item) => (
                     <li key={item.id}>
                       <a
@@ -324,22 +345,23 @@ const Index = () => {
                       </a>
                     </li>
                   ))}
-                  <li>
-                    <button
-                      onClick={() => setShowResumeViewer(true)}
-                      className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs sm:text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-primary/10 transition-all duration-300"
-                    >
-                      <Download className="w-4 h-4" />
-                      <span>Resume</span>
-                    </button>
-                  </li>
                 </ul>
               </nav>
 
-              <div className="flex items-center">
+              <div className="flex items-center gap-2 shrink-0">
+                <a
+                  href={socialLinks.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs sm:text-sm font-medium bg-foreground text-background hover:bg-foreground/90 transition-all duration-300"
+                >
+                  <Github className="w-4 h-4" />
+                  <span className="hidden sm:inline">View on GitHub</span>
+                </a>
                 <DarkModeToggle />
               </div>
             </div>
+
           </div>
         </header>
 
@@ -397,13 +419,16 @@ const Index = () => {
 
                   <ScrollAnimations delay={1.5}>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-                      <button
-                        onClick={() => setShowResumeViewer(true)}
+                      <a
+                        href={socialLinks.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="hero-button flex items-center gap-2"
                       >
-                        <Download className="w-5 h-5" />
-                        My Resume
-                      </button>
+                        <Github className="w-5 h-5" />
+                        View Projects on GitHub
+                      </a>
+
                       <a
                         href="#contact"
                         className="hero-button-outline flex items-center gap-2 justify-center"
@@ -532,33 +557,38 @@ const Index = () => {
                 </div>
               </ScrollAnimations>
 
-              {/* Horizontal row layout - each category is a row */}
-              <div className="bg-card/60 border border-border rounded-2xl overflow-hidden divide-y divide-border/60">
+              {/* Flashcards: one card per category, brand-logo skill tiles inside */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {skillsCategories.map((category, index) => (
                   <ScrollAnimations key={category.title} delay={index * 0.08}>
-                    <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 p-5 md:p-6 hover:bg-primary/5 transition-colors duration-300">
-                      {/* Category label */}
-                      <div className="md:w-60 shrink-0 flex items-center gap-3">
+                    <div className="h-full bg-card/70 backdrop-blur-sm border border-border rounded-2xl p-5 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
+                      <div className="flex items-center gap-3 mb-5 pb-4 border-b border-border/60">
                         <div className={`p-2 rounded-lg border ${category.accent} ${category.iconColor}`}>
                           {category.icon}
                         </div>
-                        <h3 className="text-sm md:text-base font-semibold text-foreground">
+                        <h3 className="text-base font-semibold text-foreground">
                           {category.title}
                         </h3>
                       </div>
 
-                      {/* Divider on desktop */}
-                      <div className="hidden md:block w-px h-10 bg-border" />
-
-                      {/* Skills as chips */}
-                      <div className="flex flex-wrap gap-2 flex-1">
+                      <div className="grid grid-cols-3 gap-3">
                         {category.skills.map((skill) => (
-                          <span
-                            key={skill}
-                            className="px-3 py-1.5 bg-background border border-border/60 rounded-md text-sm font-medium text-foreground/85 hover:text-primary hover:border-primary/40 transition-all duration-200"
+                          <div
+                            key={skill.name}
+                            className="group flex flex-col items-center justify-start text-center gap-2 p-3 rounded-xl bg-background/60 border border-border/50 hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200"
                           >
-                            {skill}
-                          </span>
+                            <div className="w-9 h-9 flex items-center justify-center">
+                              <img
+                                src={`https://cdn.simpleicons.org/${skill.slug}/${skill.color}`}
+                                alt={skill.name}
+                                className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-200"
+                                loading="lazy"
+                              />
+                            </div>
+                            <span className="text-[11px] font-medium text-foreground/80 leading-tight">
+                              {skill.name}
+                            </span>
+                          </div>
                         ))}
                       </div>
                     </div>
@@ -566,27 +596,6 @@ const Index = () => {
                 ))}
               </div>
 
-              {/* Currently Exploring */}
-              <ScrollAnimations delay={0.6}>
-                <div className="mt-8">
-                  <div className="bg-card border border-primary/30 rounded-xl p-6 text-center">
-                    <div className="inline-flex items-center gap-2 mb-4">
-                      <Star className="w-4 h-4 text-primary" />
-                      <span className="text-sm font-semibold text-foreground">Currently Exploring</span>
-                    </div>
-                    <div className="flex flex-wrap justify-center gap-3">
-                      {exploringTech.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-4 py-2 bg-primary/10 border border-primary/25 rounded-lg text-sm font-medium text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </ScrollAnimations>
             </div>
           </section>
 
@@ -650,51 +659,17 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Resume Section */}
-          <section id="resume" className="py-20 px-6 bg-accent/5">
-            <div className="max-w-4xl mx-auto text-center">
-              <ScrollAnimations>
-                <h2 className="section-title text-primary">Resume</h2>
-                <p className="section-subtitle">Download or view my resume</p>
-              </ScrollAnimations>
-
-              <ScrollAnimations delay={1}>
-                <div className="flex flex-col items-center justify-center gap-8">
-                  <div className="flex flex-col md:flex-row items-center gap-4">
-                    <a
-                      href="/Suhani-Gupta-Resume.pdf"
-                      download
-                      className="hero-button bg-primary hover:bg-primary/90 text-white text-lg px-8 py-4 shadow-lg flex items-center justify-center"
-                    >
-                      <Download className="w-6 h-6 mr-3" />
-                      Download Resume
-                    </a>
-                    <button
-                      onClick={() => setShowResumeViewer(true)}
-                      className="hero-button-outline border-accent text-accent hover:bg-accent hover:text-white text-lg px-8 py-4 shadow-lg flex items-center justify-center"
-                    >
-                      <ExternalLink className="w-6 h-6 mr-3" />
-                      View Resume
-                    </button>
-                  </div>
-                </div>
-              </ScrollAnimations>
-            </div>
-          </section>
-
           {/* Contact / Let's Connect Section */}
           <section id="contact" className="py-20 px-6">
             <div className="max-w-6xl mx-auto">
               <ScrollAnimations>
-                <h2 className="text-5xl md:text-6xl font-bold text-center text-primary mb-16 tracking-tight">
-                  Let's Connect
-                </h2>
+                <h2 className="section-title text-primary">Let's Connect</h2>
               </ScrollAnimations>
 
-              <div className="grid lg:grid-cols-2 gap-8 items-start">
-                {/* Social Media cards */}
+              <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+                {/* Left column: addresses + coding profiles to match form height */}
                 <ScrollAnimations delay={1}>
-                  <div className="space-y-4">
+                  <div className="h-full flex flex-col gap-4">
                     <a
                       href={`mailto:${socialLinks.email}`}
                       className="flex items-center p-4 rounded-xl bg-[hsl(var(--email-color))]/10 border border-[hsl(var(--email-color))]/30 hover:border-[hsl(var(--email-color))]/50 hover:bg-[hsl(var(--email-color))]/15 transition-all duration-300 group glow-on-hover"
@@ -752,13 +727,45 @@ const Index = () => {
                         <div className="text-sm text-muted-foreground">suhanigupta_23_</div>
                       </div>
                     </a>
+
+                    {/* Two coding profile cards filling the remaining space */}
+                    <div className="grid grid-cols-2 gap-4 flex-1">
+                      <a
+                        href={socialLinks.leetcode}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex flex-col items-center justify-center text-center p-5 rounded-xl bg-card border border-border hover:border-[#FFA116]/60 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+                      >
+                        <div className="w-14 h-14 rounded-xl bg-[#FFA116]/10 flex items-center justify-center mb-3 p-2">
+                          <img src={leetcodeLogo.url} alt="LeetCode" className="w-full h-full object-contain" />
+                        </div>
+                        <h4 className="font-bold text-foreground group-hover:text-[#FFA116] transition-colors">LeetCode</h4>
+                        <p className="text-xs text-muted-foreground mt-1">@SuhaniGupta_</p>
+                      </a>
+                      <a
+                        href="https://codolio.com/profile/SuhaniGupta"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex flex-col items-center justify-center text-center p-5 rounded-xl bg-card border border-border hover:border-primary/60 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+                      >
+                        <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-3 p-1">
+                          <img src={codolioOwl.url} alt="Codolio" className="w-full h-full object-contain" />
+                        </div>
+                        <h4 className="font-bold text-foreground group-hover:text-primary transition-colors">Codolio</h4>
+                        <p className="text-xs text-muted-foreground mt-1">Coding tracker</p>
+                      </a>
+                    </div>
                   </div>
                 </ScrollAnimations>
 
-                {/* Contact form */}
+                {/* Contact form column - matches left column height */}
                 <ScrollAnimations delay={2}>
-                  <div className="hidden lg:block">
-                    <ContactForm />
+                  <div className="h-full hidden lg:flex flex-col">
+                    <div className="flex-1 flex">
+                      <div className="w-full">
+                        <ContactForm />
+                      </div>
+                    </div>
                   </div>
                   <div className="lg:hidden">
                     <button
@@ -772,36 +779,6 @@ const Index = () => {
                 </ScrollAnimations>
               </div>
 
-              {/* Coding Profiles */}
-              <ScrollAnimations delay={3}>
-                <div className="mt-16">
-                  <h3 className="text-2xl font-bold text-primary mb-8 text-center">Coding Profiles</h3>
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    {[
-                      { name: 'LeetCode', desc: 'Problem Solving', icon: <Code className="w-7 h-7" />, color: 'leetcode-color', href: socialLinks.leetcode },
-                      { name: 'CodeChef', desc: 'Competitive Coding', icon: <Trophy className="w-7 h-7" />, color: 'codechef-color', href: socialLinks.codechef },
-                      { name: 'GeeksforGeeks', desc: 'DSA Practice', icon: <Sparkles className="w-7 h-7" />, color: 'gfg-color', href: socialLinks.gfg },
-                      { name: 'Codeforces', desc: 'Contests & Ratings', icon: <Zap className="w-7 h-7" />, color: 'codeforces-color', href: socialLinks.codeforces },
-                    ].map((p) => (
-                      <a
-                        key={p.name}
-                        href={p.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`group relative p-6 rounded-2xl bg-card border border-border hover:border-[hsl(var(--${p.color}))]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1`}
-                      >
-                        <div className="flex flex-col items-center text-center">
-                          <div className={`w-14 h-14 rounded-xl bg-[hsl(var(--${p.color}))]/10 flex items-center justify-center mb-4 text-[hsl(var(--${p.color}))]`}>
-                            {p.icon}
-                          </div>
-                          <h4 className={`font-bold text-foreground mb-1 group-hover:text-[hsl(var(--${p.color}))] transition-colors`}>{p.name}</h4>
-                          <p className="text-xs text-muted-foreground">{p.desc}</p>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </ScrollAnimations>
             </div>
           </section>
 

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Code2 } from 'lucide-react';
+import owlCover from '../assets/codolio-owl.gif.asset.json';
+
 
 interface LoadingScreenProps {
   onComplete: () => void;
@@ -36,13 +38,17 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete, duration = 50
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-accent/20 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
       <div className="relative z-10 flex flex-col items-center gap-6 px-6 text-center">
-        {/* Logo */}
+        {/* Owl cover */}
         <div className="relative">
-          <div className="w-20 h-20 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center animate-pulse">
-            <Code2 className="w-10 h-10 text-primary" />
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-primary/10 border border-primary/30 flex items-center justify-center overflow-hidden p-3">
+            <img src={owlCover.url} alt="Scholar owl mascot" className="w-full h-full object-contain" />
           </div>
-          <div className="absolute -inset-2 rounded-2xl border border-primary/20 animate-ping" />
+          <div className="absolute -inset-2 rounded-3xl border border-primary/20 animate-ping" />
+          <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-xl bg-background border border-primary/30 flex items-center justify-center shadow-lg">
+            <Code2 className="w-5 h-5 text-primary" />
+          </div>
         </div>
+
 
         {/* Name */}
         <div>
