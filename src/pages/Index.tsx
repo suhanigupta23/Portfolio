@@ -116,52 +116,80 @@ const Index = () => {
     'Exploration 🌏',
   ];
 
+  // Skills with brand logos via simpleicons CDN
   const skillsCategories = [
     {
       title: 'Programming Languages',
-      skills: ['Java', 'JavaScript', 'Python', 'C'],
       icon: <Code className="w-5 h-5" />,
       iconColor: 'text-blue-400',
       accent: 'bg-blue-400/10 border-blue-400/30',
+      skills: [
+        { name: 'Java', slug: 'openjdk', color: 'ED8B00' },
+        { name: 'JavaScript', slug: 'javascript', color: 'F7DF1E' },
+        { name: 'Python', slug: 'python', color: '3776AB' },
+        { name: 'C', slug: 'c', color: 'A8B9CC' },
+      ],
     },
     {
       title: 'Frontend',
-      skills: ['React.js', 'Tailwind CSS', 'HTML5', 'CSS3'],
       icon: <Palette className="w-5 h-5" />,
       iconColor: 'text-purple-400',
       accent: 'bg-purple-400/10 border-purple-400/30',
+      skills: [
+        { name: 'React.js', slug: 'react', color: '61DAFB' },
+        { name: 'Tailwind', slug: 'tailwindcss', color: '06B6D4' },
+        { name: 'HTML5', slug: 'html5', color: 'E34F26' },
+        { name: 'CSS3', slug: 'css3', color: '1572B6' },
+      ],
     },
     {
       title: 'Backend',
-      skills: ['Spring Boot', 'REST APIs'],
       icon: <Zap className="w-5 h-5" />,
       iconColor: 'text-green-400',
       accent: 'bg-green-400/10 border-green-400/30',
+      skills: [
+        { name: 'Spring Boot', slug: 'springboot', color: '6DB33F' },
+        { name: 'REST APIs', slug: 'fastapi', color: '009688' },
+      ],
     },
     {
       title: 'Databases',
-      skills: ['MongoDB', 'MySQL', 'Firebase'],
       icon: <Shield className="w-5 h-5" />,
       iconColor: 'text-orange-400',
       accent: 'bg-orange-400/10 border-orange-400/30',
+      skills: [
+        { name: 'MongoDB', slug: 'mongodb', color: '47A248' },
+        { name: 'MySQL', slug: 'mysql', color: '4479A1' },
+        { name: 'Firebase', slug: 'firebase', color: 'FFCA28' },
+      ],
     },
     {
       title: 'Tools & Design',
-      skills: ['Git', 'VS Code', 'Postman', 'Figma', 'Canva'],
       icon: <Sparkles className="w-5 h-5" />,
       iconColor: 'text-cyan-400',
       accent: 'bg-cyan-400/10 border-cyan-400/30',
+      skills: [
+        { name: 'Git', slug: 'git', color: 'F05032' },
+        { name: 'VS Code', slug: 'vscodium', color: '007ACC' },
+        { name: 'Postman', slug: 'postman', color: 'FF6C37' },
+        { name: 'Figma', slug: 'figma', color: 'F24E1E' },
+        { name: 'Canva', slug: 'canva', color: '00C4CC' },
+      ],
     },
     {
       title: 'Relevant Coursework',
-      skills: ['OS', 'DBMS', 'Computer Networks', 'OOP'],
       icon: <GraduationCap className="w-5 h-5" />,
       iconColor: 'text-indigo-400',
       accent: 'bg-indigo-400/10 border-indigo-400/30',
+      skills: [
+        { name: 'OS', slug: 'linux', color: 'FCC624' },
+        { name: 'DBMS', slug: 'databricks', color: 'FF3621' },
+        { name: 'Networks', slug: 'cisco', color: '1BA0D7' },
+        { name: 'OOP', slug: 'oracle', color: 'F80000' },
+      ],
     },
   ];
 
-  const exploringTech = ['AI-Integrated Full Stack', 'Machine Learning', 'CI/CD'];
 
   const projects = [
     {
