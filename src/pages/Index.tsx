@@ -656,51 +656,17 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Resume Section */}
-          <section id="resume" className="py-20 px-6 bg-accent/5">
-            <div className="max-w-4xl mx-auto text-center">
-              <ScrollAnimations>
-                <h2 className="section-title text-primary">Resume</h2>
-                <p className="section-subtitle">Download or view my resume</p>
-              </ScrollAnimations>
-
-              <ScrollAnimations delay={1}>
-                <div className="flex flex-col items-center justify-center gap-8">
-                  <div className="flex flex-col md:flex-row items-center gap-4">
-                    <a
-                      href="/Suhani-Gupta-Resume.pdf"
-                      download
-                      className="hero-button bg-primary hover:bg-primary/90 text-white text-lg px-8 py-4 shadow-lg flex items-center justify-center"
-                    >
-                      <Download className="w-6 h-6 mr-3" />
-                      Download Resume
-                    </a>
-                    <button
-                      onClick={() => setShowResumeViewer(true)}
-                      className="hero-button-outline border-accent text-accent hover:bg-accent hover:text-white text-lg px-8 py-4 shadow-lg flex items-center justify-center"
-                    >
-                      <ExternalLink className="w-6 h-6 mr-3" />
-                      View Resume
-                    </button>
-                  </div>
-                </div>
-              </ScrollAnimations>
-            </div>
-          </section>
-
           {/* Contact / Let's Connect Section */}
           <section id="contact" className="py-20 px-6">
             <div className="max-w-6xl mx-auto">
               <ScrollAnimations>
-                <h2 className="text-5xl md:text-6xl font-bold text-center text-primary mb-16 tracking-tight">
-                  Let's Connect
-                </h2>
+                <h2 className="section-title text-primary">Let's Connect</h2>
               </ScrollAnimations>
 
-              <div className="grid lg:grid-cols-2 gap-8 items-start">
-                {/* Social Media cards */}
+              <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+                {/* Left column: addresses + coding profiles to match form height */}
                 <ScrollAnimations delay={1}>
-                  <div className="space-y-4">
+                  <div className="h-full flex flex-col gap-4">
                     <a
                       href={`mailto:${socialLinks.email}`}
                       className="flex items-center p-4 rounded-xl bg-[hsl(var(--email-color))]/10 border border-[hsl(var(--email-color))]/30 hover:border-[hsl(var(--email-color))]/50 hover:bg-[hsl(var(--email-color))]/15 transition-all duration-300 group glow-on-hover"
@@ -758,13 +724,45 @@ const Index = () => {
                         <div className="text-sm text-muted-foreground">suhanigupta_23_</div>
                       </div>
                     </a>
+
+                    {/* Two coding profile cards filling the remaining space */}
+                    <div className="grid grid-cols-2 gap-4 flex-1">
+                      <a
+                        href={socialLinks.leetcode}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex flex-col items-center justify-center text-center p-5 rounded-xl bg-card border border-border hover:border-[#FFA116]/60 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+                      >
+                        <div className="w-14 h-14 rounded-xl bg-[#FFA116]/10 flex items-center justify-center mb-3 p-2">
+                          <img src={leetcodeLogo.url} alt="LeetCode" className="w-full h-full object-contain" />
+                        </div>
+                        <h4 className="font-bold text-foreground group-hover:text-[#FFA116] transition-colors">LeetCode</h4>
+                        <p className="text-xs text-muted-foreground mt-1">@SuhaniGupta_</p>
+                      </a>
+                      <a
+                        href="https://codolio.com/profile/SuhaniGupta"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex flex-col items-center justify-center text-center p-5 rounded-xl bg-card border border-border hover:border-primary/60 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+                      >
+                        <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-3 p-1">
+                          <img src={codolioOwl.url} alt="Codolio" className="w-full h-full object-contain" />
+                        </div>
+                        <h4 className="font-bold text-foreground group-hover:text-primary transition-colors">Codolio</h4>
+                        <p className="text-xs text-muted-foreground mt-1">Coding tracker</p>
+                      </a>
+                    </div>
                   </div>
                 </ScrollAnimations>
 
-                {/* Contact form */}
+                {/* Contact form column - matches left column height */}
                 <ScrollAnimations delay={2}>
-                  <div className="hidden lg:block">
-                    <ContactForm />
+                  <div className="h-full hidden lg:flex flex-col">
+                    <div className="flex-1 flex">
+                      <div className="w-full">
+                        <ContactForm />
+                      </div>
+                    </div>
                   </div>
                   <div className="lg:hidden">
                     <button
@@ -778,36 +776,6 @@ const Index = () => {
                 </ScrollAnimations>
               </div>
 
-              {/* Coding Profiles */}
-              <ScrollAnimations delay={3}>
-                <div className="mt-16">
-                  <h3 className="text-2xl font-bold text-primary mb-8 text-center">Coding Profiles</h3>
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    {[
-                      { name: 'LeetCode', desc: 'Problem Solving', icon: <Code className="w-7 h-7" />, color: 'leetcode-color', href: socialLinks.leetcode },
-                      { name: 'CodeChef', desc: 'Competitive Coding', icon: <Trophy className="w-7 h-7" />, color: 'codechef-color', href: socialLinks.codechef },
-                      { name: 'GeeksforGeeks', desc: 'DSA Practice', icon: <Sparkles className="w-7 h-7" />, color: 'gfg-color', href: socialLinks.gfg },
-                      { name: 'Codeforces', desc: 'Contests & Ratings', icon: <Zap className="w-7 h-7" />, color: 'codeforces-color', href: socialLinks.codeforces },
-                    ].map((p) => (
-                      <a
-                        key={p.name}
-                        href={p.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`group relative p-6 rounded-2xl bg-card border border-border hover:border-[hsl(var(--${p.color}))]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1`}
-                      >
-                        <div className="flex flex-col items-center text-center">
-                          <div className={`w-14 h-14 rounded-xl bg-[hsl(var(--${p.color}))]/10 flex items-center justify-center mb-4 text-[hsl(var(--${p.color}))]`}>
-                            {p.icon}
-                          </div>
-                          <h4 className={`font-bold text-foreground mb-1 group-hover:text-[hsl(var(--${p.color}))] transition-colors`}>{p.name}</h4>
-                          <p className="text-xs text-muted-foreground">{p.desc}</p>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </ScrollAnimations>
             </div>
           </section>
 
