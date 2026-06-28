@@ -560,33 +560,38 @@ const Index = () => {
                 </div>
               </ScrollAnimations>
 
-              {/* Horizontal row layout - each category is a row */}
-              <div className="bg-card/60 border border-border rounded-2xl overflow-hidden divide-y divide-border/60">
+              {/* Flashcards: one card per category, brand-logo skill tiles inside */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {skillsCategories.map((category, index) => (
                   <ScrollAnimations key={category.title} delay={index * 0.08}>
-                    <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 p-5 md:p-6 hover:bg-primary/5 transition-colors duration-300">
-                      {/* Category label */}
-                      <div className="md:w-60 shrink-0 flex items-center gap-3">
+                    <div className="h-full bg-card/70 backdrop-blur-sm border border-border rounded-2xl p-5 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
+                      <div className="flex items-center gap-3 mb-5 pb-4 border-b border-border/60">
                         <div className={`p-2 rounded-lg border ${category.accent} ${category.iconColor}`}>
                           {category.icon}
                         </div>
-                        <h3 className="text-sm md:text-base font-semibold text-foreground">
+                        <h3 className="text-base font-semibold text-foreground">
                           {category.title}
                         </h3>
                       </div>
 
-                      {/* Divider on desktop */}
-                      <div className="hidden md:block w-px h-10 bg-border" />
-
-                      {/* Skills as chips */}
-                      <div className="flex flex-wrap gap-2 flex-1">
+                      <div className="grid grid-cols-3 gap-3">
                         {category.skills.map((skill) => (
-                          <span
-                            key={skill}
-                            className="px-3 py-1.5 bg-background border border-border/60 rounded-md text-sm font-medium text-foreground/85 hover:text-primary hover:border-primary/40 transition-all duration-200"
+                          <div
+                            key={skill.name}
+                            className="group flex flex-col items-center justify-start text-center gap-2 p-3 rounded-xl bg-background/60 border border-border/50 hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200"
                           >
-                            {skill}
-                          </span>
+                            <div className="w-9 h-9 flex items-center justify-center">
+                              <img
+                                src={`https://cdn.simpleicons.org/${skill.slug}/${skill.color}`}
+                                alt={skill.name}
+                                className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-200"
+                                loading="lazy"
+                              />
+                            </div>
+                            <span className="text-[11px] font-medium text-foreground/80 leading-tight">
+                              {skill.name}
+                            </span>
+                          </div>
                         ))}
                       </div>
                     </div>
@@ -594,27 +599,6 @@ const Index = () => {
                 ))}
               </div>
 
-              {/* Currently Exploring */}
-              <ScrollAnimations delay={0.6}>
-                <div className="mt-8">
-                  <div className="bg-card border border-primary/30 rounded-xl p-6 text-center">
-                    <div className="inline-flex items-center gap-2 mb-4">
-                      <Star className="w-4 h-4 text-primary" />
-                      <span className="text-sm font-semibold text-foreground">Currently Exploring</span>
-                    </div>
-                    <div className="flex flex-wrap justify-center gap-3">
-                      {exploringTech.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-4 py-2 bg-primary/10 border border-primary/25 rounded-lg text-sm font-medium text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </ScrollAnimations>
             </div>
           </section>
 
