@@ -416,13 +416,16 @@ const Index = () => {
 
                   <ScrollAnimations delay={1.5}>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-                      <button
-                        onClick={() => setShowResumeViewer(true)}
+                      <a
+                        href={socialLinks.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="hero-button flex items-center gap-2"
                       >
-                        <Download className="w-5 h-5" />
-                        My Resume
-                      </button>
+                        <Github className="w-5 h-5" />
+                        View Projects on GitHub
+                      </a>
+
                       <a
                         href="#contact"
                         className="hero-button-outline flex items-center gap-2 justify-center"
