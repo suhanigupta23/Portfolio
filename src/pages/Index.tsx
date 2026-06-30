@@ -162,6 +162,7 @@ const Index = () => {
       skills: [
         { name: 'MongoDB', slug: 'mongodb', color: '47A248' },
         { name: 'MySQL', slug: 'mysql', color: '4479A1' },
+        { name: 'PostgreSQL', slug: 'postgresql', color: '4169E1' },
         { name: 'Firebase', slug: 'firebase', color: 'FFCA28' },
       ],
     },
