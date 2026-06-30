@@ -603,13 +603,41 @@ const Index = () => {
                 ))}
 
                 {projects.map((project, index) => (
-                  <ScrollAnimations key={project.title} delay={(index + 2) * 0.3}>
-                    <ProjectCard project={project} index={index} />
-                  </ScrollAnimations>
+                  <React.Fragment key={project.title}>
+                    {project.title === 'Hit the Hamster' && (
+                      <ScrollAnimations delay={(index + 2) * 0.2}>
+                        <div className="h-full min-h-[320px] flex flex-col items-center justify-center text-center p-8 rounded-2xl border-2 border-dashed border-primary/30 bg-card/40 hover:border-primary/60 hover:bg-card/60 transition-all duration-300">
+                          <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4">
+                            <Plus className="w-8 h-8 text-primary" />
+                          </div>
+                          <h3 className="text-xl font-bold text-foreground mb-2">New Project #3</h3>
+                          <p className="text-muted-foreground text-sm max-w-xs">
+                            Coming soon — a fresh build I'm shipping next. Stay tuned.
+                          </p>
+                        </div>
+                      </ScrollAnimations>
+                    )}
+                    <ScrollAnimations delay={(index + 2) * 0.3}>
+                      <ProjectCard project={project} index={index} />
+                    </ScrollAnimations>
+                  </React.Fragment>
                 ))}
+              </div>
+
+              <div className="mt-12 flex justify-center">
+                <a
+                  href={socialLinks.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-button flex items-center gap-2"
+                >
+                  <Github className="w-5 h-5" />
+                  View All Projects on GitHub
+                </a>
               </div>
             </div>
           </section>
+
 
           {/* Achievements Section */}
           <section id="achievements" className="py-20 px-6 bg-background">
