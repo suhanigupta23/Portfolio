@@ -763,7 +763,7 @@ const Index = () => {
           </section>
 
           {/* Footer */}
-          <footer className="py-12 px-6 bg-[hsl(var(--footer-bg))] border-t border-border transition-colors duration-300">
+          <footer className="py-12 px-6 bg-background border-t border-border transition-colors duration-300">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-foreground text-base md:text-lg italic leading-relaxed">
                 A digital portfolio to showcase{' '}
