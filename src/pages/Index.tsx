@@ -206,7 +206,7 @@ const Index = () => {
     {
       title: 'InTune',
       description: 'Roommate matchmaking platform using AI for compatibility scoring',
-      tech: ['AI', 'Machine Learning', 'React', 'Node.js'],
+      tech: ['React', 'EasyOCR', 'SBERT Cosine Similarity', 'Node.js'],
       tags: ['AI', 'Hackathon Project'],
       github: 'https://github.com/suhanigupta23/Intune',
       demo: 'https://team-naruto.vercel.app/',
@@ -215,10 +215,19 @@ const Index = () => {
     {
       title: 'Saarthi',
       description: 'AI-powered health platform with real-time assistance and emergency features',
-      tech: ['React', 'Flask', 'Node.js', 'MongoDB', 'GPT', 'Twilio', 'Mapbox'],
+      tech: ['React', 'Flask', 'Node.js', 'MongoDB', 'OpenAI GPT', 'WebRTC', 'Mapbox'],
       tags: ['AI', 'Full-Stack', 'Health'],
       github: 'https://github.com/suhanigupta23/Saarthi',
       demo: 'https://saarthi-empower-hub-revamp.vercel.app/',
+      features: [],
+    },
+    {
+      title: 'DermaIQ',
+      description: 'AI-powered skincare analysis platform that detects skin concerns and recommends personalized routines.',
+      tech: ['Next.js', 'API', 'AI'],
+      tags: ['AI', 'Full-Stack'],
+      github: 'https://github.com/suhanigupta23/DermaIQ',
+      demo: 'https://github.com/suhanigupta23/DermaIQ',
       features: [],
     },
     {
