@@ -194,18 +194,13 @@ const Index = () => {
 
   const projects = [
     {
-      title: 'Saarthi',
-      description: 'AI-powered health platform with real-time assistance and emergency features',
-      tech: ['React', 'Flask', 'Node.js', 'MongoDB', 'GPT', 'Twilio', 'Mapbox'],
-      tags: ['AI', 'Full-Stack', 'Health'],
-      github: 'https://github.com/suhanigupta23/Saarthi',
-      demo: 'https://saarthi-empower-hub-revamp.vercel.app/',
-      features: [
-        { icon: <Zap className="w-4 h-4" />, text: 'Real-time AI health assistance' },
-        { icon: <Shield className="w-4 h-4" />, text: 'Emergency SOS with location tracking' },
-        { icon: <Users className="w-4 h-4" />, text: 'Multi-language support' },
-        { icon: <Star className="w-4 h-4" />, text: 'Smart symptom analysis' },
-      ],
+      title: 'SketchRoom',
+      description: 'Interactive multiplayer whiteboard enabling real-time collaborative sketching, brainstorming and ideation across devices.',
+      tech: ['WebSocket', 'Spring Boot', 'React', 'Redis', 'Docker', 'PostgreSQL'],
+      tags: ['Full-Stack', 'Real-Time'],
+      github: 'https://github.com/suhanigupta23/SketchRoom',
+      demo: 'https://sketch-room-ashy.vercel.app/',
+      features: [],
     },
     {
       title: 'InTune',
@@ -214,12 +209,16 @@ const Index = () => {
       tags: ['AI', 'Hackathon Project'],
       github: 'https://github.com/suhanigupta23/Intune',
       demo: 'https://team-naruto.vercel.app/',
-      features: [
-        { icon: <Zap className="w-4 h-4" />, text: 'AI-powered compatibility scoring' },
-        { icon: <Users className="w-4 h-4" />, text: 'Smart roommate matching' },
-        { icon: <Shield className="w-4 h-4" />, text: 'Verified user profiles' },
-        { icon: <Star className="w-4 h-4" />, text: 'Real-time chat system' },
-      ],
+      features: [],
+    },
+    {
+      title: 'Saarthi',
+      description: 'AI-powered health platform with real-time assistance and emergency features',
+      tech: ['React', 'Flask', 'Node.js', 'MongoDB', 'GPT', 'Twilio', 'Mapbox'],
+      tags: ['AI', 'Full-Stack', 'Health'],
+      github: 'https://github.com/suhanigupta23/Saarthi',
+      demo: 'https://saarthi-empower-hub-revamp.vercel.app/',
+      features: [],
     },
     {
       title: 'Hit the Hamster',
@@ -228,12 +227,7 @@ const Index = () => {
       tags: ['Game'],
       github: 'https://github.com/suhanigupta23/Hit-The-Hamster',
       demo: 'https://creative-choux-e20f8d.netlify.app/',
-      features: [
-        { icon: <Zap className="w-4 h-4" />, text: 'Fast-paced gameplay' },
-        { icon: <Star className="w-4 h-4" />, text: 'High score tracking' },
-        { icon: <Users className="w-4 h-4" />, text: 'Multiplayer support' },
-        { icon: <Shield className="w-4 h-4" />, text: 'Responsive design' },
-      ],
+      features: [],
     },
     {
       title: 'Snake Game – Hand Gesture Controlled',
@@ -242,14 +236,10 @@ const Index = () => {
       tags: ['Game', 'AI'],
       github: 'https://github.com/suhanigupta23/Snake-Game-Hand-Gesture',
       demo: 'https://github.com/suhanigupta23/Snake-Game-Hand-Gesture',
-      features: [
-        { icon: <Zap className="w-4 h-4" />, text: 'Real-time hand gesture recognition' },
-        { icon: <Users className="w-4 h-4" />, text: 'Control snake movements without keyboard' },
-        { icon: <Shield className="w-4 h-4" />, text: 'Pause and resume using gestures' },
-        { icon: <Star className="w-4 h-4" />, text: 'Smooth gameplay with OpenCV and Pygame' },
-      ],
+      features: [],
     },
   ];
+
 
   const achievements = [
     {
