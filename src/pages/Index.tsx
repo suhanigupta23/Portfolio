@@ -441,7 +441,7 @@ const Index = () => {
           </section>
 
           {/* About Me Section */}
-          <section id="about" className="py-20 px-6 bg-accent/5 relative">
+          <section id="about" className="py-20 px-6 bg-background relative">
             <div className="max-w-6xl mx-auto">
               <ScrollAnimations>
                 <h2 className="section-title text-primary">About Me</h2>
@@ -526,7 +526,7 @@ const Index = () => {
           </section>
 
           {/* Skills Section - List/Row Layout */}
-          <section id="skills" className="py-20 px-6 bg-secondary/5">
+          <section id="skills" className="py-20 px-6 bg-background">
             <div className="max-w-5xl mx-auto">
               <ScrollAnimations>
                 <div className="text-center mb-12">
@@ -580,7 +580,7 @@ const Index = () => {
           </section>
 
           {/* Projects Section */}
-          <section id="projects" className="py-20 px-6 bg-secondary/5">
+          <section id="projects" className="py-20 px-6 bg-background">
             <div className="max-w-6xl mx-auto">
               <ScrollAnimations>
                 <h2 className="section-title text-primary">Projects</h2>
@@ -612,7 +612,7 @@ const Index = () => {
           </section>
 
           {/* Achievements Section */}
-          <section id="achievements" className="py-20 px-6 bg-primary/5">
+          <section id="achievements" className="py-20 px-6 bg-background">
             <div className="max-w-6xl mx-auto">
               <ScrollAnimations>
                 <h2 className="section-title text-primary">Hackathons & Achievements</h2>
