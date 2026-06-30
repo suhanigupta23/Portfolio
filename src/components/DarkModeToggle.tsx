@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
 
 const DarkModeToggle: React.FC = () => {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem('darkMode');
-    // Default to dark mode if no preference is stored
-    const shouldUseDark = stored === null ? true : stored === 'true';
+    // Default to light mode if no preference is stored
+    const shouldUseDark = stored === null ? false : stored === 'true';
     
     setIsDark(shouldUseDark);
     document.documentElement.classList.toggle('dark', shouldUseDark);

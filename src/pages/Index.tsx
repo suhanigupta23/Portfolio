@@ -162,6 +162,7 @@ const Index = () => {
       skills: [
         { name: 'MongoDB', slug: 'mongodb', color: '47A248' },
         { name: 'MySQL', slug: 'mysql', color: '4479A1' },
+        { name: 'PostgreSQL', slug: 'postgresql', color: '4169E1' },
         { name: 'Firebase', slug: 'firebase', color: 'FFCA28' },
       ],
     },
@@ -205,7 +206,7 @@ const Index = () => {
     {
       title: 'InTune',
       description: 'Roommate matchmaking platform using AI for compatibility scoring',
-      tech: ['AI', 'Machine Learning', 'React', 'Node.js'],
+      tech: ['React', 'EasyOCR', 'SBERT Cosine Similarity', 'Node.js'],
       tags: ['AI', 'Hackathon Project'],
       github: 'https://github.com/suhanigupta23/Intune',
       demo: 'https://team-naruto.vercel.app/',
@@ -214,10 +215,19 @@ const Index = () => {
     {
       title: 'Saarthi',
       description: 'AI-powered health platform with real-time assistance and emergency features',
-      tech: ['React', 'Flask', 'Node.js', 'MongoDB', 'GPT', 'Twilio', 'Mapbox'],
+      tech: ['React', 'Flask', 'Node.js', 'MongoDB', 'OpenAI GPT', 'WebRTC', 'Mapbox'],
       tags: ['AI', 'Full-Stack', 'Health'],
       github: 'https://github.com/suhanigupta23/Saarthi',
       demo: 'https://saarthi-empower-hub-revamp.vercel.app/',
+      features: [],
+    },
+    {
+      title: 'DermaIQ',
+      description: 'AI-powered skincare analysis platform that detects skin concerns and recommends personalized routines.',
+      tech: ['Next.js', 'API', 'AI'],
+      tags: ['AI', 'Full-Stack'],
+      github: 'https://github.com/suhanigupta23/DermaIQ',
+      demo: 'https://github.com/suhanigupta23/DermaIQ',
       features: [],
     },
     {
@@ -390,24 +400,23 @@ const Index = () => {
 
                   <ScrollAnimations delay={1.2}>
                     <p className="text-lg text-muted-foreground mb-10 max-w-2xl leading-relaxed">
-                      I’m a Full Stack Developer currently exploring modern technologies while
-                      pursuing B.Tech in Computer Science Engineering. I’ve worked on building
-                      real-world, scalable web applications and enjoy creating solutions that make
-                      an impact.
+                      I’m a Full Stack Developer with hands-on experience in AI-integration,
+                      currently exploring modern technologies while pursuing B.Tech in Computer
+                      Science Engineering. I’ve built real-world, scalable web applications and
+                      love creating intelligent solutions that make an impact — always exploring
+                      more.
                     </p>
                   </ScrollAnimations>
 
                   <ScrollAnimations delay={1.5}>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-                      <a
-                        href={socialLinks.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hero-button flex items-center gap-2"
+                      <button
+                        onClick={() => setShowResumeViewer(true)}
+                        className="hero-button flex items-center gap-2 justify-center"
                       >
-                        <Github className="w-5 h-5" />
-                        View Projects on GitHub
-                      </a>
+                        <Download className="w-5 h-5" />
+                        Resume
+                      </button>
 
                       <a
                         href="#contact"
@@ -587,40 +596,23 @@ const Index = () => {
               </ScrollAnimations>
 
               <div className="grid md:grid-cols-2 gap-8">
-                {/* Two placeholder cards at top - ready for upcoming projects */}
-                {[1, 2].map((slot) => (
-                  <ScrollAnimations key={`placeholder-${slot}`} delay={slot * 0.5}>
-                    <div className="h-full min-h-[320px] flex flex-col items-center justify-center text-center p-8 rounded-2xl border-2 border-dashed border-primary/30 bg-card/40 hover:border-primary/60 hover:bg-card/60 transition-all duration-300">
-                      <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4">
-                        <Plus className="w-8 h-8 text-primary" />
-                      </div>
-                      <h3 className="text-xl font-bold text-foreground mb-2">New Project #{slot}</h3>
-                      <p className="text-muted-foreground text-sm max-w-xs">
-                        Coming soon — a fresh build I'm shipping next. Stay tuned.
-                      </p>
+                {/* Single placeholder slot at top - ready for the next upcoming project */}
+                <ScrollAnimations delay={0.3}>
+                  <div className="h-full min-h-[320px] flex flex-col items-center justify-center text-center p-8 rounded-2xl border-2 border-dashed border-primary/30 bg-card/40 hover:border-primary/60 hover:bg-card/60 transition-all duration-300">
+                    <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4">
+                      <Plus className="w-8 h-8 text-primary" />
                     </div>
-                  </ScrollAnimations>
-                ))}
+                    <h3 className="text-xl font-bold text-foreground mb-2">New Project</h3>
+                    <p className="text-muted-foreground text-sm max-w-xs">
+                      Coming soon — a fresh build I'm shipping next. Stay tuned.
+                    </p>
+                  </div>
+                </ScrollAnimations>
 
                 {projects.map((project, index) => (
-                  <React.Fragment key={project.title}>
-                    {project.title === 'Hit the Hamster' && (
-                      <ScrollAnimations delay={(index + 2) * 0.2}>
-                        <div className="h-full min-h-[320px] flex flex-col items-center justify-center text-center p-8 rounded-2xl border-2 border-dashed border-primary/30 bg-card/40 hover:border-primary/60 hover:bg-card/60 transition-all duration-300">
-                          <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4">
-                            <Plus className="w-8 h-8 text-primary" />
-                          </div>
-                          <h3 className="text-xl font-bold text-foreground mb-2">New Project #3</h3>
-                          <p className="text-muted-foreground text-sm max-w-xs">
-                            Coming soon — a fresh build I'm shipping next. Stay tuned.
-                          </p>
-                        </div>
-                      </ScrollAnimations>
-                    )}
-                    <ScrollAnimations delay={(index + 2) * 0.3}>
-                      <ProjectCard project={project} index={index} />
-                    </ScrollAnimations>
-                  </React.Fragment>
+                  <ScrollAnimations key={project.title} delay={(index + 2) * 0.2}>
+                    <ProjectCard project={project} index={index} />
+                  </ScrollAnimations>
                 ))}
               </div>
 
@@ -668,7 +660,7 @@ const Index = () => {
           </section>
 
           {/* Contact / Let's Connect Section */}
-          <section id="contact" className="py-20 px-6">
+          <section id="contact" className="py-20 px-6 bg-background">
             <div className="max-w-6xl mx-auto">
               <ScrollAnimations>
                 <h2 className="section-title text-primary">Let's Connect</h2>
