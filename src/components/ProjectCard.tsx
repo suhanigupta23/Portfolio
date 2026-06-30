@@ -95,23 +95,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           <p className="text-muted-foreground leading-relaxed">{project.description}</p>
         </div>
 
-        {/* Key Features */}
-        <div className="space-y-3">
-          <h4 className="text-sm font-semibold text-foreground flex items-center">
-            <Sparkles className="w-4 h-4 mr-1 text-primary" />
-            Key Features
-          </h4>
-          <div className="grid grid-cols-1 gap-2">
-            {project.features.map((feature, idx) => (
-              <div key={idx} className="flex items-center text-sm text-muted-foreground">
-                <div className="text-primary mr-2 flex-shrink-0">
-                  {feature.icon}
-                </div>
-                {feature.text}
-              </div>
-            ))}
-          </div>
-        </div>
+
+
 
         {/* Metrics (if available) */}
         {project.metrics && (

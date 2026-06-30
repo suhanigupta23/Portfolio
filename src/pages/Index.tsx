@@ -142,7 +142,6 @@ const Index = () => {
         { name: 'React.js', slug: 'react', color: '61DAFB' },
         { name: 'Tailwind', slug: 'tailwindcss', color: '06B6D4' },
         { name: 'HTML5', slug: 'html5', color: 'E34F26' },
-        { name: 'CSS3', slug: 'css3', color: '1572B6' },
       ],
     },
     {
@@ -175,8 +174,6 @@ const Index = () => {
         { name: 'Git', slug: 'git', color: 'F05032' },
         { name: 'VS Code', slug: 'vscodium', color: '007ACC' },
         { name: 'Postman', slug: 'postman', color: 'FF6C37' },
-        { name: 'Figma', slug: 'figma', color: 'F24E1E' },
-        { name: 'Canva', slug: 'canva', color: '00C4CC' },
       ],
     },
     {
@@ -187,27 +184,23 @@ const Index = () => {
       skills: [
         { name: 'OS', slug: 'linux', color: 'FCC624' },
         { name: 'DBMS', slug: 'databricks', color: 'FF3621' },
-        { name: 'Networks', slug: 'cisco', color: '1BA0D7' },
+        { name: 'Computer Networks', slug: 'wireshark', color: '1679A7' },
         { name: 'OOP', slug: 'oracle', color: 'F80000' },
       ],
     },
   ];
 
 
+
   const projects = [
     {
-      title: 'Saarthi',
-      description: 'AI-powered health platform with real-time assistance and emergency features',
-      tech: ['React', 'Flask', 'Node.js', 'MongoDB', 'GPT', 'Twilio', 'Mapbox'],
-      tags: ['AI', 'Full-Stack', 'Health'],
-      github: 'https://github.com/suhanigupta23/Saarthi',
-      demo: 'https://saarthi-empower-hub-revamp.vercel.app/',
-      features: [
-        { icon: <Zap className="w-4 h-4" />, text: 'Real-time AI health assistance' },
-        { icon: <Shield className="w-4 h-4" />, text: 'Emergency SOS with location tracking' },
-        { icon: <Users className="w-4 h-4" />, text: 'Multi-language support' },
-        { icon: <Star className="w-4 h-4" />, text: 'Smart symptom analysis' },
-      ],
+      title: 'SketchRoom',
+      description: 'Interactive multiplayer whiteboard enabling real-time collaborative sketching, brainstorming and ideation across devices.',
+      tech: ['WebSocket', 'Spring Boot', 'React', 'Redis', 'Docker', 'PostgreSQL'],
+      tags: ['Full-Stack', 'Real-Time'],
+      github: 'https://github.com/suhanigupta23/SketchRoom',
+      demo: 'https://sketch-room-ashy.vercel.app/',
+      features: [],
     },
     {
       title: 'InTune',
@@ -216,12 +209,16 @@ const Index = () => {
       tags: ['AI', 'Hackathon Project'],
       github: 'https://github.com/suhanigupta23/Intune',
       demo: 'https://team-naruto.vercel.app/',
-      features: [
-        { icon: <Zap className="w-4 h-4" />, text: 'AI-powered compatibility scoring' },
-        { icon: <Users className="w-4 h-4" />, text: 'Smart roommate matching' },
-        { icon: <Shield className="w-4 h-4" />, text: 'Verified user profiles' },
-        { icon: <Star className="w-4 h-4" />, text: 'Real-time chat system' },
-      ],
+      features: [],
+    },
+    {
+      title: 'Saarthi',
+      description: 'AI-powered health platform with real-time assistance and emergency features',
+      tech: ['React', 'Flask', 'Node.js', 'MongoDB', 'GPT', 'Twilio', 'Mapbox'],
+      tags: ['AI', 'Full-Stack', 'Health'],
+      github: 'https://github.com/suhanigupta23/Saarthi',
+      demo: 'https://saarthi-empower-hub-revamp.vercel.app/',
+      features: [],
     },
     {
       title: 'Hit the Hamster',
@@ -230,12 +227,7 @@ const Index = () => {
       tags: ['Game'],
       github: 'https://github.com/suhanigupta23/Hit-The-Hamster',
       demo: 'https://creative-choux-e20f8d.netlify.app/',
-      features: [
-        { icon: <Zap className="w-4 h-4" />, text: 'Fast-paced gameplay' },
-        { icon: <Star className="w-4 h-4" />, text: 'High score tracking' },
-        { icon: <Users className="w-4 h-4" />, text: 'Multiplayer support' },
-        { icon: <Shield className="w-4 h-4" />, text: 'Responsive design' },
-      ],
+      features: [],
     },
     {
       title: 'Snake Game – Hand Gesture Controlled',
@@ -244,14 +236,10 @@ const Index = () => {
       tags: ['Game', 'AI'],
       github: 'https://github.com/suhanigupta23/Snake-Game-Hand-Gesture',
       demo: 'https://github.com/suhanigupta23/Snake-Game-Hand-Gesture',
-      features: [
-        { icon: <Zap className="w-4 h-4" />, text: 'Real-time hand gesture recognition' },
-        { icon: <Users className="w-4 h-4" />, text: 'Control snake movements without keyboard' },
-        { icon: <Shield className="w-4 h-4" />, text: 'Pause and resume using gestures' },
-        { icon: <Star className="w-4 h-4" />, text: 'Smooth gameplay with OpenCV and Pygame' },
-      ],
+      features: [],
     },
   ];
+
 
   const achievements = [
     {
@@ -349,17 +337,9 @@ const Index = () => {
               </nav>
 
               <div className="flex items-center gap-2 shrink-0">
-                <a
-                  href={socialLinks.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs sm:text-sm font-medium bg-foreground text-background hover:bg-foreground/90 transition-all duration-300"
-                >
-                  <Github className="w-4 h-4" />
-                  <span className="hidden sm:inline">View on GitHub</span>
-                </a>
                 <DarkModeToggle />
               </div>
+
             </div>
 
           </div>
@@ -461,7 +441,7 @@ const Index = () => {
           </section>
 
           {/* About Me Section */}
-          <section id="about" className="py-20 px-6 bg-accent/5 relative">
+          <section id="about" className="py-20 px-6 bg-background relative">
             <div className="max-w-6xl mx-auto">
               <ScrollAnimations>
                 <h2 className="section-title text-primary">About Me</h2>
@@ -546,7 +526,7 @@ const Index = () => {
           </section>
 
           {/* Skills Section - List/Row Layout */}
-          <section id="skills" className="py-20 px-6 bg-secondary/5">
+          <section id="skills" className="py-20 px-6 bg-background">
             <div className="max-w-5xl mx-auto">
               <ScrollAnimations>
                 <div className="text-center mb-12">
@@ -600,7 +580,7 @@ const Index = () => {
           </section>
 
           {/* Projects Section */}
-          <section id="projects" className="py-20 px-6 bg-secondary/5">
+          <section id="projects" className="py-20 px-6 bg-background">
             <div className="max-w-6xl mx-auto">
               <ScrollAnimations>
                 <h2 className="section-title text-primary">Projects</h2>
@@ -623,16 +603,44 @@ const Index = () => {
                 ))}
 
                 {projects.map((project, index) => (
-                  <ScrollAnimations key={project.title} delay={(index + 2) * 0.3}>
-                    <ProjectCard project={project} index={index} />
-                  </ScrollAnimations>
+                  <React.Fragment key={project.title}>
+                    {project.title === 'Hit the Hamster' && (
+                      <ScrollAnimations delay={(index + 2) * 0.2}>
+                        <div className="h-full min-h-[320px] flex flex-col items-center justify-center text-center p-8 rounded-2xl border-2 border-dashed border-primary/30 bg-card/40 hover:border-primary/60 hover:bg-card/60 transition-all duration-300">
+                          <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4">
+                            <Plus className="w-8 h-8 text-primary" />
+                          </div>
+                          <h3 className="text-xl font-bold text-foreground mb-2">New Project #3</h3>
+                          <p className="text-muted-foreground text-sm max-w-xs">
+                            Coming soon — a fresh build I'm shipping next. Stay tuned.
+                          </p>
+                        </div>
+                      </ScrollAnimations>
+                    )}
+                    <ScrollAnimations delay={(index + 2) * 0.3}>
+                      <ProjectCard project={project} index={index} />
+                    </ScrollAnimations>
+                  </React.Fragment>
                 ))}
+              </div>
+
+              <div className="mt-12 flex justify-center">
+                <a
+                  href={socialLinks.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-button flex items-center gap-2"
+                >
+                  <Github className="w-5 h-5" />
+                  View All Projects on GitHub
+                </a>
               </div>
             </div>
           </section>
 
+
           {/* Achievements Section */}
-          <section id="achievements" className="py-20 px-6 bg-primary/5">
+          <section id="achievements" className="py-20 px-6 bg-background">
             <div className="max-w-6xl mx-auto">
               <ScrollAnimations>
                 <h2 className="section-title text-primary">Hackathons & Achievements</h2>
@@ -783,7 +791,7 @@ const Index = () => {
           </section>
 
           {/* Footer */}
-          <footer className="py-12 px-6 bg-[hsl(var(--footer-bg))] border-t border-border transition-colors duration-300">
+          <footer className="py-12 px-6 bg-background border-t border-border transition-colors duration-300">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-foreground text-base md:text-lg italic leading-relaxed">
                 A digital portfolio to showcase{' '}
