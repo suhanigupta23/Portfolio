@@ -400,24 +400,23 @@ const Index = () => {
 
                   <ScrollAnimations delay={1.2}>
                     <p className="text-lg text-muted-foreground mb-10 max-w-2xl leading-relaxed">
-                      I’m a Full Stack Developer currently exploring modern technologies while
-                      pursuing B.Tech in Computer Science Engineering. I’ve worked on building
-                      real-world, scalable web applications and enjoy creating solutions that make
-                      an impact.
+                      I’m a Full Stack Developer with hands-on experience in AI-integration,
+                      currently exploring modern technologies while pursuing B.Tech in Computer
+                      Science Engineering. I’ve built real-world, scalable web applications and
+                      love creating intelligent solutions that make an impact — always exploring
+                      more.
                     </p>
                   </ScrollAnimations>
 
                   <ScrollAnimations delay={1.5}>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-                      <a
-                        href={socialLinks.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hero-button flex items-center gap-2"
+                      <button
+                        onClick={() => setShowResumeViewer(true)}
+                        className="hero-button flex items-center gap-2 justify-center"
                       >
-                        <Github className="w-5 h-5" />
-                        View Projects on GitHub
-                      </a>
+                        <Download className="w-5 h-5" />
+                        Resume
+                      </button>
 
                       <a
                         href="#contact"
