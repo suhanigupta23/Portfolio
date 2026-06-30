@@ -337,17 +337,9 @@ const Index = () => {
               </nav>
 
               <div className="flex items-center gap-2 shrink-0">
-                <a
-                  href={socialLinks.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs sm:text-sm font-medium bg-foreground text-background hover:bg-foreground/90 transition-all duration-300"
-                >
-                  <Github className="w-4 h-4" />
-                  <span className="hidden sm:inline">View on GitHub</span>
-                </a>
                 <DarkModeToggle />
               </div>
+
             </div>
 
           </div>
