@@ -660,7 +660,7 @@ const Index = () => {
           </section>
 
           {/* Contact / Let's Connect Section */}
-          <section id="contact" className="py-20 px-6">
+          <section id="contact" className="py-20 px-6 bg-background">
             <div className="max-w-6xl mx-auto">
               <ScrollAnimations>
                 <h2 className="section-title text-primary">Let's Connect</h2>
