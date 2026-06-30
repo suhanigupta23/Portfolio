@@ -142,7 +142,6 @@ const Index = () => {
         { name: 'React.js', slug: 'react', color: '61DAFB' },
         { name: 'Tailwind', slug: 'tailwindcss', color: '06B6D4' },
         { name: 'HTML5', slug: 'html5', color: 'E34F26' },
-        { name: 'CSS3', slug: 'css3', color: '1572B6' },
       ],
     },
     {
@@ -175,8 +174,6 @@ const Index = () => {
         { name: 'Git', slug: 'git', color: 'F05032' },
         { name: 'VS Code', slug: 'vscodium', color: '007ACC' },
         { name: 'Postman', slug: 'postman', color: 'FF6C37' },
-        { name: 'Figma', slug: 'figma', color: 'F24E1E' },
-        { name: 'Canva', slug: 'canva', color: '00C4CC' },
       ],
     },
     {
@@ -187,11 +184,12 @@ const Index = () => {
       skills: [
         { name: 'OS', slug: 'linux', color: 'FCC624' },
         { name: 'DBMS', slug: 'databricks', color: 'FF3621' },
-        { name: 'Networks', slug: 'cisco', color: '1BA0D7' },
+        { name: 'Computer Networks', slug: 'wireshark', color: '1679A7' },
         { name: 'OOP', slug: 'oracle', color: 'F80000' },
       ],
     },
   ];
+
 
 
   const projects = [
