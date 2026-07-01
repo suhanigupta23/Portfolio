@@ -46,6 +46,8 @@ import CodingDecoration from '../components/CodingDecoration';
 import profileImage from '../assets/profile.jpg';
 import codolioOwl from '../assets/codolio-owl.gif.asset.json';
 import leetcodeLogo from '../assets/leetcode-logo.png.asset.json';
+import javaLogo from '../assets/java-logo.png.asset.json';
+import oopLogo from '../assets/oop-logo.png.asset.json';
 
 
 const Index = () => {
