@@ -25,7 +25,6 @@ import {
   GraduationCap,
   Calendar,
   Heart,
-  Plus,
 } from 'lucide-react';
 import {
   Dialog,
