@@ -58,6 +58,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         return dermaiqImage.url;
       case 'CareerCopilot':
         return careerCopilotImage.url;
+      case 'SketchRoom':
+        return sketchroomImage.url;
       default:
         return null;
     }
