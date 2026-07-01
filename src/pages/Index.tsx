@@ -197,6 +197,26 @@ const Index = () => {
 
   const projects = [
     {
+      title: 'CareerCopilot',
+      description:
+        'AI-integrated job application tracker that matches resumes with job descriptions and generates AI-based compatibility scores. Built secure REST APIs with Spring Boot & JWT auth, and integrated OpenAI GPT-3.5 for resume-to-JD scoring.',
+      tech: ['Spring Boot', 'React', 'JavaScript', 'PostgreSQL', 'JWT', 'OpenAI API'],
+      tags: ['AI', 'Full-Stack'],
+      github: 'https://github.com/suhanigupta23/CareerCopilot',
+      demo: 'https://github.com/suhanigupta23/CareerCopilot',
+      features: [],
+    },
+    {
+      title: 'InTune',
+      description:
+        'AI roommate matching platform pairing users by lifestyle compatibility using SBERT cosine similarity, with EasyOCR-based identity verification and real-time match state via Firestore.',
+      tech: ['React', 'Node.js', 'TypeScript', 'Python', 'MongoDB', 'EasyOCR', 'Tailwind CSS', 'Firestore'],
+      tags: ['AI', 'Hackathon Project'],
+      github: 'https://github.com/suhanigupta23/Intune',
+      demo: 'https://team-naruto.vercel.app/',
+      features: [],
+    },
+    {
       title: 'SketchRoom',
       description: 'Interactive multiplayer whiteboard enabling real-time collaborative sketching, brainstorming and ideation across devices.',
       tech: ['WebSocket', 'Spring Boot', 'React', 'Redis', 'Docker', 'PostgreSQL'],
@@ -206,30 +226,21 @@ const Index = () => {
       features: [],
     },
     {
-      title: 'InTune',
-      description: 'Roommate matchmaking platform using AI for compatibility scoring',
-      tech: ['React', 'EasyOCR', 'SBERT Cosine Similarity', 'Node.js'],
-      tags: ['AI', 'Hackathon Project'],
-      github: 'https://github.com/suhanigupta23/Intune',
-      demo: 'https://team-naruto.vercel.app/',
-      features: [],
-    },
-    {
-      title: 'Saarthi',
-      description: 'AI-powered health platform with real-time assistance and emergency features',
-      tech: ['React', 'Flask', 'Node.js', 'MongoDB', 'OpenAI GPT', 'WebRTC', 'Mapbox'],
-      tags: ['AI', 'Full-Stack', 'Health'],
-      github: 'https://github.com/suhanigupta23/Saarthi',
-      demo: 'https://saarthi-empower-hub-revamp.vercel.app/',
-      features: [],
-    },
-    {
       title: 'DermaIQ',
       description: 'AI-powered skincare analysis platform that detects skin concerns and recommends personalized routines.',
       tech: ['Next.js', 'API', 'AI'],
       tags: ['AI', 'Full-Stack'],
       github: 'https://github.com/suhanigupta23/DermaIQ',
       demo: 'https://github.com/suhanigupta23/DermaIQ',
+      features: [],
+    },
+    {
+      title: 'Saarthi',
+      description: 'AI-powered health platform with real-time assistance and emergency features',
+      tech: ['React', 'Flask', 'Node.js', 'MongoDB', 'OpenAI GPT', 'WebRTC'],
+      tags: ['AI', 'Full-Stack', 'Health'],
+      github: 'https://github.com/suhanigupta23/Saarthi',
+      demo: 'https://saarthi-empower-hub-revamp.vercel.app/',
       features: [],
     },
     {
