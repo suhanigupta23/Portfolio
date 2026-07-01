@@ -46,6 +46,8 @@ import CodingDecoration from '../components/CodingDecoration';
 import profileImage from '../assets/profile.jpg';
 import codolioOwl from '../assets/codolio-owl.gif.asset.json';
 import leetcodeLogo from '../assets/leetcode-logo.png.asset.json';
+import javaLogo from '../assets/java-logo.png.asset.json';
+import oopLogo from '../assets/oop-logo.png.asset.json';
 
 
 const Index = () => {
@@ -127,7 +129,7 @@ const Index = () => {
       iconColor: 'text-blue-400',
       accent: 'bg-blue-400/10 border-blue-400/30',
       skills: [
-        { name: 'Java', slug: 'openjdk', color: 'ED8B00' },
+        { name: 'Java', slug: 'openjdk', color: 'ED8B00', img: javaLogo.url },
         { name: 'JavaScript', slug: 'javascript', color: 'F7DF1E' },
         { name: 'Python', slug: 'python', color: '3776AB' },
         { name: 'C', slug: 'c', color: 'A8B9CC' },
@@ -186,7 +188,7 @@ const Index = () => {
         { name: 'OS', slug: 'linux', color: 'FCC624' },
         { name: 'DBMS', slug: 'databricks', color: 'FF3621' },
         { name: 'Computer Networks', slug: 'wireshark', color: '1679A7' },
-        { name: 'OOP', slug: 'oracle', color: 'F80000' },
+        { name: 'OOP', slug: 'oracle', color: 'F80000', img: oopLogo.url },
       ],
     },
   ];
@@ -194,6 +196,26 @@ const Index = () => {
 
 
   const projects = [
+    {
+      title: 'CareerCopilot',
+      description:
+        'AI-integrated job application tracker that matches resumes with job descriptions and generates AI-based compatibility scores. Built secure REST APIs with Spring Boot & JWT auth, and integrated OpenAI GPT-3.5 for resume-to-JD scoring.',
+      tech: ['Spring Boot', 'React', 'JavaScript', 'PostgreSQL', 'JWT', 'OpenAI API'],
+      tags: ['AI', 'Full-Stack'],
+      github: 'https://github.com/suhanigupta23/CareerCopilot',
+      demo: 'https://github.com/suhanigupta23/CareerCopilot',
+      features: [],
+    },
+    {
+      title: 'InTune',
+      description:
+        'AI roommate matching platform pairing users by lifestyle compatibility using SBERT cosine similarity, with EasyOCR-based identity verification and real-time match state via Firestore.',
+      tech: ['React', 'Node.js', 'TypeScript', 'Python', 'MongoDB', 'EasyOCR', 'Tailwind CSS', 'Firestore'],
+      tags: ['AI', 'Hackathon Project'],
+      github: 'https://github.com/suhanigupta23/Intune',
+      demo: 'https://team-naruto.vercel.app/',
+      features: [],
+    },
     {
       title: 'SketchRoom',
       description: 'Interactive multiplayer whiteboard enabling real-time collaborative sketching, brainstorming and ideation across devices.',
@@ -204,30 +226,21 @@ const Index = () => {
       features: [],
     },
     {
-      title: 'InTune',
-      description: 'Roommate matchmaking platform using AI for compatibility scoring',
-      tech: ['React', 'EasyOCR', 'SBERT Cosine Similarity', 'Node.js'],
-      tags: ['AI', 'Hackathon Project'],
-      github: 'https://github.com/suhanigupta23/Intune',
-      demo: 'https://team-naruto.vercel.app/',
-      features: [],
-    },
-    {
-      title: 'Saarthi',
-      description: 'AI-powered health platform with real-time assistance and emergency features',
-      tech: ['React', 'Flask', 'Node.js', 'MongoDB', 'OpenAI GPT', 'WebRTC', 'Mapbox'],
-      tags: ['AI', 'Full-Stack', 'Health'],
-      github: 'https://github.com/suhanigupta23/Saarthi',
-      demo: 'https://saarthi-empower-hub-revamp.vercel.app/',
-      features: [],
-    },
-    {
       title: 'DermaIQ',
       description: 'AI-powered skincare analysis platform that detects skin concerns and recommends personalized routines.',
       tech: ['Next.js', 'API', 'AI'],
       tags: ['AI', 'Full-Stack'],
       github: 'https://github.com/suhanigupta23/DermaIQ',
       demo: 'https://github.com/suhanigupta23/DermaIQ',
+      features: [],
+    },
+    {
+      title: 'Saarthi',
+      description: 'AI-powered health platform with real-time assistance and emergency features',
+      tech: ['React', 'Flask', 'Node.js', 'MongoDB', 'OpenAI GPT', 'WebRTC'],
+      tags: ['AI', 'Full-Stack', 'Health'],
+      github: 'https://github.com/suhanigupta23/Saarthi',
+      demo: 'https://saarthi-empower-hub-revamp.vercel.app/',
       features: [],
     },
     {
@@ -568,7 +581,7 @@ const Index = () => {
                           >
                             <div className="w-9 h-9 flex items-center justify-center">
                               <img
-                                src={`https://cdn.simpleicons.org/${skill.slug}/${skill.color}`}
+                                src={(skill as any).img || `https://cdn.simpleicons.org/${skill.slug}/${skill.color}`}
                                 alt={skill.name}
                                 className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-200"
                                 loading="lazy"

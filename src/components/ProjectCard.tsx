@@ -8,6 +8,8 @@ import carManagementImage from '../assets/car-management-project.jpg';
 import soundorbitImage from '../assets/soundorbit-project.jpg';
 import hamsterGameImage from '../assets/hamster-game-project.jpg';
 import snakeGameImage from '../assets/snake-game-project.png';
+import dermaiqImage from '../assets/dermaiq-project.png.asset.json';
+import careerCopilotImage from '../assets/careercopilot-project.png.asset.json';
 
 interface Feature {
   icon: React.ReactNode;
@@ -51,6 +53,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         return hamsterGameImage;
       case 'Snake Game – Hand Gesture Controlled':
         return snakeGameImage;
+      case 'DermaIQ':
+        return dermaiqImage.url;
+      case 'CareerCopilot':
+        return careerCopilotImage.url;
       default:
         return null;
     }
