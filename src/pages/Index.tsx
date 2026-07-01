@@ -129,7 +129,7 @@ const Index = () => {
       iconColor: 'text-blue-400',
       accent: 'bg-blue-400/10 border-blue-400/30',
       skills: [
-        { name: 'Java', slug: 'openjdk', color: 'ED8B00' },
+        { name: 'Java', slug: 'openjdk', color: 'ED8B00', img: javaLogo.url },
         { name: 'JavaScript', slug: 'javascript', color: 'F7DF1E' },
         { name: 'Python', slug: 'python', color: '3776AB' },
         { name: 'C', slug: 'c', color: 'A8B9CC' },
