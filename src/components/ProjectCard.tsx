@@ -53,6 +53,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         return hamsterGameImage;
       case 'Snake Game – Hand Gesture Controlled':
         return snakeGameImage;
+      case 'DermaIQ':
+        return dermaiqImage.url;
+      case 'CareerCopilot':
+        return careerCopilotImage.url;
       default:
         return null;
     }
