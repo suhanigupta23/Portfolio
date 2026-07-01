@@ -8,6 +8,8 @@ import carManagementImage from '../assets/car-management-project.jpg';
 import soundorbitImage from '../assets/soundorbit-project.jpg';
 import hamsterGameImage from '../assets/hamster-game-project.jpg';
 import snakeGameImage from '../assets/snake-game-project.png';
+import dermaiqImage from '../assets/dermaiq-project.png.asset.json';
+import careerCopilotImage from '../assets/careercopilot-project.png.asset.json';
 
 interface Feature {
   icon: React.ReactNode;
