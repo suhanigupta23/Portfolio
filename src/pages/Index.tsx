@@ -188,7 +188,7 @@ const Index = () => {
         { name: 'OS', slug: 'linux', color: 'FCC624' },
         { name: 'DBMS', slug: 'databricks', color: 'FF3621' },
         { name: 'Computer Networks', slug: 'wireshark', color: '1679A7' },
-        { name: 'OOP', slug: 'oracle', color: 'F80000' },
+        { name: 'OOP', slug: 'oracle', color: 'F80000', img: oopLogo.url },
       ],
     },
   ];
