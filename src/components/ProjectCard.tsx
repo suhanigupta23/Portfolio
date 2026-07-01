@@ -10,6 +10,7 @@ import hamsterGameImage from '../assets/hamster-game-project.jpg';
 import snakeGameImage from '../assets/snake-game-project.png';
 import dermaiqImage from '../assets/dermaiq-project.png.asset.json';
 import careerCopilotImage from '../assets/careercopilot-project.png.asset.json';
+import sketchroomImage from '../assets/sketchroom-project.jpg.asset.json';
 
 interface Feature {
   icon: React.ReactNode;
