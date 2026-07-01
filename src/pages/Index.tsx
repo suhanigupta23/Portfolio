@@ -570,7 +570,7 @@ const Index = () => {
                           >
                             <div className="w-9 h-9 flex items-center justify-center">
                               <img
-                                src={`https://cdn.simpleicons.org/${skill.slug}/${skill.color}`}
+                                src={(skill as any).img || `https://cdn.simpleicons.org/${skill.slug}/${skill.color}`}
                                 alt={skill.name}
                                 className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-200"
                                 loading="lazy"
