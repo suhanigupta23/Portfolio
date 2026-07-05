@@ -38,22 +38,22 @@ export const portfolioData = {
 
   education: [
     {
-      degree: "BTech in Computer Science & Engineering",
-      institution: "Indian Institute of Information Technology",
-      duration: "2023-2027",
+      degree: "B.Tech (CSE) - GPA: 7.01",
+      institution: "Indian Institute of Information Technology, Kota",
+      duration: "2023 - 2027",
       location: "Kota, Rajasthan",
       type: "college"
     },
     {
       degree: "Class XII - 88.88%",
-      institution: "Sagar Public School",
+      institution: "Sagar Public School, Bhopal",
       duration: "2022",
       location: "Bhopal, Madhya Pradesh",
       type: "school"
     },
     {
       degree: "Class X - 95.2%",
-      institution: "Sagar Public School",
+      institution: "Sagar Public School, Bhopal",
       duration: "2020",
       location: "Bhopal, Madhya Pradesh",
       type: "school"
@@ -96,6 +96,7 @@ export const portfolioData = {
       skills: [
         { name: "Java", slug: "openjdk", color: "ED8B00" },
         { name: "JavaScript", slug: "javascript", color: "F7DF1E" },
+        { name: "TypeScript", slug: "typescript", color: "3178C6" },
         { name: "Python", slug: "python", color: "3776AB" },
         { name: "C", slug: "c", color: "A8B9CC" }
       ]
@@ -106,7 +107,7 @@ export const portfolioData = {
       accent: "bg-purple-400/10 border-purple-400/30",
       skills: [
         { name: "React.js", slug: "react", color: "61DAFB" },
-        { name: "Tailwind", slug: "tailwindcss", color: "06B6D4" },
+        { name: "Tailwind CSS", slug: "tailwindcss", color: "06B6D4" },
         { name: "HTML5", slug: "html5", color: "E34F26" }
       ]
     },
@@ -116,25 +117,30 @@ export const portfolioData = {
       accent: "bg-green-400/10 border-green-400/30",
       skills: [
         { name: "Spring Boot", slug: "springboot", color: "6DB33F" },
-        { name: "REST APIs", slug: "fastapi", color: "009688" }
+        { name: "REST APIs", slug: "fastapi", color: "009688" },
+        { name: "WebSocket", slug: "socketdotio", color: "010101" }
       ]
     },
     {
-      title: "Databases",
+      title: "Databases & Caching",
       iconColor: "text-orange-400",
       accent: "bg-orange-400/10 border-orange-400/30",
       skills: [
         { name: "MongoDB", slug: "mongodb", color: "47A248" },
-        { name: "MySQL", slug: "mysql", color: "4479A1" },
         { name: "PostgreSQL", slug: "postgresql", color: "4169E1" },
-        { name: "Firebase", slug: "firebase", color: "FFCA28" }
+        { name: "Redis", slug: "redis", color: "DC382D" },
+        { name: "Firebase", slug: "firebase", color: "FFCA28" },
+        { name: "MySQL", slug: "mysql", color: "4479A1" }
       ]
     },
     {
-      title: "Tools & Design",
+      title: "Tools & Platforms",
       iconColor: "text-cyan-400",
       accent: "bg-cyan-400/10 border-cyan-400/30",
       skills: [
+        { name: "Docker", slug: "docker", color: "2496ED" },
+        { name: "Vercel", slug: "vercel", color: "000000" },
+        { name: "Railway", slug: "railway", color: "0B0D0F" },
         { name: "Git", slug: "git", color: "F05032" },
         { name: "VS Code", slug: "vscodium", color: "007ACC" },
         { name: "Postman", slug: "postman", color: "FF6C37" }
@@ -145,6 +151,7 @@ export const portfolioData = {
       iconColor: "text-indigo-400",
       accent: "bg-indigo-400/10 border-indigo-400/30",
       skills: [
+        { name: "DSA", slug: "codeforces", color: "1F8ACB" },
         { name: "OS", slug: "linux", color: "FCC624" },
         { name: "DBMS", slug: "databricks", color: "FF3621" },
         { name: "Computer Networks", slug: "wireshark", color: "1679A7" },
