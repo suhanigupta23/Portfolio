@@ -172,11 +172,11 @@ export const portfolioData = {
     },
     {
       title: "InTune",
-      description: "AI roommate matching platform pairing users by lifestyle compatibility using SBERT cosine similarity, with EasyOCR-based identity verification and real-time match state via Firestore.",
-      tech: ["React", "Node.js", "TypeScript", "Python", "MongoDB", "EasyOCR", "Tailwind CSS", "Firestore"],
+      description: "AI roommate matching platform pairing users by lifestyle compatibility using SBERT cosine similarity, with EasyOCR-based identity verification and real-time match state.",
+      tech: ["React", "Node.js", "TypeScript", "Python", "MongoDB", "EasyOCR", "Tailwind CSS", "Omnidim Voice Aegnt"],
       tags: ["AI", "Hackathon Project"],
       github: "https://github.com/suhanigupta23/Intune",
-      demo: "https://team-naruto.vercel.app/",
+      demo: "https://in-tune-phi.vercel.app/",
       image: "/projects/intune.png"
     },
     {
