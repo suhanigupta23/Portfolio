@@ -139,7 +139,6 @@ export const portfolioData = {
       accent: "bg-green-400/10 border-green-400/30",
       skills: [
         { name: "Spring Boot", slug: "springboot", color: "6DB33F" },
-        { name: "Node.js", slug: "nodedotjs", color: "5FA04E" },
         { name: "REST APIs", slug: "fastapi", color: "009688" },
         { name: "WebSocket", slug: "socketdotio", color: "010101" }
       ]

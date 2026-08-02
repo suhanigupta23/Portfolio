@@ -227,7 +227,7 @@ def create_resume_pdf(output_path):
     add_section_header("Technical Skills")
     story.append(Paragraph("<b>Languages:</b> Java, JavaScript, TypeScript, Python, C", body_style))
     story.append(Paragraph("<b>Frontend Technologies:</b> React, Tailwind CSS, HTML5, CSS3", body_style))
-    story.append(Paragraph("<b>Backend Technologies:</b> Spring Boot, Node.js, REST APIs, WebSocket", body_style))
+    story.append(Paragraph("<b>Backend Technologies:</b> Spring Boot, REST APIs, WebSocket", body_style))
     story.append(Paragraph("<b>Databases & Caching:</b> MongoDB, PostgreSQL, Redis, MySQL", body_style))
     story.append(Paragraph("<b>Tools & Platforms:</b> Docker, Vercel, Render, Git", body_style))
     story.append(Paragraph("<b>Relevant Coursework:</b> Data Structures & Algorithms, Object-Oriented Programming (OOP), DBMS, Operating Systems, Computer Networks", body_style))
