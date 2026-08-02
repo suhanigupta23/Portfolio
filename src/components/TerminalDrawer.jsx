@@ -12,7 +12,7 @@ export default function TerminalDrawer({ isOpen, onClose }) {
   const terminalEndRef = useRef(null);
   const inputRef = useRef(null);
 
-  const { name, bio, education, skillsCategories, projects, achievements, socials } = portfolioData;
+  const { name, bio, education, experience, skillsCategories, projects, achievements, socials } = portfolioData;
 
   useEffect(() => {
     if (isOpen) {
@@ -35,13 +35,22 @@ export default function TerminalDrawer({ isOpen, onClose }) {
     switch (cmd) {
       case "help":
         newHistory.push({
-          text: `Available commands:\n  about        - Show summary biography\n  skills       - List technical skill sets\n  projects     - List key project details\n  education    - Show education timeline\n  achievements - List hackathon accomplishments\n  contact      - Get contact details\n  clear        - Clear console output\n  close        - Close terminal panel`,
+          text: `Available commands:\n  about        - Show summary biography\n  experience   - List work & open-source experience\n  skills       - List technical skill sets\n  projects     - List key project details\n  education    - Show education timeline\n  achievements - List hackathon accomplishments\n  contact      - Get contact details\n  clear        - Clear console output\n  close        - Close terminal panel`,
           type: "output",
         });
         break;
       case "about":
         newHistory.push({
           text: `Biography:\n${bio}`,
+          type: "output",
+        });
+        break;
+      case "experience":
+        const expText = experience
+          .map((exp) => `* ${exp.role} @ ${exp.organization} (${exp.period})\n  Type: ${exp.type} | Location: ${exp.location}\n  ${exp.points.map(p => `  - ${p}`).join("\n")}`)
+          .join("\n\n");
+        newHistory.push({
+          text: `Experience:\n${expText}`,
           type: "output",
         });
         break;

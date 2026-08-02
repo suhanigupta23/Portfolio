@@ -78,7 +78,7 @@ export default function About() {
                     </span>
                   </div>
 
-                  {/* Middle block: Degree/Institution details */}
+                  {/* Middle block: Degree/Institution details & Scholarship note */}
                   <div className="flex-1 space-y-1.5 md:border-l md:border-border/60 md:pl-8">
                     <h4 className="font-bold text-foreground text-xl md:text-2xl leading-snug">
                       {item.degree}
@@ -86,12 +86,24 @@ export default function About() {
                     <p className="text-primary font-bold text-base md:text-lg">
                       {item.institution}
                     </p>
+                    {item.note && (
+                      <p className="text-xs md:text-sm text-muted-foreground/85 font-medium pt-1">
+                        {item.note}
+                      </p>
+                    )}
                   </div>
 
-                  {/* Right block: Location */}
-                  <div className="md:w-1/5 shrink-0 md:text-right text-xs font-semibold text-muted-foreground flex items-center md:justify-end gap-1.5">
-                    <MapPin className="w-4 h-4 text-accent/70" />
-                    <span>{item.location}</span>
+                  {/* Right block: Location and subtle percentage pill */}
+                  <div className="md:w-1/4 shrink-0 flex flex-col md:items-end items-start gap-2">
+                    <div className="text-xs font-semibold text-muted-foreground flex items-center md:justify-end gap-1.5">
+                      <MapPin className="w-4 h-4 text-accent/70" />
+                      <span>{item.location}</span>
+                    </div>
+                    {item.percentage && (
+                      <span className="text-[11px] font-mono font-medium text-muted-foreground/60 bg-secondary/50 border border-border/40 px-2.5 py-0.5 rounded-full">
+                        {item.percentage}
+                      </span>
+                    )}
                   </div>
                 </div>
               );
