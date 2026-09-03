@@ -183,7 +183,7 @@ def create_resume_pdf(output_path):
     proj2_header = [
         [
             Paragraph("<b>2. InTune : AI Roommate Matching Platform</b>", bold_body_style),
-            Paragraph('<a href="https://team-naruto.vercel.app/"><u><i>Live Link</i></u></a>', ParagraphStyle('LiveLink2', parent=body_style, alignment=TA_RIGHT))
+            Paragraph('<a href="https://in-tune-phi.vercel.app/"><u><i>Live Link</i></u></a>', ParagraphStyle('LiveLink2', parent=body_style, alignment=TA_RIGHT))
         ]
     ]
     p2_table = Table(proj2_header, colWidths=[448, 100])
@@ -195,17 +195,17 @@ def create_resume_pdf(output_path):
         ('RIGHTPADDING', (0,0), (-1,-1), 0),
     ]))
     story.append(p2_table)
-    story.append(Paragraph("<i>Tech Stack: React, Node.js, MongoDB, Tailwind CSS, Tesseract.js, Web Speech API</i>", body_style))
-    story.append(Paragraph("• Developed voice onboarding using the Web Speech API (Speech-to-Text) and Tesseract.js for client-side Aadhaar OCR with Verhoeff Checksum validation.", bullet_style))
-    story.append(Paragraph("• Designed a client-side roommate matching engine using TF-IDF vectorization and Cosine Similarity, achieving 0.027 ms average matching latency while eliminating server-side inference costs.", bullet_style))
-    story.append(Paragraph("• Architected backend API endpoints managing user sessions, conditional chat name-reveals, and split-expense ledger tracking among matched roommates.", bullet_style))
+    story.append(Paragraph("<i>Tech Stack: React, TypeScript, Spring Boot, Java, FastAPI, Python, Sentence-Transformers, MongoDB, Tailwind CSS, Tesseract.js, Web Speech API (OmniDim)</i>", body_style))
+    story.append(Paragraph("• Reimagined roommate-finding around lifestyle compatibility using OmniDim voice/text descriptions, semantically compared via a Sentence-Embedding model (SBERT) to surface genuinely compatible matches.", bullet_style))
+    story.append(Paragraph("• Protected user privacy during discovery with auto-generated anonymous aliases, revealing real identities only after a mutual match.", bullet_style))
+    story.append(Paragraph("• Ensured data security with entirely on-device identity verification, OCR'ing and checksum-validating Aadhaar photos in the browser so sensitive documents never leave the user's machine.", bullet_style))
     story.append(Spacer(1, 1.5))
 
     # Project 3: Saarthi
     proj3_header = [
         [
             Paragraph("<b>3. Saarthi : AI-Powered Women’s Health & Telehealth Platform</b>", bold_body_style),
-            Paragraph('<a href="https://saarthi-empower-hub-revamp.vercel.app/"><u><i>Live Link</i></u></a>', ParagraphStyle('LiveLink3', parent=body_style, alignment=TA_RIGHT))
+            Paragraph('<a href="https://saarthi-nine-gamma.vercel.app/"><u><i>Live Link</i></u></a>', ParagraphStyle('LiveLink3', parent=body_style, alignment=TA_RIGHT))
         ]
     ]
     p3_table = Table(proj3_header, colWidths=[448, 100])

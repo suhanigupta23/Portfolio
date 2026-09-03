@@ -10,8 +10,11 @@ export const portfolioData = {
     "<Suhani />",
     "npm run dream"
   ],
-  bio: "I’m a Full Stack Developer with hands-on experience in AI-integration, currently exploring modern technologies while pursuing B.Tech in Computer Science Engineering. I’ve built real-world, scalable web applications and love creating intelligent solutions that make an impact — always exploring more.",
-  shortBio: ", a Computer Science student passionate about building full-stack solutions that blend AI, creativity, and usability. I thrive in hackathons, open-source, and collaborative projects.",
+  bio: "I’m a final-year Computer Science student and a full-stack developer who enjoys turning ideas into practical, reliable applications.",
+  aboutMe: [
+    "I’m a final-year Computer Science student and full-stack developer who enjoys turning ideas into practical, reliable applications. I mainly work with Java, Spring Boot, React, TypeScript, and Python, and I’m continuously improving my skills by building and experimenting. Currently, I’m exploring System Design and Generative AI and finding ways to bring them into my projects.",
+    "Outside tech, I’m a curious and collaborative person who enjoys playing guitar, listening to music, sketching, and exploring new interests. I also enjoy planning, helping others, and building things with people."
+  ],
   
   focusAreas: [
     { title: "Full-Stack Development ⌨️" },
@@ -195,11 +198,11 @@ export const portfolioData = {
     {
       title: "InTune",
       subtitle: "AI Roommate Matching Platform",
-      description: "AI roommate matching platform pairing users by lifestyle compatibility. Features OmniDim voice agent onboarding using Web Speech API (Speech-to-Text) and Tesseract.js client-side Aadhaar OCR with Verhoeff Checksum validation. Designed client-side matching engine using TF-IDF vectorization & Cosine Similarity (0.027ms latency), plus split-expense ledger tracking.",
-      tech: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Tesseract.js", "Web Speech API", "OmniDim Voice Agent"],
+      description: "InTune reimagines roommate-finding around lifestyle compatibility instead of rigid filters. Users describe their living habits in their own words — by voice or text — and a sentence-embedding model (SBERT) semantically compares descriptions to surface genuinely compatible matches, not just keyword overlaps. To protect privacy during discovery, every user interacts under an auto-generated anonymous alias; real identities are revealed only after a mutual match. Identity verification happens entirely on-device — Aadhaar photos are OCR'd and checksum-validated in the browser, so sensitive documents never leave the user's machine.",
+      tech: ["React", "TypeScript", "Spring Boot", "Java", "FastAPI", "Python", "Sentence-Transformers", "MongoDB", "Tailwind CSS", "Tesseract.js", "Web Speech API (OmniDim)"],
       tags: ["AI", "Hackathon Finalist"],
       github: "https://github.com/suhanigupta23/Intune",
-      demo: "https://team-naruto.vercel.app/",
+      demo: "https://in-tune-phi.vercel.app/",
       image: "/projects/intune.png"
     },
     {
@@ -209,7 +212,7 @@ export const portfolioData = {
       tech: ["Spring Boot", "React", "PostgreSQL", "Redis", "JWT", "WebRTC", "Stripe", "Gemini API", "Resilience4j", "Docker"],
       tags: ["AI", "Healthcare", "Hackathon Winner"],
       github: "https://github.com/suhanigupta23/Saarthi",
-      demo: "https://saarthi-empower-hub-revamp.vercel.app/",
+      demo: "https://saarthi-nine-gamma.vercel.app/",
       image: "/projects/saarthi.png"
     },
     {

@@ -3,7 +3,7 @@ import { GraduationCap, BookOpen, Calendar, MapPin, Smile } from "lucide-react";
 import { portfolioData } from "../data/portfolioData";
 
 export default function About() {
-  const { name, shortBio, education } = portfolioData;
+  const { name, aboutMe, education } = portfolioData;
 
   return (
     <section id="about" className="py-32 px-10 md:px-20 lg:px-24 bg-background/50 border-y border-border/40">
@@ -16,9 +16,9 @@ export default function About() {
         </div>
 
         {/* Centered Biography */}
-        <div className="max-w-4xl mx-auto mb-20 bg-card/45 border border-border/80 rounded-2xl p-10 md:p-12 backdrop-blur-sm shadow-md flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
+        <div className="max-w-5xl mx-auto mb-20 bg-card/45 border border-border/80 rounded-2xl p-8 md:p-10 backdrop-blur-sm shadow-md flex flex-col md:flex-row gap-8 items-center md:items-center text-center md:text-left">
           {/* Avatar Container */}
-          <div className="w-32 h-32 md:w-36 md:h-36 rounded-2xl overflow-hidden border border-border bg-muted shrink-0 relative group shadow-inner">
+          <div className="w-36 h-36 md:w-48 md:h-48 rounded-2xl overflow-hidden border border-border bg-muted shrink-0 relative group shadow-inner">
             <img
               src="/avatar.jpg"
               alt="Suhani Gupta"
@@ -36,71 +36,73 @@ export default function About() {
 
           {/* Biography Text */}
           <div className="flex-1 space-y-4">
-            <h3 className="text-2xl font-bold text-foreground flex items-center gap-3 justify-center md:justify-start">
-              <Smile className="w-7 h-7 text-primary" />
+            <h3 className="text-xl md:text-2xl font-bold text-foreground flex items-center gap-2.5 justify-center md:justify-start">
+              <Smile className="w-6 h-6 text-primary" />
               <span>My Background</span>
             </h3>
-            <p className="text-muted-foreground leading-relaxed text-lg">
-              I'm <span className="text-primary font-semibold">{name}</span>
-              {shortBio}
-            </p>
+            
+            <div className="text-muted-foreground leading-relaxed text-base md:text-lg space-y-4 text-left">
+              {aboutMe.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Vertical Education Stack */}
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-3xl font-black text-primary mb-12 flex items-center justify-center">
-            <GraduationCap className="w-8 h-8 mr-3 text-primary" />
+        <div className="max-w-3xl mx-auto">
+          <h3 className="text-2xl md:text-3xl font-black text-primary mb-8 flex items-center justify-center">
+            <GraduationCap className="w-7 h-7 mr-2.5 text-primary" />
             <span>Education</span>
           </h3>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             {education.map((item, idx) => {
               const Icon = item.type === "college" ? GraduationCap : BookOpen;
               return (
                 <div
                   key={idx}
-                  className="bg-card border border-border/80 rounded-2xl p-8 hover:border-accent hover:-translate-y-0.5 hover:shadow-2xl transition-all duration-300 shadow-md flex flex-col md:flex-row gap-6 md:items-center justify-between"
+                  className="bg-card border border-border/80 rounded-xl p-5 md:p-6 hover:border-accent hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col md:flex-row gap-4 md:items-center justify-between"
                 >
                   {/* Left block: Metadata */}
-                  <div className="md:w-1/4 shrink-0 flex flex-col gap-2.5">
-                    <span className={`inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full w-fit ${
+                  <div className="md:w-1/4 shrink-0 flex flex-col gap-2">
+                    <span className={`inline-flex items-center gap-1.5 text-[10px] md:text-xs font-bold px-2.5 py-0.5 rounded-full w-fit ${
                       item.type === "college" 
                         ? "bg-accent/15 text-accent border border-accent/20" 
                         : "bg-primary/10 text-primary border border-primary/20"
                     }`}>
-                      <Icon className="w-3.5 h-3.5" />
+                      <Icon className="w-3 h-3" />
                       {item.type === "college" ? "College" : "School"}
                     </span>
-                    <span className="text-sm font-bold text-muted-foreground flex items-center gap-1.5 font-mono">
-                      <Calendar className="w-4 h-4 text-primary/70" />
+                    <span className="text-xs font-bold text-muted-foreground flex items-center gap-1.5 font-mono">
+                      <Calendar className="w-3.5 h-3.5 text-primary/70" />
                       {item.duration}
                     </span>
                   </div>
 
                   {/* Middle block: Degree/Institution details & Scholarship note */}
-                  <div className="flex-1 space-y-1.5 md:border-l md:border-border/60 md:pl-8">
-                    <h4 className="font-bold text-foreground text-xl md:text-2xl leading-snug">
+                  <div className="flex-1 space-y-1 md:border-l md:border-border/60 md:pl-6">
+                    <h4 className="font-bold text-foreground text-base md:text-lg leading-snug">
                       {item.degree}
                     </h4>
-                    <p className="text-primary font-bold text-base md:text-lg">
+                    <p className="text-primary font-semibold text-sm md:text-base">
                       {item.institution}
                     </p>
                     {item.note && (
-                      <p className="text-xs md:text-sm text-muted-foreground/85 font-medium pt-1">
+                      <p className="text-xs text-muted-foreground/85 font-medium pt-0.5">
                         {item.note}
                       </p>
                     )}
                   </div>
 
                   {/* Right block: Location and subtle percentage pill */}
-                  <div className="md:w-1/4 shrink-0 flex flex-col md:items-end items-start gap-2">
+                  <div className="md:w-1/4 shrink-0 flex flex-col md:items-end items-start gap-1.5">
                     <div className="text-xs font-semibold text-muted-foreground flex items-center md:justify-end gap-1.5">
-                      <MapPin className="w-4 h-4 text-accent/70" />
+                      <MapPin className="w-3.5 h-3.5 text-accent/70" />
                       <span>{item.location}</span>
                     </div>
                     {item.percentage && (
-                      <span className="text-[11px] font-mono font-medium text-muted-foreground/60 bg-secondary/50 border border-border/40 px-2.5 py-0.5 rounded-full">
+                      <span className="text-[10px] font-mono font-medium text-muted-foreground/60 bg-secondary/50 border border-border/40 px-2 py-0.5 rounded-full mt-1 md:mt-0">
                         {item.percentage}
                       </span>
                     )}
