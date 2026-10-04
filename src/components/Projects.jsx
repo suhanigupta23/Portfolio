@@ -26,7 +26,7 @@ export default function Projects() {
           <div className="w-28 h-1.5 bg-primary mx-auto rounded-full" />
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mt-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-12 mt-16">
           {projects.map((project, idx) => {
             const grad = gradients[idx % gradients.length];
             return (

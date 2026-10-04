@@ -188,7 +188,7 @@ export const portfolioData = {
     {
       title: "SketchRoom",
       subtitle: "Real-Time Collaborative Whiteboard",
-      description: "Engineered a collaborative whiteboard with Spring Boot WebSocket (STOMP) enabling live multi-user drawing sync across shared rooms with sub-100ms latency. Implemented Redis write-behind caching to buffer high-frequency draw events and batch-flush to PostgreSQL every 30s, reducing DB writes by ~98%.",
+      description: "Engineered a real-time collaborative whiteboard with Spring Boot WebSockets and STOMP for multi-user drawing synchronization, featuring shared undo/redo, late-join canvas replay, and automatic reconnect recovery. Optimized the drawing pipeline by batching canvas updates with Redis write-behind caching, reducing write operations by 96.9% while maintaining strict sequence ordering and save-before-broadcast message delivery.",
       tech: ["Spring Boot", "React", "WebSocket (STOMP)", "Redis", "PostgreSQL", "TypeScript", "Docker"],
       tags: ["Full-Stack", "Real-Time"],
       github: "https://github.com/suhanigupta23/SketchRoom",
@@ -198,8 +198,8 @@ export const portfolioData = {
     {
       title: "InTune",
       subtitle: "AI Roommate Matching Platform",
-      description: "InTune reimagines roommate-finding around lifestyle compatibility instead of rigid filters. Users describe their living habits in their own words — by voice or text — and a sentence-embedding model (SBERT) semantically compares descriptions to surface genuinely compatible matches, not just keyword overlaps. To protect privacy during discovery, every user interacts under an auto-generated anonymous alias; real identities are revealed only after a mutual match. Identity verification happens entirely on-device — Aadhaar photos are OCR'd and checksum-validated in the browser, so sensitive documents never leave the user's machine.",
-      tech: ["React", "TypeScript", "Spring Boot", "Java", "FastAPI", "Python", "Sentence-Transformers", "MongoDB", "Tailwind CSS", "Tesseract.js", "Web Speech API (OmniDim)"],
+      description: "AI-powered roommate matching platform leveraging a semantic pipeline built with FastAPI and Sentence Transformers (all-MiniLM-L6-v2) to calculate profile similarity and rank candidates. Features accessibility-first voice onboarding via the Web Speech API, browser-side identity verification using Tesseract.js OCR with Verhoeff checksum validation, and secure Spring Boot REST APIs for chat and expense management.",
+      tech: ["React", "TypeScript", "Spring Boot", "MongoDB", "FastAPI (Python)", "Sentence Transformers", "Tesseract.js", "Web Speech API"],
       tags: ["AI", "Hackathon Finalist"],
       github: "https://github.com/suhanigupta23/Intune",
       demo: "https://in-tune-phi.vercel.app/",
@@ -207,23 +207,13 @@ export const portfolioData = {
     },
     {
       title: "Saarthi",
-      subtitle: "AI-Powered Women’s Health & Telehealth Platform",
-      description: "Responsive full-stack web app with JWT-secured REST APIs and PostgreSQL to manage patient profiles, cycle tracking, vitals history, and appointment records. Enabled browser-based 2-way video calls using WebSocket signaling for low-latency consultations, Haversine geolocation search, Gemini AI symptom screening with Resilience4j circuit breaker, and Stripe/UPI bookings.",
-      tech: ["Spring Boot", "React", "PostgreSQL", "Redis", "JWT", "WebRTC", "Stripe", "Gemini API", "Resilience4j", "Docker"],
+      subtitle: "AI Women’s Health & Telehealth Platform",
+      description: "Comprehensive women's health and telehealth platform featuring JWT-secured Spring Boot APIs for cycle tracking, appointments, and health records. Engineered highly robust, concurrency-safe booking and Stripe payment flows with database constraints and webhook reconciliation. Integrates WebRTC for video consultations, OpenStreetMap for nearby provider discovery, and a Gemini AI symptom checker protected by Resilience4j fallbacks.",
+      tech: ["Spring Boot", "React", "PostgreSQL", "JWT", "WebRTC", "Stripe", "Gemini API", "Resilience4j", "OpenStreetMap"],
       tags: ["AI", "Healthcare", "Hackathon Winner"],
       github: "https://github.com/suhanigupta23/Saarthi",
       demo: "https://saarthi-nine-gamma.vercel.app/",
       image: "/projects/saarthi.png"
-    },
-    {
-      title: "DermaIQ",
-      subtitle: "AI Skincare Analysis Platform",
-      description: "AI-powered skincare analysis platform that detects skin concerns and recommends personalized routines using computer vision & Hugging Face models.",
-      tech: ["JavaScript", "React", "Hugging Face API", "Tailwind CSS"],
-      tags: ["AI", "Full-Stack"],
-      github: "https://github.com/suhanigupta23/DermaIQ",
-      demo: "https://github.com/suhanigupta23/DermaIQ",
-      image: "/projects/derma-iq.png"
     },
     {
       title: "Hit the Hamster",
@@ -234,16 +224,6 @@ export const portfolioData = {
       github: "https://github.com/suhanigupta23/Hit-The-Hamster",
       demo: "https://creative-choux-e20f8d.netlify.app/",
       image: "/projects/hit-the-hamster.png"
-    },
-    {
-      title: "Snake Game – Hand Gesture Controlled",
-      subtitle: "Computer Vision Arcade Game",
-      description: "Classic Snake game controlled entirely via real-time hand gestures using webcam video streams with MediaPipe & OpenCV.",
-      tech: ["Python", "OpenCV", "MediaPipe", "Pygame"],
-      tags: ["Game", "AI / CV"],
-      github: "https://github.com/suhanigupta23/Snake-Game-Hand-Gesture",
-      demo: "https://github.com/suhanigupta23/Snake-Game-Hand-Gesture",
-      image: "/projects/snake-game.png"
     }
   ],
 
