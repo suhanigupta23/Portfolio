@@ -1,21 +1,20 @@
-# Suhani Gupta — Portfolio
+# ✦ Suhani Gupta — Portfolio
 
-Vanilla HTML, CSS, and JavaScript portfolio for Suhani Gupta, a final-year CSE student at IIIT Kota focused on full-stack development, real-time systems, and AI-integrated products.
+A personal developer portfolio showcasing my work in **backend engineering, full-stack development, real-time systems, and AI-integrated applications**.
 
-## Run locally
+The portfolio highlights my projects, experience, technical skills, achievements, coding profiles, and an interactive assistant — **Byte 🤖**.
 
-```bash
-python3 -m http.server 8000
-```
+## 🚀 Featured Projects
 
-Open `http://localhost:8000`.
+- **SketchRoom** — Real-time collaborative whiteboard
+- **InTune** — AI-powered roommate matching platform
+- **Saarthi** — Full-stack healthcare platform
+- **Hit the Hamster** — Small browser game
 
-## Personalize
+## 🔗 Live Portfolio
 
-- Replace project links and add screenshots in `index.html`.
-- Add `Suhani_Gupta_Resume.pdf` to the project root.
-- Update the LinkedIn placeholder when the URL is available.
-- Project summaries are stored in the `PROJECTS` object in `script.js`.
-- Intro timings are configured in `INTRO_CONFIG` in `script.js`.
+[View Portfolio](https://suhanigupta.vercel.app/)
 
-The project assistant is a local simulated interaction. It does not call an AI API.
+---
+
+Designed & built by **Suhani Gupta** ✨
